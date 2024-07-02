@@ -1,27 +1,42 @@
-# FrontebdJeuxolympiques
+# Studi-jeux-olympiques
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+Présentation
 
-## Development server
+Création d'une application gérant un système permettant la réservation de ticket avec la mise en place: 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+    front-end : site web dynamique et responsive
+    back-end : composant d'accès à la base de données
+    base de données : manipulation des données
 
-## Code scaffolding
+Pré-requis
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Afin de pouvoir lancer le projet en local, vous devez avoir ces outils sur votre machine :
 
-## Build
+    pour la partie back
+        Java JDK 21
+        Maven
+    pour la partie front
+        nodeJS (LTS)
+        npm
+        Angular CLI
+    pour la partie base de données
+        MariaDB
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Technologies utilisées
 
-## Running unit tests
+Ce projet utilise Angular 18.0.6 en front, Spring Boot 3.3.1 en back-end
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Pour lancer le projet, il faut lancer les commandes suivantes dans l'ordre :
 
-## Running end-to-end tests
+    mvn clean install dans le dossier back
+    npm install dans le dossier front
+    npm start dans le dossier front
+    mvn spring-boot:run dans le dossier back
+    ng serve : ouvrir votre navigateur sur l'adresse http://localhost:4200
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Fonctionnalités
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+    Ajouter un utilisateur
+    Supprimer un utilisateur
+    Modifier les données d'un utilisateur
+    Récupérer les données d'un utilisateur
