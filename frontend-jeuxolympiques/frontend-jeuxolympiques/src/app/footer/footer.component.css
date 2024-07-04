@@ -1,3 +1,5 @@
+/*layout footer and icon social network*/
+
 footer{
   color:#ffffff;
   width: 100%;
@@ -6,13 +8,14 @@ footer{
   flex-direction: row;
   height: 445px;
 }
-
+/* div contain logo, title, div with icon social network and div with legal information */
 .footer{
   display: flex;
   flex-direction: column;
   width: 68%;
 }
 
+/* div with class actualites*/
 .actualities{
   background-color:#eb9fed;
   width:100%;
@@ -35,6 +38,7 @@ i{
   margin-top: 10px;
 }
 
+/*div with class informations*/
 .informations{
   height: 375px;
   width: 100%;

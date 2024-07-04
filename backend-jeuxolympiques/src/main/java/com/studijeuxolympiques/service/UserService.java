@@ -1,9 +1,11 @@
 package com.studijeuxolympiques.service;
-
-
-
 import com.studijeuxolympiques.model.User;
 import java.util.List;
+
+/**
+ * Implements interface of service
+ * implements business logic
+ */
 
 public interface UserService {
     List<User> getAllUsers();

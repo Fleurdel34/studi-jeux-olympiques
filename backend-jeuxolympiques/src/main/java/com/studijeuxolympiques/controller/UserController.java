@@ -16,6 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping({"/users"})
 public class UserController {
+
+    /**
+     * Build class UserController
+     * Receive the request and provide the response
+     * @property UserService
+     * @requests Get, Post, and Put
+     */
+
     private final UserService userService;
 
     @Autowired

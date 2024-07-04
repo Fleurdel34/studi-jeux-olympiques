@@ -8,10 +8,23 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
+/**
+ * @author johanna
+ * @version 1.0.0
+ */
+
 @Data
 @Entity
 @Table(name = "users")
 public class User {
+
+    /**
+     * Build Class user
+     * Set up properties (id, firstname, lastname, telephone, email and password)
+     * Implement constructor
+     * @Data allows the implementation of getter and setter
+     */
+
     @Id
     @GeneratedValue(
             strategy = GenerationType.IDENTITY

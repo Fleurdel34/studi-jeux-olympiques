@@ -18,7 +18,7 @@ export class AccountcreationComponent {
     userPassword!: string;
     userPasswordConfirmation!:string;
 
-
+    /*recover all form values*/
     onSubmitForm(form: NgForm){
       console.log(form.value);
     }

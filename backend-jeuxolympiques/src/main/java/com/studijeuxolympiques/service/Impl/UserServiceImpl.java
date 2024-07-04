@@ -7,6 +7,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * Create class UserServiceImpl
+ * Execute business processing
+ * Use the property UserRepository
+ */
+
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
@@ -28,6 +34,12 @@ public class UserServiceImpl implements UserService {
         this.userRepository.save(user);
     }
 
+    /**
+     * Update properties of instance of User Object
+     * @param id
+     * @param updatedUser
+     * @return save model User update with new property
+     */
     public User updateUser(Long id, User updatedUser) {
         User oldUser = this.getUserById(id);
         if (oldUser != null) {
