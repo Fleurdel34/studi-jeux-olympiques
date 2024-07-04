@@ -28,7 +28,7 @@ public class User {
     @Column(
             nullable = false
     )
-    private int telephone;
+    private Long telephone;
     @Column(
             nullable = false
     )
@@ -38,7 +38,7 @@ public class User {
     )
     private String password;
 
-    public User(String firstname, String lastname, int telephone, String mail, String password) {
+    public User(String firstname, String lastname, long telephone, String mail, String password) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.telephone = telephone;
@@ -48,5 +48,6 @@ public class User {
 
     public User() {
     }
+
 
 }

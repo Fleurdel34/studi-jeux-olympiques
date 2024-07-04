@@ -11,15 +11,19 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest({UserController.class})
 class StudiJeuxOlympiquesApplicationTests {
+
 	@Autowired
 	private MockMvc mockMvc;
+
 	@MockBean
 	private UserService userService;
+
 	@Autowired
 	private ObjectMapper objectMapper;
 
@@ -28,13 +32,17 @@ class StudiJeuxOlympiquesApplicationTests {
 
 	@Test
 	public void testGetUsers() throws Exception {
-		this.mockMvc.perform(MockMvcRequestBuilders.get("/users", new Object[0])).andExpect(MockMvcResultMatchers.status().isOk());
+		mockMvc.perform(get("/users"))
+				.andExpect(status().isOk());
 	}
 
 	@Test
 	public void createUser() throws Exception {
-		User user1 = new User("José", "GINO", 104768212, "josegino@test.com", "joseGINO32*");
-		this.mockMvc.perform(MockMvcRequestBuilders.post("/users", new Object[0]).contentType(MediaType.APPLICATION_JSON).content(this.objectMapper.writeValueAsString(user1))).andExpect(MockMvcResultMatchers.status().isOk());
+		User user1 = new User("José", "GINO", 0132016013L, "josegino@test.com", "joseGINO32*");
+		mockMvc.perform(post("/users")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(objectMapper.writeValueAsString(user1)))
+				.andExpect(status().isOk());
 	}
 }
 
