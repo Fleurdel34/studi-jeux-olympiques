@@ -32,6 +32,12 @@ li{
   margin-right: 20px;
 }
 
+/*Layout button path page AccountCreation and Connection"*/
+button{
+  background-color: #a03174;
+  border: none;
+}
+
 /*icon awesome*/
 i{
   font-size: 30px;

@@ -1,0 +1,106 @@
+section{
+  background-color:#f5f5f5;
+  height: 1100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+form{
+  background-color: #d9d9d9;
+  width: 60%;
+  height: 800px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+/* Layout title and span page*/
+
+h2{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h3{
+  font-size: 22px;
+  font-weight: bold;
+}
+
+span{
+  font-size: 12px;
+  font-style: italic;
+  display: block;
+  margin-top: 20px;
+}
+
+/*Position input and text*/
+.inputLabel{
+  position: relative;
+  height:80px;
+  line-height:80px;
+}
+
+/*Layout label and input*/
+.label{
+  font-size: 22px;
+  font-weight: bold;
+  position: absolute;
+  padding: 0 20px;
+  height:50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.2s ease;
+  background-color:#d9d9d9;
+}
+
+input{
+  width: 70%;
+  height:50px;
+  background-color: transparent;
+  border-radius: 20px;
+  border: solid grey;
+  outline: none;
+  position: absolute;
+  z-index: 999;
+  transition: 0.2s ease;
+  padding-left: 20px;
+}
+
+/* Animation of the input when the user makes an entry c*/
+input:focus,
+input:valid{
+   border: 2px solid;
+}
+
+input:focus ~.label,
+input:valid ~.label{
+  height: 30px;
+  transform: translate(-15px, -16px) scale(0.88);
+  z-index: 9999;
+}
+
+/*position of button submit*/
+
+.buttonSubmit{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/*Layout button Create Account*/
+
+button{
+  border-radius: 50px;
+  background-color: #38bbd8;
+  border: none;
+  color:#ffffff;
+  width:25%;
+  height: 50px;
+  font-size: 18px;
+}

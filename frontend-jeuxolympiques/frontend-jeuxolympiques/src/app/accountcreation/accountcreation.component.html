@@ -1,29 +1,56 @@
-<main>
-  <h2>Saisissez les informations suivantes:</h2>
-  <form #valuesForm= "ngForm" (ngSubmit)="onSubmitForm(valuesForm)">
-    <label for="lastnameInput">Nom</label>
-    <input type="text" id="lastnameInput" name="userLastname" [(ngModel)]="userName" required/>
+<section>
+   <form #valuesForm= "ngForm" (ngSubmit)="onSubmitForm(valuesForm)">
+    <h2>Saisissez les informations suivantes:</h2>
 
-    <label for="firstnameInput">Prénom</label>
-    <input type="text" id="firstnameInput" name="userFirstname" [(ngModel)]="userFirstname" required/>
+    <div class="inputLabel">
+      <input type="text" id="lastnameInput" name="userLastname" [(ngModel)]="userName" required/>
+      <div class="label">
+        Nom
+      </div>
+    </div>
 
-    <label for="emailInput">Email</label>
-    <input type="email" id="emailInput" name="userEmail" [(ngModel)]="userEmail" required/>
+     <div class="inputLabel">
+      <input type="text" id="firstnameInput" name="userFirstname" [(ngModel)]="userFirstname" required/>
+       <div class="label">
+         Prénom
+       </div>
+     </div>
 
-    <label for="telephoneInput">Téléphone</label>
-    <input type="number" id="telephoneInput" name="userTelephone" [(ngModel)]="userTelephone" required/>
+     <div class="inputLabel">
+      <input type="email" id="emailInput" name="userEmail" [(ngModel)]="userEmail" required/>
+      <div class="label">
+        Email
+      </div>
+      </div>
 
-    <label for="passwordInput">Mot de passe</label>
-    <input type="password" id="passwordInput" name="userPassword" [(ngModel)]="userPassword" required/>
-    <p>Le mot de passe devra comporter au moins 10 caractères
-      avec au moins une majuscule, une minuscule, un chiffre,
-      un caractère spécial ou un signe de ponctuation</p>
+     <div class="inputLabel">
+      <input type="tel" id="telephoneInput" name="userTelephone" [(ngModel)]="userTelephone" required/>
+      <div class="label">
+        Téléphone
+      </div>
+      </div>
+
+     <div class="inputLabel">
+     <input type="password" id="passwordInput" name="userPassword" [(ngModel)]="userPassword" required/>
+      <div class="label">
+        Mot de passe
+      </div>
+      <span>Le mot de passe devra comporter au moins 10 caractères avec au moins une majuscule,
+        une minuscule, un chiffre, un caractère spécial ou un signe de ponctuation</span>
+    </div>
 
     <h3>Confirmer la saisie de votre mot de passe:</h3>
 
-    <label for="passwordConfirmation">Mot de passe</label>
-    <input type="password" id="passwordConfirmation" name="userPasswordConfirmation" [(ngModel)]="userPasswordConfirmation"required/>
+     <div class="inputLabel">
+      <input type="password" id="passwordConfirmation" name="userPasswordConfirmation" [(ngModel)]="userPasswordConfirmation"required/>
+      <div class="label">
+        Mot de passe
+      </div>
+     </div>
 
-    <button type="submit">Créer un compte</button>
+     <div class="buttonSubmit">
+       <button type="submit">Créer un compte</button>
+     </div>
+
   </form>
-</main>
+</section>

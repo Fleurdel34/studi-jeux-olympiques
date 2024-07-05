@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,15 @@ import {NgOptimizedImage} from "@angular/common";
   styleUrl: './header.component.css'
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
 
+  constructor(private router: Router){}
+
+  ngOnInit(): void{}
+
+  /* Create method for redirect Account Creation Page with route and path*/
+  onRedirectAccountCreation(): void{
+      this.router.navigateByUrl('/registration');
+  }
 
 }

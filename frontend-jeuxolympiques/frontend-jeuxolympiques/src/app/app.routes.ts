@@ -3,6 +3,6 @@ import {HomeComponent} from "./home/home.component";
 import {AccountcreationComponent} from "./accountcreation/accountcreation.component";
 
 export const routes: Routes = [
-  {path:"Inscription", component:AccountcreationComponent},
+  {path:"registration", component:AccountcreationComponent},
   {path:'', component: HomeComponent}
 ];

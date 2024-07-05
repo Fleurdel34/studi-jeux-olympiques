@@ -5,38 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9554a597-5062-4333-b599-c9f641a52987" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/.vscode/tasks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/app/app.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/app/app.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/app/app.routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/app/header/header.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/app/header/header.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/app/header/header.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/app/header/header.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/assets/Jeux Olympiques.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/assets/Jeux Paralympiques.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/assets/Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/assets/flag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/assets/twitter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/src/styles.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/accountcreation/accountcreation.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/accountcreation/accountcreation.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/accountcreation/accountcreation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/accountcreation/accountcreation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/header/header.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +42,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -77,32 +54,53 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Karma.AppComponent.should have the 'frontend-jeuxolympiques' title.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\johan\\IdeaProjects\\studi-jeux-olympiques\\frontend-jeuxolympiques\\frontend-jeuxolympiques\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.createUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.testGetUsers.executor&quot;: &quot;Run&quot;,
+    &quot;Karma.AppComponent.should have the 'frontend-jeuxolympiques' title.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [site].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.StudiJeuxOlympiquesApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.karma.karma_node_package_dir&quot;: &quot;&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/IdeaProjects/stock&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\johan\\IdeaProjects\\studi-jeux-olympiques\\frontend-jeuxolympiques\\frontend-jeuxolympiques\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques\frontend-jeuxolympiques\public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques\frontend-jeuxolympiques\public" />
+      <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques\frontend-jeuxolympiques\src\assets" />
+      <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques\frontend-jeuxolympiques\src\app\header\assets" />
       <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques\public" />
       <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques\src" />
-      <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques\src\app" />
-      <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques\src\assets" />
-      <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques" />
     </key>
   </component>
-  <component name="RunManager" selected="Karma.AppComponent.should have the 'frontend-jeuxolympiques' title">
+  <component name="RunManager" selected="Spring Boot.StudiJeuxOlympiquesApplication">
     <configuration name="StudiJeuxOlympiquesApplicationTests.createUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="studi-jeux-olympiques" />
       <extension name="coverage">
@@ -135,23 +133,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppComponent.should have the 'frontend-jeuxolympiques' title" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
-      <config-file value="" />
-      <karma-package-dir value="$PROJECT_DIR$/frontend-jeuxolympiques/node_modules/@angular/cli" />
-      <working-directory value="$PROJECT_DIR$" />
-      <node-interpreter value="project" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file-path value="$PROJECT_DIR$/frontend-jeuxolympiques/src/app/app.component.spec.ts" />
-      <test-names>
-        <test-name value="AppComponent" />
-        <test-name value="should have the 'frontend-jeuxolympiques' title" />
-      </test-names>
-      <method v="2" />
+    <configuration name="StudiJeuxOlympiquesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="studi-jeux-olympiques" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.studijeuxolympiques.StudiJeuxOlympiquesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Karma.AppComponent.should have the 'frontend-jeuxolympiques' title" />
         <item itemvalue="JUnit.StudiJeuxOlympiquesApplicationTests.testGetUsers" />
         <item itemvalue="JUnit.StudiJeuxOlympiquesApplicationTests.createUser" />
       </list>
@@ -179,7 +170,16 @@
       <workItem from="1719982429181" duration="6274000" />
       <workItem from="1719989155321" duration="89000" />
       <workItem from="1720009901776" duration="2757000" />
-      <workItem from="1720012962985" duration="5404000" />
+      <workItem from="1720012962985" duration="6008000" />
+      <workItem from="1720026146491" duration="4545000" />
+      <workItem from="1720068476023" duration="1072000" />
+      <workItem from="1720069625329" duration="11007000" />
+      <workItem from="1720090958927" duration="4550000" />
+      <workItem from="1720095641030" duration="3262000" />
+      <workItem from="1720098977206" duration="997000" />
+      <workItem from="1720100051925" duration="110000" />
+      <workItem from="1720110994227" duration="5203000" />
+      <workItem from="1720154946606" duration="10469000" />
     </task>
     <servers />
   </component>
@@ -196,5 +196,29 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/backend-jeuxolympiques/src/test/java/com/studijeuxolympiques/StudiJeuxOlympiquesApplicationTests.java</url>
+          <line>33</line>
+          <properties class="com.studijeuxolympiques.StudiJeuxOlympiquesApplicationTests" method="testGetUsers">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/backend-jeuxolympiques/src/test/java/com/studijeuxolympiques/StudiJeuxOlympiquesApplicationTests.java</url>
+          <line>39</line>
+          <properties class="com.studijeuxolympiques.StudiJeuxOlympiquesApplicationTests" method="createUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
