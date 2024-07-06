@@ -1,37 +1,37 @@
 <section>
-   <form #valuesForm= "ngForm" (ngSubmit)="onSubmitForm(valuesForm)">
+   <form [formGroup]="registrationForm">
     <h2>Saisissez les informations suivantes:</h2>
 
     <div class="inputLabel">
-      <input type="text" id="lastnameInput" name="userLastname" [(ngModel)]="userName" required/>
+      <input type="text" id="lastnameInput" name="userLastname" formControlName="userLastname"/>
       <div class="label">
         Nom
       </div>
     </div>
 
      <div class="inputLabel">
-      <input type="text" id="firstnameInput" name="userFirstname" [(ngModel)]="userFirstname" required/>
+      <input type="text" id="firstnameInput" name="userFirstname" formControlName="userFirstname"/>
        <div class="label">
          Prénom
        </div>
      </div>
 
      <div class="inputLabel">
-      <input type="email" id="emailInput" name="userEmail" [(ngModel)]="userEmail" required/>
+      <input type="email" id="emailInput" name="userEmail" formControlName="userEmail"/>
       <div class="label">
         Email
       </div>
       </div>
 
      <div class="inputLabel">
-      <input type="tel" id="telephoneInput" name="userTelephone" [(ngModel)]="userTelephone" required/>
+      <input type="tel" id="telephoneInput" name="userTelephone" formControlName="userTelephone"/>
       <div class="label">
         Téléphone
       </div>
       </div>
 
      <div class="inputLabel">
-     <input type="password" id="passwordInput" name="userPassword" [(ngModel)]="userPassword" required/>
+     <input type="password" id="passwordInput" name="userPassword" formControlName="userPassword" />
       <div class="label">
         Mot de passe
       </div>
@@ -42,15 +42,15 @@
     <h3>Confirmer la saisie de votre mot de passe:</h3>
 
      <div class="inputLabel">
-      <input type="password" id="passwordConfirmation" name="userPasswordConfirmation" [(ngModel)]="userPasswordConfirmation"required/>
+      <input type="password" id="passwordConfirmation" name="userPasswordConfirmation" formControlName="userPasswordConfirmation" />
       <div class="label">
         Mot de passe
       </div>
      </div>
-
+     <small class="error-text" *ngIf="showPasswordError$ | async ">Les mots de passe ne correspondent pas!</small>
      <div class="buttonSubmit">
-       <button type="submit">Créer un compte</button>
+       <button type="submit" (click)="onSubmitForm()">Créer un compte</button>
      </div>
 
-  </form>
+     </form>
 </section>

@@ -104,3 +104,9 @@ button{
   height: 50px;
   font-size: 18px;
 }
+
+/*Layout message error*/
+.error-text{
+  color: red;
+  font-size: 18px;
+}
