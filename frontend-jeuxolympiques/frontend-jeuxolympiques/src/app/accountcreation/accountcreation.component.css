@@ -65,7 +65,6 @@ input{
   background-color: transparent;
   border-radius: 20px;
   border: solid grey;
-  outline: none;
   position: absolute;
   z-index: 999;
   transition: 0.2s ease;
@@ -73,13 +72,13 @@ input{
 }
 
 /* Animation of the input when the user makes an entry c*/
-input:focus,
-input:valid{
+input:focus
+{
    border: 2px solid;
 }
 
-input:focus ~.label,
-input:valid ~.label{
+input:focus ~.label
+{
   height: 30px;
   transform: translate(-15px, -16px) scale(0.88);
   z-index: 9999;
