@@ -1,0 +1,34 @@
+/*Layout Error Page div title paragraph and link*/
+
+div{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d9d9d9;
+}
+
+h1{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 288px;
+  margin-top:3rem;
+  margin-bottom:0;
+  color:#eb9fed;
+}
+
+p{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  margin-bottom:5rem;
+  color: #ffffff;
+}
+
+a{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top:5rem;
+  margin-bottom:7rem;
+  color: #a03174;
+}

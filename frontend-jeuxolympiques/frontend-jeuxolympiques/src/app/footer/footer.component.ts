@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-footer',
@@ -7,6 +8,17 @@ import { Component } from '@angular/core';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css'
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit{
+
+  constructor(private router: Router){}
+
+  ngOnInit() {
+  }
+
+  /* Create method for redirect Legal Information Page with route and path*/
+
+  onRedirectLegalInformation(): void{
+    this.router.navigateByUrl('/legalinformation');
+  }
 
 }
