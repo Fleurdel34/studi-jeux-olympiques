@@ -7,17 +7,34 @@
         <i class="fa-solid fa-user"></i>
       </button>
       <li>Se connecter</li>
-      <button (click)="onRedirectAccountCreation()">
-        <i class="fa-regular fa-user"></i>
-      </button>
-      <li>S'inscrire</li>
+      <ng-container *ngIf="router.url.endsWith('/')">
+        <button (click)="onRedirectAccountCreation()">
+          <i class="fa-regular fa-user"></i>
+        </button>
+        <li>S'inscrire</li>
+      </ng-container>
+      <ng-container *ngIf="router.url.includes('/registration')">
+        <button (click)="onRedirectBackHomePage()">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <li>Accueil</li>
+      </ng-container>
     </ul>
   </nav>
   <div class="header-logo">
     <img src="assets/Logo.png" class="img-logo" alt="Logo des jeux olympiques">
-    <h1>
-      Billetterie des Jeux Olympiques et Paralympiques<br>
-      de Paris 2024
-    </h1>
+    <ng-container *ngIf="router.url.endsWith('/')">
+      <h1>
+        Billetterie des Jeux Olympiques et Paralympiques<br>
+        de Paris 2024
+      </h1>
+    </ng-container>
+    <ng-container *ngIf="router.url.includes('/registration')">
+      <h1>
+        Inscription<br>
+        Jeux Olympiques et<br>
+        Paralympiques Paris 2024
+      </h1>
+    </ng-container>
   </div>
 </header>
