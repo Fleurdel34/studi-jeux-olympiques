@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {
   FormBuilder,
-  FormControl, FormControlOptions,
-  FormControlState,
+  FormControl,
   FormGroup,
   ReactiveFormsModule,
-  ValidatorFn,
   Validators
 } from "@angular/forms";
 import {confirmEqualValidator} from "../validators/confirmEqualValidator";
 import {map, Observable} from "rxjs";
 import {AsyncPipe, NgIf} from "@angular/common";
+import {ApiService} from "../service/api.service";
+
 
 @Component({
   selector: 'app-accountcreation',
@@ -18,7 +18,7 @@ import {AsyncPipe, NgIf} from "@angular/common";
   imports: [
     ReactiveFormsModule,
     AsyncPipe,
-    NgIf
+    NgIf,
   ],
   templateUrl: './accountcreation.component.html',
   styleUrl: './accountcreation.component.css'
@@ -27,14 +27,11 @@ export class AccountcreationComponent implements OnInit {
 
   registrationForm!: FormGroup;
   passwordRegex!: RegExp;
-
   userPasswordCtrl!: FormControl;
   userPasswordConfirmationCtrl!: FormControl;
+  showPasswordError$!: Observable<boolean>;
 
-
-  showPasswordError$!: Observable<boolean>
-
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private apiService: ApiService) {
   }
 
   ngOnInit(): void {
@@ -44,19 +41,18 @@ export class AccountcreationComponent implements OnInit {
     this.userPasswordConfirmationCtrl =this.formBuilder.control('', [Validators.required, Validators.pattern(this.passwordRegex)]);
 
     this.registrationForm = this.formBuilder.group({
-      userLastname: [null, [Validators.required]],
-      userFirstname: [null, [Validators.required]],
-      userEmail: [null, [Validators.required, Validators.email]],
-      userTelephone: [null, [Validators.required]],
-      userPassword: this.userPasswordCtrl,
+      lastname: [null, [Validators.required]],
+      firstname: [null, [Validators.required]],
+      telephone: [null, [Validators.required]],
+      mail: [null, [Validators.required, Validators.email]],
+      password: this.userPasswordCtrl,
       userPasswordConfirmation: this.userPasswordConfirmationCtrl
-    },{validators: [confirmEqualValidator('userPassword', 'userPasswordConfirmation')], updateOn: 'blur'});
+    },{validators: [confirmEqualValidator('password', 'userPasswordConfirmation')], updateOn: 'blur'});
 
     this.initFormObservables();
   }
 
   /* Create Observable to write comment error*/
-
   private initFormObservables(){
     this.showPasswordError$ =this.registrationForm.statusChanges.pipe(
       map(status => status === 'INVALID' && this.userPasswordCtrl.value && this.userPasswordConfirmationCtrl.value)
@@ -64,15 +60,17 @@ export class AccountcreationComponent implements OnInit {
   }
 
   /*recover all form values*/
-    onSubmitForm(){
-      if (this.registrationForm.invalid) {
-        alert("La saisie de votre formulaire est erronée ou incomplète!");
-      } else {
-
-        let formValue= this.registrationForm.value;
-        console.log(formValue);
-        this.registrationForm.reset();
-      }
+  /*  penser à clore l'observable + securisez les requetes token +
+commentaire*/
+  onSubmitForm(){
+    if(this.registrationForm.invalid) {
+      alert("La saisie de votre formulaire est erronée ou incomplète!");
+    } else {
+      let formValue = this.registrationForm.value;
+      Reflect.deleteProperty(formValue, 'userPasswordConfirmation');
+      this.apiService.createUser(formValue);
+      this.registrationForm.reset();
     }
+  }
 
 }

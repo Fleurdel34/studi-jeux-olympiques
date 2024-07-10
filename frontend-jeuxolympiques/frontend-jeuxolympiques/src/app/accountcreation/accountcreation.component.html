@@ -1,37 +1,37 @@
 <section>
-   <form [formGroup]="registrationForm">
+   <form [formGroup]="registrationForm" method="post">
     <h2>Saisissez les informations suivantes:</h2>
 
     <div class="inputLabel">
-      <input type="text" id="lastnameInput" name="userLastname" formControlName="userLastname"/>
+      <input type="text" id="lastnameInput" name="lastname" formControlName="lastname"/>
       <div class="label">
         Nom
       </div>
     </div>
 
      <div class="inputLabel">
-      <input type="text" id="firstnameInput" name="userFirstname" formControlName="userFirstname"/>
+      <input type="text" id="firstnameInput" name="firstname" formControlName="firstname"/>
        <div class="label">
          Prénom
        </div>
      </div>
 
      <div class="inputLabel">
-      <input type="email" id="emailInput" name="userEmail" formControlName="userEmail"/>
+      <input type="email" id="emailInput" name="mail" formControlName="mail"/>
       <div class="label">
         Email
       </div>
       </div>
 
      <div class="inputLabel">
-      <input type="tel" id="telephoneInput" name="userTelephone" formControlName="userTelephone"/>
+      <input type="tel" id="telephoneInput" name="telephone" formControlName="telephone"/>
       <div class="label">
         Téléphone
       </div>
       </div>
 
      <div class="inputLabel">
-     <input type="password" id="passwordInput" name="userPassword" formControlName="userPassword" />
+     <input type="password" id="passwordInput" name="password" formControlName="password" />
       <div class="label">
         Mot de passe
       </div>

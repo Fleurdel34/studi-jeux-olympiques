@@ -72,12 +72,14 @@ input{
 }
 
 /* Animation of the input when the user makes an entry c*/
-input:focus
+input:focus,
+input:active
 {
    border: 2px solid;
 }
 
-input:focus ~.label
+input:focus ~.label,
+input:active ~.label
 {
   height: 30px;
   transform: translate(-15px, -16px) scale(0.88);

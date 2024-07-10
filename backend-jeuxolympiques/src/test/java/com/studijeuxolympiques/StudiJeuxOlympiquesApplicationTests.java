@@ -38,7 +38,7 @@ class StudiJeuxOlympiquesApplicationTests {
 
 	@Test
 	public void createUser() throws Exception {
-		User user1 = new User("José", "GINO", 0132016013L, "josegino@test.com", "joseGINO32*");
+		User user1 = new User("GINO", "José", 0132016013L, "josegino@test.com", "joseGINO32*");
 		mockMvc.perform(post("/users")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsString(user1)))

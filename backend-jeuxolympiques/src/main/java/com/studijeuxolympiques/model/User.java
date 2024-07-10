@@ -7,6 +7,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author johanna
@@ -30,37 +32,43 @@ public class User {
             strategy = GenerationType.IDENTITY
     )
     private Long id;
+    @Getter
     @Column(
             nullable = false
     )
-    private String firstname;
-    @Column(
-            nullable = false
-    )
+
     private String lastname;
     @Column(
             nullable = false
     )
+
+    private String firstname;
+    @Column(
+            nullable = false
+    )
+
     private Long telephone;
     @Column(
             nullable = false
     )
+
     private String mail;
+    @Setter
     @Column(
             nullable = false
     )
+
     private String password;
 
-    public User(String firstname, String lastname, long telephone, String mail, String password) {
-        this.firstname = firstname;
+    public User( String lastname, String firstname, long telephone, String mail, String password) {
         this.lastname = lastname;
+        this.firstname = firstname;
         this.telephone = telephone;
         this.mail = mail;
         this.password = password;
     }
 
     public User() {
+
     }
-
-
 }

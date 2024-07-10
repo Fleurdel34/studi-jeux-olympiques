@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
  * extends CrudRepository from tools Jpa
  */
 
-
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 }
