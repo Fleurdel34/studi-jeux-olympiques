@@ -15,7 +15,7 @@ export class FooterComponent implements OnInit{
   ngOnInit() {
   }
 
-  /* Create method for redirect Legal Information Page with route and path*/
+  /** Create method for redirect Legal Information Page with route and path*/
 
   onRedirectLegalInformation(): void{
     this.router.navigateByUrl('/legalinformation');

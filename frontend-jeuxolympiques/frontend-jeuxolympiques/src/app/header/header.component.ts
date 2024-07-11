@@ -24,12 +24,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /* Create method for redirect Account Creation Page with route and path*/
+  /** Create method for redirect Account Creation Page with route and path*/
   onRedirectAccountCreation(): void {
     this.router.navigateByUrl('/registration');
   }
 
-  /* Create method for redirect Home Page if page isn't Home*/
+  /** Create method for redirect Home Page if page isn't Home*/
   onRedirectBackHomePage(): void {
     this.router.navigateByUrl('/');
   }

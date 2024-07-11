@@ -56,19 +56,16 @@ export class AccountcreationComponent implements OnInit {
     this.initFormObservables();
   }
 
-  /* Create Observable to write comment error*/
+  /** Create Observable to write comment error*/
   private initFormObservables(){
     this.showPasswordError$ =this.registrationForm.statusChanges.pipe(
       map(status => status === 'INVALID' && this.userPasswordCtrl.value && this.userPasswordConfirmationCtrl.value)
     )
   }
 
-  /*recover all form values and create user in data base
-  */
-  /*
-  securisez les requetes ac token+ : jwt token
-  sécuriser l'API avec l'authentification user + mot de passe et tocken +role
-  * si l'utilisateur existe déjà*/
+  /**recover all form values and create user in database*/
+  /* si l'utilisateur existe déjà cntroler présence adresse mail faire sur la page confirmationcode+ voir github projet angular*/
+ /*sécuriser l'API av role + token => verifier le front end requete post nettoyer le localstorage*/
 
   onSubmitForm(){
 
@@ -87,12 +84,11 @@ export class AccountcreationComponent implements OnInit {
     }
   }
 
+  /** create methode with library bcrypt to salt and hash password befor to save in bdd*/
   hashPassword(password: string): string {
     const salt = bcrypt.genSaltSync(10);
    this.hashedPassword = bcrypt.hashSync(password, salt);
     return this.hashedPassword;
   }
-
-
 
 }

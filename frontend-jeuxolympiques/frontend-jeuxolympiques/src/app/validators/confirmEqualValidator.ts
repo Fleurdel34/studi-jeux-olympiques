@@ -1,6 +1,6 @@
 import {AbstractControl, ValidationErrors, ValidatorFn} from "@angular/forms";
 
-/*function takes two parameters (string) to compare two values at the sames */
+/**function takes two parameters (string) to compare two values at the sames */
 
 export function confirmEqualValidator(main:string, confirm: string): ValidatorFn{
 
