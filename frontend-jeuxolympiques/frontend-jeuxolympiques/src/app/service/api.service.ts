@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {catchError, tap, throwError} from "rxjs";
 import {FormGroup} from "@angular/forms";
+import {take} from "rxjs";
 
 
 
@@ -20,8 +20,8 @@ export class ApiService {
    * @param formValue
    */
   createUser(formValue: FormGroup){
-
     this.http.post(this.url,formValue)
+      .pipe(take(1))
       .subscribe
       (
         (res) =>{console.log(res)}

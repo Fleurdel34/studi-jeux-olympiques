@@ -6,10 +6,13 @@ import {
   ReactiveFormsModule,
   Validators
 } from "@angular/forms";
-import {confirmEqualValidator} from "../validators/confirmEqualValidator";
-import {map, Observable} from "rxjs";
-import {AsyncPipe, NgIf} from "@angular/common";
-import {ApiService} from "../service/api.service";
+import { confirmEqualValidator } from "../validators/confirmEqualValidator";
+import { map, Observable } from "rxjs";
+import { AsyncPipe, NgIf } from "@angular/common";
+import { ApiService } from "../service/api.service";
+// @ts-ignore
+import * as bcrypt from "bcryptjs";
+
 
 
 @Component({
@@ -30,6 +33,7 @@ export class AccountcreationComponent implements OnInit {
   userPasswordCtrl!: FormControl;
   userPasswordConfirmationCtrl!: FormControl;
   showPasswordError$!: Observable<boolean>;
+  hashedPassword: any;
 
   constructor(private formBuilder: FormBuilder, private apiService: ApiService) {
   }
@@ -59,18 +63,36 @@ export class AccountcreationComponent implements OnInit {
     )
   }
 
-  /*recover all form values*/
-  /*  penser à clore l'observable + securisez les requetes token +
-commentaire*/
+  /*recover all form values and create user in data base
+  */
+  /*
+  securisez les requetes ac token+ : jwt token
+  sécuriser l'API avec l'authentification user + mot de passe et tocken +role
+  * si l'utilisateur existe déjà*/
+
   onSubmitForm(){
+
     if(this.registrationForm.invalid) {
+
       alert("La saisie de votre formulaire est erronée ou incomplète!");
+
     } else {
+
       let formValue = this.registrationForm.value;
       Reflect.deleteProperty(formValue, 'userPasswordConfirmation');
+      formValue.password = this.hashPassword(formValue.password);
       this.apiService.createUser(formValue);
       this.registrationForm.reset();
+
     }
   }
+
+  hashPassword(password: string): string {
+    const salt = bcrypt.genSaltSync(10);
+   this.hashedPassword = bcrypt.hashSync(password, salt);
+    return this.hashedPassword;
+  }
+
+
 
 }
