@@ -47,10 +47,11 @@ export class AccountcreationComponent implements OnInit {
     this.registrationForm = this.formBuilder.group({
       lastname: [null, [Validators.required]],
       firstname: [null, [Validators.required]],
-      telephone: [null, [Validators.required]],
+      username: [null, [Validators.required]],
       mail: [null, [Validators.required, Validators.email]],
       password: this.userPasswordCtrl,
-      userPasswordConfirmation: this.userPasswordConfirmationCtrl
+      userPasswordConfirmation: this.userPasswordConfirmationCtrl,
+      role:["USER"]
     },{validators: [confirmEqualValidator('password', 'userPasswordConfirmation')], updateOn: 'blur'});
 
     this.initFormObservables();
@@ -64,7 +65,7 @@ export class AccountcreationComponent implements OnInit {
   }
 
   /**recover all form values and create user in database*/
-  /* si l'utilisateur existe déjà cntroler présence adresse mail faire sur la page confirmationcode+ voir github projet angular*/
+  /*voir github projet angular*/
  /*sécuriser l'API av role + token => verifier le front end requete post nettoyer le localstorage*/
 
   onSubmitForm(){
@@ -77,18 +78,10 @@ export class AccountcreationComponent implements OnInit {
 
       let formValue = this.registrationForm.value;
       Reflect.deleteProperty(formValue, 'userPasswordConfirmation');
-      formValue.password = this.hashPassword(formValue.password);
       this.apiService.createUser(formValue);
       this.registrationForm.reset();
 
     }
-  }
-
-  /** create methode with library bcrypt to salt and hash password befor to save in bdd*/
-  hashPassword(password: string): string {
-    const salt = bcrypt.genSaltSync(10);
-   this.hashedPassword = bcrypt.hashSync(password, salt);
-    return this.hashedPassword;
   }
 
 }

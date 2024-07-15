@@ -4,6 +4,7 @@ import com.studijeuxolympiques.model.User;
 import com.studijeuxolympiques.service.UserService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/")
+    @PostMapping
     public void createUser(@RequestBody User user) {
         this.userService.createUser(user);
     }
@@ -35,7 +36,7 @@ public class UserController {
         return this.userService.getUserById(id);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<User> getAllUsers() {
         return this.userService.getAllUsers();
     }

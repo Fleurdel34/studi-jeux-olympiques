@@ -14,7 +14,7 @@ export class CustomeInterceptor implements HttpInterceptor{
   constructor(private apiService: ApiService){}
 
   /** methode to inject token in request for authentication*/
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+ intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const token = this.apiService.getToken();
     const newCloneRequest = request.clone({
       setHeaders:{

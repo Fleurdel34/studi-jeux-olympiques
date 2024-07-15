@@ -1,10 +1,15 @@
 package com.studijeuxolympiques.service.Impl;
 
+import com.studijeuxolympiques.TypeRole;
+import com.studijeuxolympiques.model.Role;
 import com.studijeuxolympiques.model.User;
 import com.studijeuxolympiques.repository.UserRepository;
 import com.studijeuxolympiques.service.UserService;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,7 +20,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
+
     private final UserRepository userRepository;
+
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository) {
@@ -31,7 +41,28 @@ public class UserServiceImpl implements UserService {
     }
 
     public void createUser(User user) {
+        if(!user.getMail().contains("@")){
+            throw new RuntimeException("Votre email est invalide");
+        }
+
+        if(!user.getMail().contains(".")){
+            throw new RuntimeException("Votre email est invalide");
+        }
+
+        Optional<User> userOptional = this.userRepository.findByMail(user.getMail());
+        if(userOptional.isPresent()){
+            throw new RuntimeException("Votre email est déjà utilisée");
+        }
+
+        String passwordCrypt = this.passwordEncoder.encode(user.getPassword());
+        user.setPassword(passwordCrypt);
+
+        Role roleUser = new Role();
+        roleUser.setRole(TypeRole.USER);
+        user.setRole(roleUser);
+
         this.userRepository.save(user);
+
     }
 
     /**
@@ -46,7 +77,7 @@ public class UserServiceImpl implements UserService {
             oldUser.setFirstname(updatedUser.getFirstname());
             oldUser.setLastname(updatedUser.getLastname());
             oldUser.setMail(updatedUser.getMail());
-            oldUser.setTelephone(updatedUser.getTelephone());
+            oldUser.setUsername(updatedUser.getUsername());
             oldUser.setPassword(updatedUser.getPassword());
         }
 

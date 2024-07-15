@@ -1,14 +1,15 @@
 package com.studijeuxolympiques.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.studijeuxolympiques.TypeRole;
+import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.Collections;
+
 
 /**
  * @author johanna
@@ -18,11 +19,11 @@ import lombok.Setter;
 @Data
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements UserDetails {
 
     /**
      * Build Class user
-     * Set up properties (id, firstname, lastname, telephone, email and password)
+     * Set up properties (id, firstname, lastname, telephone, email, password and role)
      * Implement constructor
      * @Data allows the implementation of getter and setter
      */
@@ -32,7 +33,6 @@ public class User {
             strategy = GenerationType.IDENTITY
     )
     private Long id;
-    @Getter
     @Column(
             nullable = false
     )
@@ -47,28 +47,60 @@ public class User {
             nullable = false
     )
 
-    private Long telephone;
+    private String username;
     @Column(
             nullable = false
     )
 
     private String mail;
-    @Setter
     @Column(
             nullable = false
     )
 
     private String password;
+    @Column(
+            nullable = false
+    )
 
-    public User( String lastname, String firstname, long telephone, String mail, String password) {
+    private boolean active = false;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Role role;
+
+
+
+    public User(String lastname, String firstname, String username, String mail, String password, Role role) {
         this.lastname = lastname;
         this.firstname = firstname;
-        this.telephone = telephone;
+        this.username = username;
         this.mail = mail;
         this.password = password;
+        this.role = role;
     }
 
-    public User() {
+    public User(){}
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Collections.singletonList(new SimpleGrantedAuthority("ROLE_"+this.role.getRole()));
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return this.active;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return this.active;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return this.active;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return this.active;
     }
 }
