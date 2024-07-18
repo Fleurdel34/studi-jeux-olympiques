@@ -30,8 +30,7 @@ export class ApiService {
         (res:any) => {
           if (res.result) {
             alert('login Success');
-            localStorage.setItem('loginToken', res.data.token);
-            this.router.navigateByUrl('/confirmationcode');
+            this.router.navigateByUrl('/activation');
           } else {
             res.messageerror;
             alert('login failed')

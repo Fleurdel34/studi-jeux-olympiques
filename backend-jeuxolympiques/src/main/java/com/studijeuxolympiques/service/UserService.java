@@ -1,6 +1,7 @@
 package com.studijeuxolympiques.service;
 import com.studijeuxolympiques.model.User;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Implements interface of service
@@ -17,4 +18,6 @@ public interface UserService {
     User updateUser(Long id, User updatedUser);
 
     void deleteUser(Long id);
+
+    void activation(Map<String, String> activation);
 }

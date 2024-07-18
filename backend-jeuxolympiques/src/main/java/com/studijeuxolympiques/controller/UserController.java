@@ -3,11 +3,13 @@ package com.studijeuxolympiques.controller;
 import com.studijeuxolympiques.model.User;
 import com.studijeuxolympiques.service.UserService;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping({"api/users"})
 public class UserController {
@@ -29,6 +31,14 @@ public class UserController {
     @PostMapping
     public void createUser(@RequestBody User user) {
         this.userService.createUser(user);
+    }
+
+    /** Build special request post for activation Code
+    * @params Request body Map string
+    **/
+    @PostMapping("/activation")
+    public void activationUser(@RequestBody Map<String, String>  activation) {
+        this.userService.activation(activation);
     }
 
     @GetMapping({"/{id}"})

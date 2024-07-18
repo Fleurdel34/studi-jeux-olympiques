@@ -4,9 +4,9 @@ import com.studijeuxolympiques.TypeRole;
 import jakarta.persistence.*;
 import lombok.Data;
 
-/**
- * @author johanna
- * @version 1.0.0
+/** Build Class Role
+ * Set up properties (id and Enumeration)
+ * @Data allows the implementation of constructor, getter and setter
  */
 
 @Data

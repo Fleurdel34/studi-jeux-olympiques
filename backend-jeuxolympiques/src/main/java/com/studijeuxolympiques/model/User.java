@@ -1,11 +1,12 @@
 package com.studijeuxolympiques.model;
 
-import com.studijeuxolympiques.TypeRole;
+
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
 
 import java.util.Collection;
 import java.util.Collections;
@@ -62,7 +63,10 @@ public class User implements UserDetails {
             nullable = false
     )
 
+
     private boolean active = false;
+
+
     @OneToOne(cascade = CascadeType.ALL)
     private Role role;
 
