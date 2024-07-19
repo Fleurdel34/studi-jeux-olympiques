@@ -41,6 +41,14 @@ public class UserController {
         this.userService.activation(activation);
     }
 
+    /** Build special request post for connexion
+     * @params Request body Map string
+     **/
+    @PostMapping("/connection")
+    public Map<String, String> connectionUser() {
+
+    }
+
     @GetMapping({"/{id}"})
     public User getUserById(@PathVariable Long id) {
         return this.userService.getUserById(id);

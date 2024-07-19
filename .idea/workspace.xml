@@ -5,21 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9554a597-5062-4333-b599-c9f641a52987" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/TypeRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/TypeRole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/configuration/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/configuration/SpringSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/model/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/resources/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/test/java/com/studijeuxolympiques/StudiJeuxOlympiquesApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/test/java/com/studijeuxolympiques/StudiJeuxOlympiquesApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/Impl/ValidationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/Impl/ValidationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/accountcreation/accountcreation.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/accountcreation/accountcreation.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/accountcreation/accountcreation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/accountcreation/accountcreation.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/activation/activation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/activation/activation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/activation/activation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/activation/activation.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/api.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +29,7 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -138,7 +135,7 @@
       <module name="studi-jeux-olympiques" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.studijeuxolympiques.*" />
+          <option name="PATTERN" value="com.studijeuxolympiques.dto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -153,7 +150,7 @@
       <module name="studi-jeux-olympiques" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.studijeuxolympiques.*" />
+          <option name="PATTERN" value="com.studijeuxolympiques.dto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -169,7 +166,7 @@
       <module name="studi-jeux-olympiques" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.studijeuxolympiques.*" />
+          <option name="PATTERN" value="com.studijeuxolympiques.dto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -185,7 +182,7 @@
       <module name="studi-jeux-olympiques" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.studijeuxolympiques.*" />
+          <option name="PATTERN" value="com.studijeuxolympiques.dto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -284,6 +281,15 @@
       <workItem from="1721278391558" duration="9589000" />
       <workItem from="1721300855610" duration="4947000" />
       <workItem from="1721306520320" duration="10805000" />
+      <workItem from="1721321146470" duration="313000" />
+      <workItem from="1721365798913" duration="476000" />
+      <workItem from="1721367338731" duration="1282000" />
+      <workItem from="1721368757372" duration="5493000" />
+      <workItem from="1721385241526" duration="605000" />
+      <workItem from="1721386179798" duration="4122000" />
+      <workItem from="1721401818328" duration="2190000" />
+      <workItem from="1721406291405" duration="194000" />
+      <workItem from="1721406624284" duration="4421000" />
     </task>
     <servers />
   </component>

@@ -42,7 +42,6 @@ public class ValidationServiceImpl implements ValidationService {
         Instant creation = Instant.now();
         validation.setCreation(creation);
 
-
         Instant expired = creation.plus(10, MINUTES);
         validation.setExpired(expired);
 

@@ -13,7 +13,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -23,22 +28,24 @@ import org.springframework.stereotype.Service;
  * Use the property UserRepository
  */
 
+@NoArgsConstructor(force = true)
+@AllArgsConstructor
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, UserDetailsService {
 
     private final UserRepository userRepository;
-
+    private final ValidationRepository validationRepository;
+    private final ValidationServiceImpl validationServiceImpl;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
-    private final ValidationServiceImpl validationServiceImpl;
-
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository,
+    public UserServiceImpl(UserRepository userRepository, ValidationRepository validationRepository,
                            ValidationServiceImpl validationServiceImpl) {
         this.userRepository = userRepository;
+        this.validationRepository = validationRepository;
         this.validationServiceImpl = validationServiceImpl;
 
     }
@@ -50,8 +57,6 @@ public class UserServiceImpl implements UserService {
     public User getUserById(Long id) {
         return this.userRepository.findById(id).orElse(null);
     }
-
-
 
     public void createUser(User user) {
         if(!user.getMail().contains("@")){
@@ -74,11 +79,9 @@ public class UserServiceImpl implements UserService {
         roleUser.setRole(TypeRole.USER);
         user.setRole(roleUser);
 
-
         user = this.userRepository.save(user);
 
         this.validationServiceImpl.saveValidation(user);
-
     }
 
     /**
@@ -114,6 +117,14 @@ public class UserServiceImpl implements UserService {
 
         userEnabled.setActive(true);
         this.userRepository.save(userEnabled);
+        this.validationRepository.save(validation);
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+      return  this.userRepository
+              .findByMail(username)
+              .orElseThrow(() -> new UsernameNotFoundException("Aucun utilisateur n'a été identifié"));
 
     }
 }

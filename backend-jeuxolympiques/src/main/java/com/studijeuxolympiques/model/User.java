@@ -1,6 +1,5 @@
 package com.studijeuxolympiques.model;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -63,14 +62,10 @@ public class User implements UserDetails {
             nullable = false
     )
 
-
     private boolean active = false;
-
 
     @OneToOne(cascade = CascadeType.ALL)
     private Role role;
-
-
 
     public User(String lastname, String firstname, String username, String mail, String password, Role role) {
         this.lastname = lastname;

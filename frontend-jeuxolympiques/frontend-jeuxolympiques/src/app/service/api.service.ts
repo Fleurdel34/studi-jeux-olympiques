@@ -1,9 +1,8 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {FormGroup} from "@angular/forms";
-import {take} from "rxjs";
+import {Form, FormGroup} from "@angular/forms";
+import {catchError, pipe, take} from "rxjs";
 import {Router} from "@angular/router";
-
 
 
 @Injectable({
@@ -12,6 +11,8 @@ import {Router} from "@angular/router";
 export class ApiService {
 
   url: string = 'http://localhost:8080/api/users';
+
+  urlActivation: string ='http://localhost:8080/api/users/activation';
 
 
   constructor(private http: HttpClient, private router: Router) {
@@ -24,19 +25,12 @@ export class ApiService {
   createUser(formValue: FormGroup){
 
     this.http.post(this.url,formValue)
-      .pipe(take(1))
+      .pipe(take(1), catchError(err => { throw'error in source. Details: ' + err;}))
       .subscribe
-      (
-        (res:any) => {
-          if (res.result) {
-            alert('login Success');
-            this.router.navigateByUrl('/activation');
-          } else {
-            res.messageerror;
-            alert('login failed')
-          }
-
-        });
+      ({
+        next: res => console.log(res),
+        error : err => console.log(err)
+      });
   }
 
   /**recover the token for authentication*/
@@ -44,4 +38,14 @@ export class ApiService {
     return localStorage.getItem('loginToken');
   }
 
+  activationAccount(formValue: FormGroup){
+
+    this.http.post(this.urlActivation, formValue)
+      .pipe(take(1), catchError(err => { throw'error in source. Details: ' + err;}))
+      .subscribe
+      ({
+        next: res => console.log(res),
+        error : err => console.log(err)
+      });
+  }
 }

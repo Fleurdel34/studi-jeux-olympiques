@@ -77,7 +77,7 @@ input:active
   border: 2px solid;
 }
 
-
+input:invalid ~.label,
 input:valid ~.label
 {
   font-size: 22px;

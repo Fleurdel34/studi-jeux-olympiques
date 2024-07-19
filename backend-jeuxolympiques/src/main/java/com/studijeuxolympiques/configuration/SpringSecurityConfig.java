@@ -1,11 +1,16 @@
 package com.studijeuxolympiques.configuration;
 
-
+import com.studijeuxolympiques.service.Impl.UserServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -31,11 +36,39 @@ public class SpringSecurityConfig {
             }).build();
     }
 
+    /**
+     * Create Bean with Bcrypt
+     * @return new password encrypt
+     */
     @Bean
     public BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
 
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+        return authenticationConfiguration.getAuthenticationManager();
+    }
 
+    /**
+     * Create Bean with UserDetailsService
+     * @return user identified
+     */
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return new UserServiceImpl();
+    }
+
+    /**
+     * Create Bean with AuthenticationProvider
+     * @return Access BDD POO
+     */
+    @Bean
+    public AuthenticationProvider authenticationProvider(){
+        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
+        daoAuthenticationProvider.setUserDetailsService(this.userDetailsService());
+        daoAuthenticationProvider.setPasswordEncoder(this.passwordEncoder());
+        return daoAuthenticationProvider;
+    }
 }
 
