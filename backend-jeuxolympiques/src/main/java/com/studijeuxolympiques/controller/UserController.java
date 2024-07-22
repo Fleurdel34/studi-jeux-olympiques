@@ -1,14 +1,21 @@
 package com.studijeuxolympiques.controller;
 
+import com.studijeuxolympiques.configuration.JwtService;
+import com.studijeuxolympiques.dto.AuthenticationDTO;
 import com.studijeuxolympiques.model.User;
 import com.studijeuxolympiques.service.UserService;
 import java.util.List;
 import java.util.Map;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping({"api/users"})
@@ -21,11 +28,15 @@ public class UserController {
      * @requests Get, Post, and Put
      */
 
+    private AuthenticationManager authenticationManager;
     private UserService userService;
+    private JwtService jwtService;
 
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserService userService, AuthenticationManager authenticationManager, JwtService jwtService) {
         this.userService = userService;
+        this.authenticationManager = authenticationManager;
+        this.jwtService = jwtService;
     }
 
     @PostMapping
@@ -45,8 +56,14 @@ public class UserController {
      * @params Request body Map string
      **/
     @PostMapping("/connection")
-    public Map<String, String> connectionUser() {
-
+    public Map<String, String> connectionUser(@RequestBody AuthenticationDTO authenticationDTO) {
+        final Authentication authenticate = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken
+                        (authenticationDTO.username(), authenticationDTO.password()));
+        if(authenticate.isAuthenticated()){
+            return this.jwtService.generate(authenticationDTO.username());
+        }
+        return null;
     }
 
     @GetMapping({"/{id}"})

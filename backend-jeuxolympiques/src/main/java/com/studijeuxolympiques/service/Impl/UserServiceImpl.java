@@ -14,7 +14,6 @@ import java.util.Map;
 import java.util.Optional;
 
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -28,7 +27,7 @@ import org.springframework.stereotype.Service;
  * Use the property UserRepository
  */
 
-@NoArgsConstructor(force = true)
+
 @AllArgsConstructor
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {
@@ -120,10 +119,16 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         this.validationRepository.save(validation);
     }
 
+    /**
+     * Implement method loadUserByUsername obligatory with UserDetailsService
+     * @param username
+     * @return identified user
+     * @throws UsernameNotFoundException
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
       return  this.userRepository
-              .findByMail(username)
+              .findByUsername(username)
               .orElseThrow(() -> new UsernameNotFoundException("Aucun utilisateur n'a été identifié"));
 
     }

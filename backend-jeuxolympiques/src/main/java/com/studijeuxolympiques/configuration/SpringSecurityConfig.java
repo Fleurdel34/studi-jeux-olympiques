@@ -1,6 +1,6 @@
 package com.studijeuxolympiques.configuration;
 
-import com.studijeuxolympiques.service.Impl.UserServiceImpl;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -10,20 +10,33 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import static org.springframework.http.HttpMethod.POST;
 
 /** Create account to access api
  * security api back end
  * @request post: permitall
+ * @method filter to verify identified user
  */
 
 @Configuration
 @EnableWebSecurity
 public class SpringSecurityConfig {
+
+
+    private final JwtFilter jwtFilter;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    public SpringSecurityConfig(JwtFilter jwtFilter, BCryptPasswordEncoder bCryptPasswordEncoder) {
+        this.jwtFilter = jwtFilter;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    }
+
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
@@ -32,18 +45,22 @@ public class SpringSecurityConfig {
                     .authorizeHttpRequests(authorize-> {
                             authorize.requestMatchers(POST, "/api/users").permitAll();
                             authorize.requestMatchers(POST, "/api/users/activation").permitAll();
+                            authorize.requestMatchers(POST, "/api/users/connection").permitAll();
                             authorize.anyRequest().authenticated();
-            }).build();
+                    })
+                    .sessionManagement(httpSecuritySessionManagementConfigurer ->
+                            httpSecuritySessionManagementConfigurer
+                            .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                    .addFilterBefore(jwtFilter,UsernamePasswordAuthenticationFilter.class)
+                    .build();
     }
 
     /**
-     * Create Bean with Bcrypt
-     * @return new password encrypt
+     *Managing users when trying to log in
+     * @param authenticationConfiguration
+     * @return
+     * @throws Exception
      */
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
@@ -51,23 +68,14 @@ public class SpringSecurityConfig {
     }
 
     /**
-     * Create Bean with UserDetailsService
-     * @return user identified
-     */
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return new UserServiceImpl();
-    }
-
-    /**
      * Create Bean with AuthenticationProvider
      * @return Access BDD POO
      */
     @Bean
-    public AuthenticationProvider authenticationProvider(){
+    public AuthenticationProvider authenticationProvider(UserDetailsService userDetailsService){
         DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-        daoAuthenticationProvider.setUserDetailsService(this.userDetailsService());
-        daoAuthenticationProvider.setPasswordEncoder(this.passwordEncoder());
+        daoAuthenticationProvider.setUserDetailsService(userDetailsService);
+        daoAuthenticationProvider.setPasswordEncoder(bCryptPasswordEncoder);
         return daoAuthenticationProvider;
     }
 }
