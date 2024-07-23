@@ -13,6 +13,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
+
 /** Create Filter class
  * with abstract class OncePerRequestFilter
  * implement method with properties token and username at null
@@ -24,27 +25,28 @@ public class JwtFilter extends OncePerRequestFilter {
     private final UserServiceImpl userServiceImpl;
     private final JwtService jwtService;
 
+
     public JwtFilter(UserServiceImpl userServiceImpl, JwtService jwtService) {
         this.userServiceImpl = userServiceImpl;
         this.jwtService = jwtService;
     }
 
 
-
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException
     {
 
-        String token = null;
+        String token;
         String username = null;
         boolean isTokenExpired = true;
 
-        String authorization = request.getHeader("Authorization");
+        final String authorization = request.getHeader("Authorization");
 
         if (authorization !=null && authorization.startsWith("Bearer ")) {
             token = authorization.substring(7);
             isTokenExpired = jwtService.isTokenExpired(token);
             username = jwtService.extractUsername(token);
+
         }
 
         if (!isTokenExpired && username != null && SecurityContextHolder.getContext().getAuthentication() == null){
