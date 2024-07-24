@@ -5,6 +5,7 @@ import {RouterOutlet} from "@angular/router";
 import {ErrorComponent} from "./error/error.component";
 import {LegalinformationComponent} from "./legalinformation/legalinformation.component";
 import {ActivationComponent} from "./activation/activation.component";
+import {ConnectionComponent} from "./connection/connection.component";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import {ActivationComponent} from "./activation/activation.component";
     FooterComponent,
     ErrorComponent,
     LegalinformationComponent,
-    ActivationComponent],
+    ActivationComponent,
+    ConnectionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

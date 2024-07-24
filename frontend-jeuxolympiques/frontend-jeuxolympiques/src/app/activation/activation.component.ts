@@ -7,13 +7,11 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-activation',
   standalone: true,
-  imports: [ReactiveFormsModule,],
+  imports: [ReactiveFormsModule],
   templateUrl: './activation.component.html',
   styleUrl: './activation.component.css'
 })
 export class ActivationComponent implements OnInit {
-
-
 
   numberActivationForm!:FormGroup;
 
@@ -28,12 +26,9 @@ export class ActivationComponent implements OnInit {
 
   onSubmitForm(){
       let formValue = this.numberActivationForm.value;
-      console.log(
-        formValue
-      )
       this.apiService.activationAccount(formValue);
       this.numberActivationForm.reset();
-      this.router.navigateByUrl('/accountconnexion');
+      this.router.navigateByUrl('/connection');
 
   }
 }

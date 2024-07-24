@@ -7,20 +7,20 @@ import {
 } from "@angular/common/http";
 
 import { Observable} from "rxjs";
-import {ApiService} from "./api.service";
+import {AuthService} from "./auth.service";
 
 @Injectable()
 export class CustomeInterceptor implements HttpInterceptor{
-  constructor(private apiService: ApiService){}
+  constructor(private authService: AuthService){}
 
   /** methode to inject token in request for authentication*/
  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const token = this.apiService.getToken();
+    const token = this.authService.getToken();
     const newCloneRequest = request.clone({
       setHeaders:{
-        Authorization:"Bearer " + token
+        Authorization:"Bearer " + authToken
       }
-    })
+    });
 
     return next.handle(newCloneRequest);
   }

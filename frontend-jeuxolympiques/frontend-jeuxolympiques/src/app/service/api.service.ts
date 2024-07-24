@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {Form, FormGroup} from "@angular/forms";
-import {catchError, pipe, take} from "rxjs";
+import { FormGroup} from "@angular/forms";
+import {catchError, take} from "rxjs";
 import {Router} from "@angular/router";
 
 
@@ -14,12 +14,11 @@ export class ApiService {
 
   urlActivation: string ='http://localhost:8080/api/users/activation';
 
-
   constructor(private http: HttpClient, private router: Router) {
   }
 
   /**
-   * Save a new form object in the Backend server data base
+   * Request post with form object to save in data base
    * @param formValue
    */
   createUser(formValue: FormGroup){
@@ -33,11 +32,6 @@ export class ApiService {
       });
   }
 
-  /**recover the token for authentication*/
-  getToken() {
-    return localStorage.getItem('loginToken');
-  }
-
   activationAccount(formValue: FormGroup){
 
     this.http.post(this.urlActivation, formValue)
@@ -48,4 +42,5 @@ export class ApiService {
         error : err => console.log(err)
       });
   }
+
 }

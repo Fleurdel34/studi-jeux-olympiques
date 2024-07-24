@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 
 
 
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -32,6 +33,10 @@ export class HeaderComponent implements OnInit {
   /** Create method for redirect Home Page if page isn't Home*/
   onRedirectBackHomePage(): void {
     this.router.navigateByUrl('/');
+  }
+
+  onRedirectConnectionPage(): void {
+    this.router.navigateByUrl('/connection');
   }
 
 }
