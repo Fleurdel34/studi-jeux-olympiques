@@ -44,12 +44,12 @@ public class OfferServiceImpl implements OfferService {
     }
 
     @Override
-    public void updateOffer(Long id, Offer offer){
+    public void updateOffer(Long id, Offer updatedOffer){
         Offer oldOffer = this.getOfferById(id);
         if(oldOffer !=null){
-            oldOffer.setName(offer.getName());
-            oldOffer.setDescription(offer.getDescription());
-            oldOffer.setPrice(offer.getPrice());
+            oldOffer.setName(updatedOffer.getName());
+            oldOffer.setDescription(updatedOffer.getDescription());
+            oldOffer.setPrice(updatedOffer.getPrice());
             this.offerRepository.save(oldOffer);
         }
 

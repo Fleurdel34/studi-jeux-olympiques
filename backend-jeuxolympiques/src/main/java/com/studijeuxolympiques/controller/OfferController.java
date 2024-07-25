@@ -1,9 +1,9 @@
 package com.studijeuxolympiques.controller;
 
 import com.studijeuxolympiques.model.Offer;
-import com.studijeuxolympiques.model.User;
 import com.studijeuxolympiques.service.OfferService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,6 +40,12 @@ public class OfferController {
     @DeleteMapping("{/id}")
     public void deleteOfferById(@PathVariable Long id){
         this.offerService.deleteOfferById(id);
+    }
+
+    @PutMapping({"/{id}"})
+    public ResponseEntity<Offer> updateOffer(@PathVariable("id") Long id, @RequestBody Offer updatedOffer) {
+        this.offerService.updateOffer(id, updatedOffer);
+        return ResponseEntity.ok(updatedOffer);
     }
 
 }
