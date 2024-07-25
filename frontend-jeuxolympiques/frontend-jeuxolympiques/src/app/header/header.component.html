@@ -13,7 +13,7 @@
         </button>
         <li>S'inscrire</li>
       </ng-container>
-      <ng-container *ngIf="(router.url === '/registration' || router.url === '/connection')">
+      <ng-container *ngIf="(router.url === '/registration' || router.url === '/connection' || router.url === '/productpage')">
         <button (click)="onRedirectBackHomePage()">
           <i class="fa-solid fa-arrow-left"></i>
         </button>
@@ -23,7 +23,7 @@
   </nav>
   <div class="header-logo">
     <img src="assets/Logo.png" class="img-logo" alt="Logo des jeux olympiques">
-    <ng-container *ngIf="router.url.endsWith('/')">
+    <ng-container *ngIf="(router.url === '/' || router.url === '/productpage')">
       <h1>
         Billetterie des Jeux Olympiques et Paralympiques<br>
         de Paris 2024

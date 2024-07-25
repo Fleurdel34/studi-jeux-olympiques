@@ -6,9 +6,11 @@ import {LegalinformationComponent} from "./legalinformation/legalinformation.com
 import {ActivationComponent} from "./activation/activation.component";
 import {ConnectionComponent} from "./connection/connection.component";
 import {ErrorComponent} from "./error/error.component";
+import {ProductpageComponent} from "./productpage/productpage.component";
 
 export const routes: Routes = [
   {path:'', component: HomeComponent},
+  {path:'productpage', component:ProductpageComponent},
 
   {path:"registration", component:AccountcreationComponent},
   {path:"activation", component:ActivationComponent},

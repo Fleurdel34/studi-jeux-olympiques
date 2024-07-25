@@ -2,13 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-productpage',
   standalone: true,
   imports: [],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: './productpage.component.html',
+  styleUrl: './productpage.component.css'
 })
-export class HomeComponent implements OnInit{
+export class ProductpageComponent implements OnInit{
 
   constructor(protected router: Router) {
   }
@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit{
 
   /** Create method for redirect Product Page with route and path*/
   onClick(){
-    this.router.navigateByUrl('/productpage');
+    this.router.navigateByUrl('/offerspage');
   }
-
 }
