@@ -102,7 +102,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return (User)this.userRepository.save(oldUser);
     }
 
-    public void deleteUser(Long id) {
+    public void deleteUserById(Long id) {
         this.userRepository.deleteById(id);
     }
 

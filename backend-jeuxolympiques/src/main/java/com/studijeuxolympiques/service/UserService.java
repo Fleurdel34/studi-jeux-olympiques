@@ -17,7 +17,7 @@ public interface UserService {
 
     User updateUser(Long id, User updatedUser);
 
-    void deleteUser(Long id);
+    void deleteUserById(Long id);
 
     void activation(Map<String, String> activation);
 }

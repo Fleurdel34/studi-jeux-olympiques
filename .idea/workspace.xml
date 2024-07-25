@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9554a597-5062-4333-b599-c9f641a52987" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/shared/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/shared/auth.guard.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,53 +61,53 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NotificationServiceImplTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NotificationServiceImplTest.testSendMessage.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.createUser.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.shouldCreateUser.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.shouldReturnDefaultMessage.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.shouldReturnUserPage.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.testGetUsers.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.userLoginFailed.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.userLoginTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserControllerTest.contextLoads.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserControllerTest.createUser.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserControllerTest.shouldReturnUserPage.executor&quot;: &quot;Run&quot;,
-    &quot;Karma.AppComponent.should have the 'frontend-jeuxolympiques' title.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.studi-jeux-olympiques [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.studi-jeux-olympiques [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.studi-jeux-olympiques [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.studi-jeux-olympiques [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.studi-jeux-olympiques [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.studi-jeux-olympiques [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.studi-jeux-olympiques [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.studi-jeux-olympiques [verify].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.StudiJeuxOlympiquesApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;javascript.karma.karma_node_package_dir&quot;: &quot;&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/IdeaProjects/studi-jeux-olympiques&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\johan\\IdeaProjects\\studi-jeux-olympiques\\frontend-jeuxolympiques\\frontend-jeuxolympiques\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "JUnit.NotificationServiceImplTest.executor": "Run",
+    "JUnit.NotificationServiceImplTest.testSendMessage.executor": "Run",
+    "JUnit.StudiJeuxOlympiquesApplicationTests.contextLoads.executor": "Run",
+    "JUnit.StudiJeuxOlympiquesApplicationTests.createUser.executor": "Run",
+    "JUnit.StudiJeuxOlympiquesApplicationTests.executor": "Run",
+    "JUnit.StudiJeuxOlympiquesApplicationTests.shouldCreateUser.executor": "Run",
+    "JUnit.StudiJeuxOlympiquesApplicationTests.shouldReturnDefaultMessage.executor": "Run",
+    "JUnit.StudiJeuxOlympiquesApplicationTests.shouldReturnUserPage.executor": "Run",
+    "JUnit.StudiJeuxOlympiquesApplicationTests.testGetUsers.executor": "Run",
+    "JUnit.StudiJeuxOlympiquesApplicationTests.userLoginFailed.executor": "Run",
+    "JUnit.StudiJeuxOlympiquesApplicationTests.userLoginTest.executor": "Run",
+    "JUnit.UserControllerTest.contextLoads.executor": "Run",
+    "JUnit.UserControllerTest.createUser.executor": "Run",
+    "JUnit.UserControllerTest.shouldReturnUserPage.executor": "Run",
+    "Karma.AppComponent.should have the 'frontend-jeuxolympiques' title.executor": "Run",
+    "Maven.studi-jeux-olympiques [clean].executor": "Run",
+    "Maven.studi-jeux-olympiques [compile].executor": "Run",
+    "Maven.studi-jeux-olympiques [install].executor": "Run",
+    "Maven.studi-jeux-olympiques [package].executor": "Run",
+    "Maven.studi-jeux-olympiques [site].executor": "Run",
+    "Maven.studi-jeux-olympiques [test].executor": "Run",
+    "Maven.studi-jeux-olympiques [validate].executor": "Run",
+    "Maven.studi-jeux-olympiques [verify].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.StudiJeuxOlympiquesApplication.executor": "Run",
+    "git-widget-placeholder": "dev",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.karma.karma_node_package_dir": "",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/johan/IdeaProjects/stock",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\johan\\IdeaProjects\\studi-jeux-olympiques\\frontend-jeuxolympiques\\frontend-jeuxolympiques\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques\frontend-jeuxolympiques\public" />
@@ -296,7 +293,8 @@
       <workItem from="1721829005247" duration="32000" />
       <workItem from="1721842569819" duration="153000" />
       <workItem from="1721883037543" duration="6103000" />
-      <workItem from="1721900034181" duration="3097000" />
+      <workItem from="1721900034181" duration="4141000" />
+      <workItem from="1721919641306" duration="1709000" />
     </task>
     <servers />
   </component>
