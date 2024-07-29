@@ -18,10 +18,12 @@ export class CustomeInterceptor implements HttpInterceptor{
     const token = this.authService.getToken();
     const newCloneRequest = request.clone({
       setHeaders:{
-        Authorization:"Bearer " + authToken
+        Authorization:"Bearer " + token
       }
     });
 
     return next.handle(newCloneRequest);
   }
+
+
 }

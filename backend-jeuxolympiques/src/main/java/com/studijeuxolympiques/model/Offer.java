@@ -35,7 +35,10 @@ public class Offer {
 
     private String description;
 
-    public Offer(String name, String description, float price, Integer quantity) {
+    @ManyToOne
+    private User user;
+
+    public Offer(String name, String description, float price) {
         this.name = name;
         this.description = description;
         this.price = price;

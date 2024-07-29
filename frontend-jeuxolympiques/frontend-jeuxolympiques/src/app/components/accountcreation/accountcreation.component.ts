@@ -6,10 +6,10 @@ import {
   ReactiveFormsModule,
   Validators
 } from "@angular/forms";
-import { confirmEqualValidator } from "../validators/confirmEqualValidator";
+import { confirmEqualValidator } from "../../validators/confirmEqualValidator";
 import { map, Observable } from "rxjs";
 import { AsyncPipe, NgIf } from "@angular/common";
-import { ApiService } from "../service/api.service";
+import { ApiService } from "../../service/api.service";
 import {Router} from "@angular/router";
 
 

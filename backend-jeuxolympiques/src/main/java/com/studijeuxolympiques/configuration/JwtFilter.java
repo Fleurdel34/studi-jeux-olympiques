@@ -19,18 +19,18 @@ import java.io.IOException;
  * implement method with properties token and username at null
  */
 
+
 @Service
 public class JwtFilter extends OncePerRequestFilter {
 
     private final UserServiceImpl userServiceImpl;
-    private final JwtService jwtService;
 
+    private final JwtService jwtService;
 
     public JwtFilter(UserServiceImpl userServiceImpl, JwtService jwtService) {
         this.userServiceImpl = userServiceImpl;
         this.jwtService = jwtService;
     }
-
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException

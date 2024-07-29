@@ -13,7 +13,7 @@
         </button>
         <li>S'inscrire</li>
       </ng-container>
-      <ng-container *ngIf="(router.url === '/registration' || router.url === '/connection' || router.url === '/productpage')">
+      <ng-container *ngIf="(router.url === '/registration' || router.url === '/activation' || router.url === '/connection'  || router.url === '/productpage')">
         <button (click)="onRedirectBackHomePage()">
           <i class="fa-solid fa-arrow-left"></i>
         </button>

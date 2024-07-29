@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import {HomeComponent} from "./home/home.component";
-import {AccountcreationComponent} from "./accountcreation/accountcreation.component";
+import {HomeComponent} from "./components/home/home.component";
+import {ProductpageComponent} from "./components/productpage/productpage.component";
+import {AccountcreationComponent} from "./components/accountcreation/accountcreation.component";
+import {ActivationComponent} from "./components/activation/activation.component";
+import {ConnectionComponent} from "./components/connection/connection.component";
+import {LegalinformationComponent} from "./components/legalinformation/legalinformation.component";
+import {ErrorComponent} from "./components/error/error.component";
 
-import {LegalinformationComponent} from "./legalinformation/legalinformation.component";
-import {ActivationComponent} from "./activation/activation.component";
-import {ConnectionComponent} from "./connection/connection.component";
-import {ErrorComponent} from "./error/error.component";
-import {ProductpageComponent} from "./productpage/productpage.component";
 
 export const routes: Routes = [
   {path:'', component: HomeComponent},

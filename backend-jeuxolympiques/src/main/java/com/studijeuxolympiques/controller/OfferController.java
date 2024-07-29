@@ -37,7 +37,7 @@ public class OfferController {
         return this.offerService.getOfferById(id);
     }
 
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public void deleteOfferById(@PathVariable Long id){
         this.offerService.deleteOfferById(id);
     }

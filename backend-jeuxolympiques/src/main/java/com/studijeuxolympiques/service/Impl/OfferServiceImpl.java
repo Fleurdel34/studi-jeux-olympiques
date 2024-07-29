@@ -1,10 +1,12 @@
 package com.studijeuxolympiques.service.Impl;
 
 import com.studijeuxolympiques.model.Offer;
+import com.studijeuxolympiques.model.User;
 import com.studijeuxolympiques.repository.OfferRepository;
 import com.studijeuxolympiques.service.OfferService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,6 +32,8 @@ public class OfferServiceImpl implements OfferService {
 
     @Override
     public void createOffer(Offer offer) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        offer.setUser(user);
         this.offerRepository.save(offer);
     }
 

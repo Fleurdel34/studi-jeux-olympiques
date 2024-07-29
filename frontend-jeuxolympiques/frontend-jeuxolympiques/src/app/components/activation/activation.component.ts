@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {ApiService} from "../service/api.service";
-import {Router} from "@angular/router";
-
+import { Router} from "@angular/router";
+import {ApiService} from "../../service/api.service";
 
 @Component({
   selector: 'app-activation',
@@ -15,8 +14,9 @@ export class ActivationComponent implements OnInit {
 
   numberActivationForm!:FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private apiService: ApiService, private router: Router) {
-  }
+  constructor(private formBuilder: FormBuilder,
+              private apiService: ApiService,
+              private router: Router,) {}
 
   ngOnInit() {
     this.numberActivationForm= this.formBuilder.group({
@@ -28,7 +28,10 @@ export class ActivationComponent implements OnInit {
       let formValue = this.numberActivationForm.value;
       this.apiService.activationAccount(formValue);
       this.numberActivationForm.reset();
-      this.router.navigateByUrl('/connection');
-
   }
+
 }
+
+
+
+
