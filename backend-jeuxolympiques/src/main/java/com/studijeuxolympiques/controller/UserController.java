@@ -26,6 +26,7 @@ public class UserController {
      * Receive the request and provide the response
      * @property UserService
      * @requests Get, Post, and Put
+     * @request Post to create User - to enable account with code  - to connect - to disconnect
      */
 
     private AuthenticationManager authenticationManager;
@@ -64,6 +65,11 @@ public class UserController {
             return this.jwtService.generate(authenticationDTO.username());
         }
         return null;
+    }
+
+    @PostMapping("/disconnection")
+    public void disconnectionUser() {
+        this.jwtService.disconnection();
     }
 
     @GetMapping({"/{id}"})

@@ -1,5 +1,6 @@
 package com.studijeuxolympiques.configuration;
 
+import com.studijeuxolympiques.model.Jwt;
 import com.studijeuxolympiques.service.Impl.UserServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -17,6 +18,7 @@ import java.io.IOException;
 /** Create Filter class
  * with abstract class OncePerRequestFilter
  * implement method with properties token and username at null
+ * check token gives by user it is the same token in BDD
  */
 
 
@@ -37,6 +39,7 @@ public class JwtFilter extends OncePerRequestFilter {
     {
 
         String token;
+        Jwt tokenInBDD = null;
         String username = null;
         boolean isTokenExpired = true;
 
@@ -44,13 +47,16 @@ public class JwtFilter extends OncePerRequestFilter {
 
         if (authorization !=null && authorization.startsWith("Bearer ")) {
             token = authorization.substring(7);
+            tokenInBDD = this.jwtService.tokenByValue(token);
             isTokenExpired = jwtService.isTokenExpired(token);
             username = jwtService.extractUsername(token);
 
         }
 
-        if (!isTokenExpired && username != null && SecurityContextHolder.getContext().getAuthentication() == null){
-           UserDetails userDetails = userServiceImpl.loadUserByUsername(username);
+        if (!isTokenExpired
+                && tokenInBDD.getUser().getUsername().equals(username)
+                && SecurityContextHolder.getContext().getAuthentication() == null){
+            UserDetails userDetails = userServiceImpl.loadUserByUsername(username);
             UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDetails,null, userDetails.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authenticationToken);
         }

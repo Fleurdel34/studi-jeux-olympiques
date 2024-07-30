@@ -11,7 +11,7 @@ import java.util.Optional;
  * Build OfferRepository
  * extends CrudRepository from tools Jpa
  * Create method findByName
- * @Params string offer's name
+ * @Params String Offer's name
  */
 
 
