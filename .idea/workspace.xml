@@ -5,12 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9554a597-5062-4333-b599-c9f641a52987" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/StudiJeuxOlympiquesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/StudiJeuxOlympiquesApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/configuration/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/configuration/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/configuration/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/configuration/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/repository/OfferRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/repository/OfferRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Record" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <favorite-branches>
@@ -33,6 +48,13 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -45,20 +67,70 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotificationServiceImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotificationServiceImplTest.testSendMessage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OfferControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OfferControllerTest.testCreateOffer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OfferControllerTest.testGetOffers.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OfferServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OfferServiceTest.testCreateOffer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.createUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.shouldCreateUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.shouldReturnDefaultMessage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.shouldReturnUserPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.testGetUsers.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.userLoginFailed.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.userLoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTest.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTest.createUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTest.shouldReturnUserPage.executor&quot;: &quot;Run&quot;,
+    &quot;Karma.AppComponent.should have the 'frontend-jeuxolympiques' title.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [site].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.StudiJeuxOlympiquesApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.karma.karma_node_package_dir&quot;: &quot;&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/IdeaProjects/studi-jeux-olympiques&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\johan\\IdeaProjects\\studi-jeux-olympiques\\frontend-jeuxolympiques\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\johan\\IdeaProjects\\studi-jeux-olympiques\\frontend-jeuxolympiques\\frontend-jeuxolympiques\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.StudiJeuxOlympiquesApplicationTests.createUser">
-    <configuration name="StudiJeuxOlympiquesApplicationTests.createUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques\frontend-jeuxolympiques\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques\frontend-jeuxolympiques\src\app\components" />
+      <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques" />
+      <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\backend-jeuxolympiques\src\main\resources" />
+      <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques\frontend-jeuxolympiques\public" />
+      <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques\frontend-jeuxolympiques\src\assets" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.StudiJeuxOlympiquesApplication">
+    <configuration name="OfferControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="studi-jeux-olympiques" />
       <extension name="coverage">
         <pattern>
@@ -67,14 +139,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.studijeuxolympiques" />
-      <option name="MAIN_CLASS_NAME" value="com.studijeuxolympiques.StudiJeuxOlympiquesApplicationTests" />
-      <option name="METHOD_NAME" value="createUser" />
+      <option name="MAIN_CLASS_NAME" value="com.studijeuxolympiques.OfferControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OfferControllerTest.testCreateOffer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="studi-jeux-olympiques" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.studijeuxolympiques.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.studijeuxolympiques" />
+      <option name="MAIN_CLASS_NAME" value="com.studijeuxolympiques.OfferControllerTest" />
+      <option name="METHOD_NAME" value="testCreateOffer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StudiJeuxOlympiquesApplicationTests.testGetUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OfferControllerTest.testGetOffers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="studi-jeux-olympiques" />
       <extension name="coverage">
         <pattern>
@@ -83,17 +170,59 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.studijeuxolympiques" />
-      <option name="MAIN_CLASS_NAME" value="com.studijeuxolympiques.StudiJeuxOlympiquesApplicationTests" />
-      <option name="METHOD_NAME" value="testGetUsers" />
+      <option name="MAIN_CLASS_NAME" value="com.studijeuxolympiques.OfferControllerTest" />
+      <option name="METHOD_NAME" value="testGetOffers" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OfferServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="studi-jeux-olympiques" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.studijeuxolympiques.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.studijeuxolympiques" />
+      <option name="MAIN_CLASS_NAME" value="com.studijeuxolympiques.OfferServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OfferServiceTest.testCreateOffer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="studi-jeux-olympiques" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.studijeuxolympiques.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.studijeuxolympiques" />
+      <option name="MAIN_CLASS_NAME" value="com.studijeuxolympiques.OfferServiceTest" />
+      <option name="METHOD_NAME" value="testCreateOffer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudiJeuxOlympiquesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="studi-jeux-olympiques" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.studijeuxolympiques.StudiJeuxOlympiquesApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StudiJeuxOlympiquesApplicationTests.testGetUsers" />
-        <item itemvalue="JUnit.StudiJeuxOlympiquesApplicationTests.createUser" />
+        <item itemvalue="JUnit.OfferServiceTest.testCreateOffer" />
+        <item itemvalue="JUnit.OfferServiceTest" />
+        <item itemvalue="JUnit.OfferControllerTest.testGetOffers" />
+        <item itemvalue="JUnit.OfferControllerTest" />
+        <item itemvalue="JUnit.OfferControllerTest.testCreateOffer" />
       </list>
     </recent_temporary>
   </component>
@@ -114,10 +243,101 @@
       <option name="presentableId" value="Default" />
       <updated>1719939445889</updated>
       <workItem from="1719939449839" duration="955000" />
+      <workItem from="1719940481029" duration="388000" />
+      <workItem from="1719940920740" duration="1954000" />
+      <workItem from="1719982429181" duration="6274000" />
+      <workItem from="1719989155321" duration="89000" />
+      <workItem from="1720009901776" duration="2757000" />
+      <workItem from="1720012962985" duration="6008000" />
+      <workItem from="1720026146491" duration="4545000" />
+      <workItem from="1720068476023" duration="1072000" />
+      <workItem from="1720069625329" duration="11007000" />
+      <workItem from="1720090958927" duration="4550000" />
+      <workItem from="1720095641030" duration="3262000" />
+      <workItem from="1720098977206" duration="997000" />
+      <workItem from="1720100051925" duration="110000" />
+      <workItem from="1720110994227" duration="5203000" />
+      <workItem from="1720154946606" duration="10974000" />
+      <workItem from="1720184619934" duration="18322000" />
+      <workItem from="1720268458880" duration="10825000" />
+      <workItem from="1720414650669" duration="13500000" />
+      <workItem from="1720433482285" duration="5612000" />
+      <workItem from="1720457676166" duration="4957000" />
+      <workItem from="1720499423596" duration="7325000" />
+      <workItem from="1720536844432" duration="7935000" />
+      <workItem from="1720587493505" duration="9176000" />
+      <workItem from="1720608688765" duration="8014000" />
+      <workItem from="1720627602412" duration="6506000" />
+      <workItem from="1720694863686" duration="14835000" />
+      <workItem from="1720759764873" duration="21435000" />
+      <workItem from="1720800777706" duration="7469000" />
+      <workItem from="1720943170052" duration="15543000" />
+      <workItem from="1720970166637" duration="2432000" />
+      <workItem from="1720972936428" duration="3732000" />
+      <workItem from="1721018708628" duration="14833000" />
+      <workItem from="1721054570857" duration="11972000" />
+      <workItem from="1721106504393" duration="13165000" />
+      <workItem from="1721128758313" duration="1431000" />
+      <workItem from="1721130525564" duration="36000" />
+      <workItem from="1721137971596" duration="1012000" />
+      <workItem from="1721154960568" duration="2700000" />
+      <workItem from="1721192059375" duration="12054000" />
+      <workItem from="1721221988482" duration="3470000" />
+      <workItem from="1721234052229" duration="6053000" />
+      <workItem from="1721278391558" duration="9589000" />
+      <workItem from="1721300855610" duration="4947000" />
+      <workItem from="1721306520320" duration="10805000" />
+      <workItem from="1721321146470" duration="313000" />
+      <workItem from="1721365798913" duration="476000" />
+      <workItem from="1721367338731" duration="1282000" />
+      <workItem from="1721368757372" duration="5493000" />
+      <workItem from="1721385241526" duration="605000" />
+      <workItem from="1721386179798" duration="4122000" />
+      <workItem from="1721401818328" duration="2190000" />
+      <workItem from="1721406291405" duration="194000" />
+      <workItem from="1721406624284" duration="4856000" />
+      <workItem from="1721489773497" duration="4034000" />
+      <workItem from="1721623752121" duration="9638000" />
+      <workItem from="1721660120299" duration="9365000" />
+      <workItem from="1721709243845" duration="13428000" />
+      <workItem from="1721746635589" duration="8666000" />
+      <workItem from="1721758397558" duration="60000" />
+      <workItem from="1721797058020" duration="15539000" />
+      <workItem from="1721821016381" duration="780000" />
+      <workItem from="1721822176401" duration="4440000" />
+      <workItem from="1721826940897" duration="1914000" />
+      <workItem from="1721829005247" duration="32000" />
+      <workItem from="1721842569819" duration="153000" />
+      <workItem from="1721883037543" duration="6103000" />
+      <workItem from="1721900034181" duration="4141000" />
+      <workItem from="1721919641306" duration="5140000" />
+      <workItem from="1721929190995" duration="114000" />
+      <workItem from="1721969310965" duration="450000" />
+      <workItem from="1721970307098" duration="13157000" />
+      <workItem from="1721993003990" duration="12830000" />
+      <workItem from="1722066852809" duration="1194000" />
+      <workItem from="1722071358519" duration="1528000" />
+      <workItem from="1722084352712" duration="772000" />
+      <workItem from="1722158223866" duration="10565000" />
+      <workItem from="1722230399585" duration="15098000" />
+      <workItem from="1722251911362" duration="17097000" />
+      <workItem from="1722314498026" duration="4614000" />
+      <workItem from="1722341602523" duration="9351000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

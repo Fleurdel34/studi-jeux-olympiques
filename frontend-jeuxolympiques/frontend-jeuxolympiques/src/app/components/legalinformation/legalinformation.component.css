@@ -1,0 +1,58 @@
+
+/*Layout Legal Information Page*/
+
+legalinformation{
+  display: flex;
+  flex-direction: column;
+}
+
+/*layout div */
+
+div{
+  margin: 5rem;
+}
+
+/*Layout title*/
+h1{
+  padding-top: 5rem;
+  text-decoration: underline;
+}
+
+h2{
+  padding-bottom: 2rem;
+  text-decoration: underline;
+}
+
+/*Layout paragraph and span page*/
+
+p{
+  padding-bottom: 1rem;
+}
+
+span{
+  font-weight: bold;
+}
+
+/*Layout class needhelp and span of this class*/
+.needhelp {
+  font-size: 22px;
+  border: 4px solid grey;
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.needhelp span{
+  display: block;
+  text-align: center;
+}
+
+/*layout link Home Page*/
+
+a{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top:5rem;
+  margin-bottom:7rem;
+  color: #a03174;
+}

@@ -1,0 +1,90 @@
+main{
+  height: 1250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6.5rem;
+}
+
+/*Layout introduction section*/
+.introduction {
+  height: 410px;
+  width: 97%;
+  border: 2px solid grey;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem;
+  padding-bottom: 1rem;
+}
+
+.introduction p{
+  font-weight: bold;
+  font-size: 32px;
+  text-align: center;
+  padding-top:15px ;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+/*Layout event card*/
+.card{
+  height:840px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.cardSection{
+  width: 97%;
+  border: 2px solid grey;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction:row;
+  padding: 15px 0 10px 15px;
+}
+
+.title{
+  width: 90%;
+}
+
+.title h2{
+  padding-bottom: 5px;
+}
+
+.firstParagraph{
+  text-decoration: underline;
+  padding-bottom: 5px;
+}
+
+.secondParagraph{
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+/*Layout button*/
+
+.button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button{
+  border-radius: 30px;
+  border: none;
+  width:100%;
+  height: 50px;
+  font-size: 18px;
+  box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.2);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+

@@ -1,0 +1,27 @@
+<section>
+
+    <form [formGroup]="connectionForm">
+      <h2>
+        Saisissez les informations suivantes pour vous connecter:
+      </h2>
+      <div class="labelInput">
+        <input type="text" name="user" id="user" formControlName="username">
+        <div class="label">
+          User
+        </div>
+      </div>
+
+      <div class="labelInput">
+        <input type="password" name="password" id="password" formControlName="password">
+        <div class="label">
+          Mot de Passe
+        </div>
+      </div>
+      <div class="buttonInput">
+        <button type="submit" (click)="onSubmitForm()">
+          Se connecter
+          <i class="fa-solid fa-rotate"></i>
+        </button>
+      </div>
+    </form>
+</section>
