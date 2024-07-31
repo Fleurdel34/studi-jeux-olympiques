@@ -1,0 +1,18 @@
+section{
+  height:1200px;
+  width: 100%;
+  margin:50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+}
+div{
+  height: 150px;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+

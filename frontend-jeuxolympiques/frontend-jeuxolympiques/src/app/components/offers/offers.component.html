@@ -1,0 +1,41 @@
+<section>
+  <div>
+    <h2></h2>
+    <p></p>
+    <p></p>
+    <span>Nombre de billet:</span>
+    <button (click)="addOfferSolo()">+</button>
+      {{offerSolo}}
+    <button (click)="removeOfferSolo()">-</button>
+      <button type="submit" (click)="onSubmit()">
+        <i class="fa-solid fa-cart-shopping"></i> Ajouter au panier
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+  </div>
+  <div>
+    <h2></h2>
+    <p></p>
+    <p></p>
+    <span>Nombre de billet:</span>
+    <button (click)="addOfferDuo()">+</button>
+    {{offerDuo}}
+    <button (click)="removeOfferDuo()">-</button>
+    <button type="submit" (click)="onSubmit()">
+      <i class="fa-solid fa-cart-shopping"></i> Ajouter au panier
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+  <div>
+    <h2></h2>
+    <p></p>
+    <p></p>
+    <span>Nombre de billet:</span>
+    <button (click)="addOfferFamilial()">+</button>
+    {{offerFamilial}}
+    <button (click)="removeOfferFamilial()">-</button>
+    <button type="submit" (click)="onSubmit()">
+      <i class="fa-solid fa-cart-shopping"></i> Ajouter au panier
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+</section>

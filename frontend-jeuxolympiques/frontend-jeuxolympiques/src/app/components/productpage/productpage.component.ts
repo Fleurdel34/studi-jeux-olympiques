@@ -18,6 +18,6 @@ export class ProductpageComponent implements OnInit{
 
   /** Create method for redirect Product Page with route and path*/
   onClick(){
-    this.router.navigateByUrl('/offerspage');
+    this.router.navigateByUrl('/offers');
   }
 }

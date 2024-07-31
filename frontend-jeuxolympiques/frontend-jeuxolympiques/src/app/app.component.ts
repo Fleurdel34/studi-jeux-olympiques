@@ -7,6 +7,8 @@ import {ActivationComponent} from "./components/activation/activation.component"
 import {ConnectionComponent} from "./components/connection/connection.component";
 import {LegalinformationComponent} from "./components/legalinformation/legalinformation.component";
 import {ErrorComponent} from "./components/error/error.component";
+import {OffersComponent} from "./components/offers/offers.component";
+import {AdminpageComponent} from "./components/adminpage/adminpage.component";
 
 @Component({
   selector: 'app-root',
@@ -18,7 +20,9 @@ import {ErrorComponent} from "./components/error/error.component";
     LegalinformationComponent,
     ActivationComponent,
     ConnectionComponent,
-    ProductpageComponent],
+    ProductpageComponent,
+    OffersComponent,
+    AdminpageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
