@@ -10,7 +10,7 @@ export class DataService {
   offerDuo!:number
   offerFamilial!:number;
 
-
+  /* use getter and setter to communicate between offers and admin components*/
   constructor() {}
 
   setSaleOfferSolo(data:number){

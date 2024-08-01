@@ -11,9 +11,11 @@ import {DatePipe} from "@angular/common";
   styleUrl: './adminpage.component.css'
 })
 export class AdminpageComponent implements OnInit{
+  /*properties offers*/
   title!:string;
   description!:string;
   price!:number;
+
 
   date!:Date;
   saleOfferSolo!:number;
@@ -24,8 +26,12 @@ export class AdminpageComponent implements OnInit{
   totalSaleOfferDuo!:number;
   totalSaleOfferFamilial!:number;
 
+  protected readonly isNaN = isNaN;
+
   constructor(public data:DataService) {
   }
+
+  /*Use service to recover data from offers page*/
 
   ngOnInit() {
     this.date = new Date();
@@ -36,6 +42,8 @@ export class AdminpageComponent implements OnInit{
     this.totalSaleOfferDuo = this.addSaleOffer(this.saleOfferDuo);
     this.totalSaleOfferFamilial = this.addSaleOffer(this.saleOfferFamilial);
   }
+
+  /*Create method and array to save sales data */
   addSaleOffer(data: number){
     let arrayOffer=[]
     let sum = 0;
@@ -46,6 +54,5 @@ export class AdminpageComponent implements OnInit{
     return sum;
   }
 
-  protected readonly NaN = NaN;
-  protected readonly isNaN = isNaN;
+
 }

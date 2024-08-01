@@ -9,6 +9,8 @@ section{
   align-items: center;
 }
 
+/*Layout of offers card and button to create, to update and to delete */
+
 .cardOffers{
   height: 600px;
   width:90%;
@@ -30,6 +32,8 @@ button{
   margin-top:60px;
   margin-right: 50px;
 }
+
+/*Layout of sales card and offers div to receive statistics*/
 
 .cardSale{
   height: 300px;

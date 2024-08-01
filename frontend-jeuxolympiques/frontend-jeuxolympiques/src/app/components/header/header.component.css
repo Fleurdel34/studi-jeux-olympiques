@@ -67,3 +67,33 @@ h1{
   text-align: center;
 }
 
+/*layout special admin page*/
+.titleAdmin{
+  top:450px;
+  text-align: left;
+}
+
+.divAdmin{
+  display: flex;
+  margin-right: 25px;
+}
+
+.divAdmin i{
+  color: black;
+}
+
+.logoutDiv{
+  display: flex;
+}
+
+.buttonLogOut{
+  display: flex;
+  flex-direction: column;
+}
+
+.logOut{
+  background-color: #d9d9d9;
+  font-weight:bold;
+  padding:10px;
+}
+

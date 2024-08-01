@@ -20,11 +20,14 @@ export class OffersComponent implements OnInit{
   offerDuo = 0;
   offerFamilial = 0;
 
+  /*Use service to send data to admin page*/
+
   constructor(private router: Router, private data: DataService) {
   }
 
   ngOnInit() {};
 
+  /*add offers and remove offers*/
   addOfferSolo(){
     this.offerSolo++;
   }
@@ -48,6 +51,8 @@ export class OffersComponent implements OnInit{
   removeOfferFamilial(){
     this.offerFamilial--;
   }
+
+  /*to send data offer to admin page and redirect to the login page to order*/
 
   onSubmit(){
     this.router.navigateByUrl("/connection");

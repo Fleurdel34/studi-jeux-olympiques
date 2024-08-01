@@ -3,10 +3,26 @@
     <ul>
       <img src="assets/flag.png" class= "img-flag" alt="Drapeau Français"/>
       <li>FR</li>
+      <ng-container *ngIf="(router.url !== '/adminpage')">
       <button (click)="onRedirectConnectionPage()">
         <i class="fa-solid fa-user"></i>
       </button>
       <li>Se connecter</li>
+      </ng-container>
+      <ng-container *ngIf="router.url.endsWith('/adminpage')">
+        <div class="divAdmin">
+          <div>
+            <button (click)="buttonShowHide()"><i class="fa-solid fa-user"></i></button>
+          </div>
+          <div class="logIn" *ngIf="showMe">
+             <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="buttonLogOut" *ngIf="hideMe">
+            <i class="fa-solid fa-chevron-up"></i>
+            <button class="logOut">Me Déconnecter</button>
+          </div>
+        </div>
+      </ng-container>
       <ng-container *ngIf="router.url.endsWith('/')">
         <button (click)="onRedirectAccountCreation()">
           <i class="fa-regular fa-user"></i>
@@ -42,12 +58,12 @@
       </h1>
     </ng-container>
     <ng-container *ngIf="router.url.includes('/adminpage')">
-      <h1 class="titleAdmin">
-        Bienvenue sur la page de l'administrateur<br>
-        Jeux Olympiques et Paralympiques<br>
-        Paris 2024
-      </h1>
+        <h1 class="titleAdmin">
+          Bienvenue sur la page de<br>
+          l'administrateur<br>
+          Jeux Olympiques et<br>
+          Paralympiques Paris 2024
+        </h1>
     </ng-container>
-
   </div>
 </header>

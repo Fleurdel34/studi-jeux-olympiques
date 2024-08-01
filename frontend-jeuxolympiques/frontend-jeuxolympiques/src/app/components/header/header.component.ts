@@ -3,8 +3,6 @@ import {NgIf, NgOptimizedImage} from "@angular/common";
 import {Router} from "@angular/router";
 
 
-
-
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -18,6 +16,8 @@ import {Router} from "@angular/router";
 
 export class HeaderComponent implements OnInit {
 
+  showMe: boolean=true;
+  hideMe: boolean=false;
 
   constructor(protected router: Router) {
   }
@@ -37,6 +37,12 @@ export class HeaderComponent implements OnInit {
 
   onRedirectConnectionPage(): void {
     this.router.navigateByUrl('/connection');
+  }
+
+  /**Create method to modify login logout menu*/
+  buttonShowHide(){
+   this.showMe =! this.showMe;
+   this.hideMe =!this.hideMe;
   }
 
 }
