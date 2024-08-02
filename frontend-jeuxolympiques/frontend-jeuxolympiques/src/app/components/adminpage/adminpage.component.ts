@@ -16,34 +16,16 @@ export class AdminpageComponent implements OnInit{
   description!:string;
   price!:number;
 
-
   date!:Date;
-  saleOfferSolo!:number;
-  saleOfferDuo!:number;
-  saleOfferFamilial!:number;
-
-  totalSaleOfferSolo!:number;
-  totalSaleOfferDuo!:number;
-  totalSaleOfferFamilial!:number;
-
-  protected readonly isNaN = isNaN;
 
   constructor(public data:DataService) {
   }
 
-  /*Use service to recover data from offers page*/
 
   ngOnInit() {
     this.date = new Date();
-    this.saleOfferSolo = this.data.getSaleOfferSolo();
-    this.saleOfferDuo = this.data.getSaleOfferDuo();
-    this.saleOfferFamilial = this.data.getSaleOfferFamilial();
-    this.totalSaleOfferSolo = this.addSaleOffer(this.saleOfferSolo);
-    this.totalSaleOfferDuo = this.addSaleOffer(this.saleOfferDuo);
-    this.totalSaleOfferFamilial = this.addSaleOffer(this.saleOfferFamilial);
-  }
+      }
 
-  /*Create method and array to save sales data */
   addSaleOffer(data: number){
     let arrayOffer=[]
     let sum = 0;

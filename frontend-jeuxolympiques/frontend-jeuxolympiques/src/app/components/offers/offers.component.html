@@ -1,41 +1,54 @@
 <section>
-  <div>
-    <h2></h2>
-    <p></p>
-    <p></p>
-    <span>Nombre de billet:</span>
-    <button (click)="addOfferSolo()">+</button>
-      {{offerSolo}}
-    <button (click)="removeOfferSolo()">-</button>
+  <div class="presentationOffers">
+    <h2>Bénéficier des offres suivantes:</h2>
+    <p class="paragraphPresentation">Vous pouvez bénéficier des offres solo, duo et
+      familiale(accès respectivement à 1, 2 et 4 personnes) et
+      profitez de la réduction selon l'offre sélectionnée:</p>
+    <ul>
+      <li>Offre solo</li>
+      <li>Offre duo</li>
+      <li class="liFamilial">Offre familiale</li>
+    </ul>
+  </div>
+  <div class="offers">
+    <div class="offerSolo">
+      <h3></h3>
+      <p></p>
+      <p></p>
+      <span>Nombre de billet:</span>
+      <button (click)="addSale()">+</button>
+      {{sale.quantity}}
+      <button (click)="removeSale()">-</button>
+        <button type="submit" (click)="onSubmit()">
+          <i class="fa-solid fa-cart-shopping"></i> Ajouter au panier
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+    <div class="offerDuo">
+      <h3></h3>
+      <p></p>
+      <p></p>
+      <span>Nombre de billet:</span>
+      <button (click)="addSale()">+</button>
+      {{sale.quantity}}
+      <button (click)="removeSale()">-</button>
       <button type="submit" (click)="onSubmit()">
         <i class="fa-solid fa-cart-shopping"></i> Ajouter au panier
         <i class="fa-solid fa-arrow-right"></i>
       </button>
-  </div>
-  <div>
-    <h2></h2>
-    <p></p>
-    <p></p>
-    <span>Nombre de billet:</span>
-    <button (click)="addOfferDuo()">+</button>
-    {{offerDuo}}
-    <button (click)="removeOfferDuo()">-</button>
-    <button type="submit" (click)="onSubmit()">
-      <i class="fa-solid fa-cart-shopping"></i> Ajouter au panier
-      <i class="fa-solid fa-arrow-right"></i>
-    </button>
-  </div>
-  <div>
-    <h2></h2>
-    <p></p>
-    <p></p>
-    <span>Nombre de billet:</span>
-    <button (click)="addOfferFamilial()">+</button>
-    {{offerFamilial}}
-    <button (click)="removeOfferFamilial()">-</button>
-    <button type="submit" (click)="onSubmit()">
-      <i class="fa-solid fa-cart-shopping"></i> Ajouter au panier
-      <i class="fa-solid fa-arrow-right"></i>
-    </button>
+    </div>
+    <div class="offerFamilial">
+      <h3></h3>
+      <p></p>
+      <p></p>
+      <span>Nombre de billet:</span>
+      <button (click)="addSale()">+</button>
+      {{sale.quantity}}
+      <button (click)="removeSale()">-</button>
+      <button type="submit" (click)="onSubmit()">
+        <i class="fa-solid fa-cart-shopping"></i> Ajouter au panier
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
   </div>
 </section>

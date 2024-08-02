@@ -3,6 +3,11 @@ package com.studijeuxolympiques.service;
 import com.studijeuxolympiques.model.Offer;
 import java.util.List;
 
+/**
+ * Implements interface of service
+ * implements business logic
+ */
+
 public interface OfferService {
 
     List<Offer> getAllOffers();

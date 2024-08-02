@@ -1,18 +1,66 @@
 section{
-  height:1200px;
+  height:1500px;
   width: 100%;
-  margin:50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-
-}
-div{
-  height: 150px;
-  width:100%;
+  margin-top: 4rem;
+  padding-top: 8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/*Layout of presentation offers card */
+.presentationOffers {
+  height: 350px;
+  width: 90%;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  margin-top:3rem;
+  margin-bottom: 5rem;
+}
+
+h2{
+  font-size: 30px;
+  font-weight: bold;
+  padding:1rem 0 1rem 1rem;
+}
+
+.paragraphPresentation{
+  font-size: 26px;
+  padding-left:1rem;
+}
+
+ul{
+  list-style-type: none;
+  font-weight: bold;
+  font-size: 22px;
+  margin: 1rem 0 1rem 0;
+  text-align: center;
+}
+
+li{
+  padding:1rem;
+}
+
+.liFamilial{
+  padding-left:4rem;
+}
+
+/*Layout of offers card */
+.offers{
+  height: 600px ;
+  width:90%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+}
+
+.offerSolo, .offerDuo, .offerFamilial{
+  height: 150px;
+  margin-bottom: 50px;
+}
 

@@ -3,6 +3,7 @@ import {AdminpageComponent} from "../adminpage/adminpage.component";
 import {Router} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {DataService} from "../../service/data.service";
+import {Sale} from "../../models/sale";
 
 @Component({
   selector: 'app-offers',
@@ -12,53 +13,39 @@ import {DataService} from "../../service/data.service";
   styleUrl: './offers.component.css'
 })
 export class OffersComponent implements OnInit{
+
   title!:string;
   description!:string;
   price!:number;
 
-  offerSolo = 0;
-  offerDuo = 0;
-  offerFamilial = 0;
+  sale!:Sale;
 
-  /*Use service to send data to admin page*/
 
   constructor(private router: Router, private data: DataService) {
   }
 
-  ngOnInit() {};
+  ngOnInit() {
+    this.addNameOffer();
+  };
 
-  /*add offers and remove offers*/
-  addOfferSolo(){
-    this.offerSolo++;
+  /*add and remove quantity offers*/
+  addSale(){
+    this.sale.quantity++;
   }
 
-  removeOfferSolo(){
-    this.offerSolo--;
+  removeSale(){
+    this.sale.quantity--;
   }
 
-  addOfferDuo(){
-    this.offerDuo++;
+  /*add name offers*/
+  addNameOffer(){
+    this.sale.nameOffer = this.title;
   }
 
-  removeOfferDuo(){
-    this.offerDuo--;
-  }
-
-  addOfferFamilial(){
-    this.offerFamilial++;
-  }
-
-  removeOfferFamilial(){
-    this.offerFamilial--;
-  }
-
-  /*to send data offer to admin page and redirect to the login page to order*/
 
   onSubmit(){
     this.router.navigateByUrl("/connection");
-    this.data.setSaleOfferSolo(this.offerSolo);
-    this.data.setSaleOfferDuo(this.offerDuo);
-    this.data.setSaleOfferFamilial(this.offerFamilial);
+    this.data.createSale(this.sale)
   }
 
 

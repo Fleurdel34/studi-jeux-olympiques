@@ -56,6 +56,5 @@ public class OfferServiceImpl implements OfferService {
             oldOffer.setPrice(updatedOffer.getPrice());
             this.offerRepository.save(oldOffer);
         }
-
     }
 }
