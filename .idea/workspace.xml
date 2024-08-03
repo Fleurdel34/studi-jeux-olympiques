@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9554a597-5062-4333-b599-c9f641a52987" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/enumerations/TypeRole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/adminpage/adminpage.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/adminpage/adminpage.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/adminpage/adminpage.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/adminpage/adminpage.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/header/header.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/offers/offers.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/offers/offers.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/data.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/StudiJeuxOlympiquesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/StudiJeuxOlympiquesApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/TypeRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/configuration/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/configuration/SpringSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/controller/OfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/controller/OfferController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/controller/SaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/controller/SaleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/Impl/OfferServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/Impl/OfferServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/test/java/com/studijeuxolympiques/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/test/java/com/studijeuxolympiques/UserControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +27,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Record" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -108,7 +113,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;javascript.karma.karma_node_package_dir&quot;: &quot;&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/IdeaProjects/studi-jeux-olympiques&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/IdeaProjects/stock&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -136,7 +141,7 @@
       <module name="studi-jeux-olympiques" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.studijeuxolympiques.*" />
+          <option name="PATTERN" value="com.studijeuxolympiques.enumerations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,7 +156,7 @@
       <module name="studi-jeux-olympiques" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.studijeuxolympiques.*" />
+          <option name="PATTERN" value="com.studijeuxolympiques.enumerations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -167,7 +172,7 @@
       <module name="studi-jeux-olympiques" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.studijeuxolympiques.*" />
+          <option name="PATTERN" value="com.studijeuxolympiques.enumerations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -183,7 +188,7 @@
       <module name="studi-jeux-olympiques" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.studijeuxolympiques.*" />
+          <option name="PATTERN" value="com.studijeuxolympiques.enumerations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -198,7 +203,7 @@
       <module name="studi-jeux-olympiques" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.studijeuxolympiques.*" />
+          <option name="PATTERN" value="com.studijeuxolympiques.enumerations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -328,7 +333,12 @@
       <workItem from="1722359291828" duration="2830000" />
       <workItem from="1722401746690" duration="7624000" />
       <workItem from="1722422437081" duration="23745000" />
-      <workItem from="1722487228298" duration="10417000" />
+      <workItem from="1722487228298" duration="11113000" />
+      <workItem from="1722530761159" duration="591000" />
+      <workItem from="1722573034983" duration="7196000" />
+      <workItem from="1722583257140" duration="10575000" />
+      <workItem from="1722617351768" duration="3700000" />
+      <workItem from="1722698790961" duration="9218000" />
     </task>
     <servers />
   </component>

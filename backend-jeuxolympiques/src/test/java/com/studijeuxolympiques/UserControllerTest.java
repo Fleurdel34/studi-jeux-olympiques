@@ -3,6 +3,7 @@ package com.studijeuxolympiques;
 
 import com.google.gson.Gson;
 import com.studijeuxolympiques.controller.UserController;
+import com.studijeuxolympiques.enumerations.TypeRole;
 import com.studijeuxolympiques.model.Role;
 import com.studijeuxolympiques.model.User;
 import com.studijeuxolympiques.repository.UserRepository;

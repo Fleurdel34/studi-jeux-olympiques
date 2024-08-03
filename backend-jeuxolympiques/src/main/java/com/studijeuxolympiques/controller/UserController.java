@@ -10,6 +10,7 @@ import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -29,9 +30,9 @@ public class UserController {
      * @request Post to create User - to enable account with code  - to connect - to disconnect
      */
 
-    private AuthenticationManager authenticationManager;
-    private UserService userService;
-    private JwtService jwtService;
+    final private AuthenticationManager authenticationManager;
+    final private UserService userService;
+    final private JwtService jwtService;
 
     @Autowired
     public UserController(UserService userService, AuthenticationManager authenticationManager, JwtService jwtService) {
@@ -77,6 +78,7 @@ public class UserController {
         return this.userService.getUserById(id);
     }
 
+    @PreAuthorize("hasAuthority('ADMIN_READ')")
     @GetMapping
     public List<User> getAllUsers() {
         return this.userService.getAllUsers();

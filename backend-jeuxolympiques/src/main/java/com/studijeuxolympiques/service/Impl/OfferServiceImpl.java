@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,7 +28,12 @@ public class OfferServiceImpl implements OfferService {
 
     @Override
     public List<Offer> getAllOffers() {
-        return this.offerRepository.findAll();
+        final Iterable <Offer> offerIterable = this.offerRepository.findAll();
+        List<Offer> offers = new ArrayList<>();
+        for(Offer offer: offerIterable){
+            offers.add(offer);
+        }
+        return offers;
     }
 
     @Override

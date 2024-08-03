@@ -1,6 +1,6 @@
 package com.studijeuxolympiques.service.Impl;
 
-import com.studijeuxolympiques.TypeRole;
+import com.studijeuxolympiques.enumerations.TypeRole;
 import com.studijeuxolympiques.model.Role;
 import com.studijeuxolympiques.model.User;
 import com.studijeuxolympiques.model.Validation;
@@ -8,6 +8,7 @@ import com.studijeuxolympiques.repository.UserRepository;
 import com.studijeuxolympiques.repository.ValidationRepository;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -50,7 +51,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     public List<User> getAllUsers() {
-        return this.userRepository.findAll();
+        final Iterable <User> userIterable = this.userRepository.findAll();
+        List<User> users = new ArrayList<>();
+        for(User user: userIterable){
+            users.add(user);
+        }
+        return users;
     }
 
     public User getUserById(Long id) {

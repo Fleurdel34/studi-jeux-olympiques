@@ -4,6 +4,7 @@ import com.studijeuxolympiques.model.Offer;
 import com.studijeuxolympiques.service.OfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,6 +23,7 @@ public class OfferController {
     @Autowired
     private OfferService offerService;
 
+    @PreAuthorize("hasAuthority('ADMIN_CREATE')")
     @PostMapping
     public void createOffer(@RequestBody Offer offer){
         this.offerService.createOffer(offer);
@@ -37,11 +39,13 @@ public class OfferController {
         return this.offerService.getOfferById(id);
     }
 
+    @PreAuthorize("hasAuthority('ADMIN_DELETE')")
     @DeleteMapping("/{id}")
     public void deleteOfferById(@PathVariable Long id){
         this.offerService.deleteOfferById(id);
     }
 
+    @PreAuthorize("hasAuthority('ADMIN_UPDATE')")
     @PutMapping({"/{id}"})
     public ResponseEntity<Offer> updateOffer(@PathVariable("id") Long id, @RequestBody Offer updatedOffer) {
         this.offerService.updateOffer(id, updatedOffer);

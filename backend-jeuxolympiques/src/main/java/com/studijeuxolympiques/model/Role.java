@@ -1,13 +1,15 @@
 package com.studijeuxolympiques.model;
 
-import com.studijeuxolympiques.TypeRole;
+import com.studijeuxolympiques.enumerations.TypeRole;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 /** Build Class Role
  * Set up properties (id and Enumeration)
  * @Data allows the implementation of constructor, getter and setter
  */
+
 
 @Data
 @Entity
@@ -27,4 +29,7 @@ public class Role {
     private TypeRole role;
 
 
+    public Role() {
+
+    }
 }
