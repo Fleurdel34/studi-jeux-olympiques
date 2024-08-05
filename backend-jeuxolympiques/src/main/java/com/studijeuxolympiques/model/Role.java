@@ -2,7 +2,6 @@ package com.studijeuxolympiques.model;
 
 import com.studijeuxolympiques.enumerations.TypeRole;
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Data;
 
 /** Build Class Role

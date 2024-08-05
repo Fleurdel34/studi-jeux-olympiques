@@ -154,8 +154,7 @@ public class JwtService {
          this.jwtRepository.save(jwt);
     }
 
-    //@Scheduled(cron = "@daily")
-    @Scheduled(cron = "0 */1 * * * *")
+    @Scheduled(cron = "@daily")
     public void removeUselessJwt(){
         log.info("remove token expired and disabled at {}", Instant.now());
         this.jwtRepository.deleteAllByExpiredAndDisabled(true, true);

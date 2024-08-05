@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public enum TypeRole {
     USER(
-            Set.of(TypePermission.USER_CREATE_SALE)
+            Set.of(TypePermission.USER_CREATE_SALES)
     ),
     ADMIN(
             Set.of(TypePermission.ADMIN_CREATE,

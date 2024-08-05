@@ -23,7 +23,7 @@ public class SaleController {
     @Autowired
     private SaleService saleService;
 
-    @PreAuthorize("hasAnyAuthority('USER_CREATE', 'ADMIN_CREATE')")
+    @PreAuthorize("hasAnyAuthority('USER_CREATE_SALES', 'ADMIN_CREATE')")
     @PostMapping
     public void createSale(@RequestBody Sale sale){
 

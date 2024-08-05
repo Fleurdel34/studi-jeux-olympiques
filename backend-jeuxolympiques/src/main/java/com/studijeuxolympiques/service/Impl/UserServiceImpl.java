@@ -102,7 +102,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             oldUser.setLastname(updatedUser.getLastname());
             oldUser.setMail(updatedUser.getMail());
             oldUser.setUsername(updatedUser.getUsername());
-            oldUser.setPassword(updatedUser.getPassword());
+            oldUser.setPassword(this.passwordEncoder.encode(updatedUser.getPassword()));
         }
 
         return (User)this.userRepository.save(oldUser);

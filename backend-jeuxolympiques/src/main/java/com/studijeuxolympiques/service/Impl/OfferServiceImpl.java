@@ -1,5 +1,6 @@
 package com.studijeuxolympiques.service.Impl;
 
+import com.studijeuxolympiques.dto.OfferDTO;
 import com.studijeuxolympiques.model.Offer;
 import com.studijeuxolympiques.model.User;
 import com.studijeuxolympiques.repository.OfferRepository;
@@ -8,9 +9,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import java.util.stream.Stream;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Create class OfferServiceImpl
@@ -27,13 +27,11 @@ public class OfferServiceImpl implements OfferService {
     private OfferRepository offerRepository;
 
     @Override
-    public List<Offer> getAllOffers() {
-        final Iterable <Offer> offerIterable = this.offerRepository.findAll();
-        List<Offer> offers = new ArrayList<>();
-        for(Offer offer: offerIterable){
-            offers.add(offer);
-        }
-        return offers;
+    public Stream<OfferDTO> getAllOffers() {
+        return this.offerRepository.findAll()
+                .stream().map(offer -> new OfferDTO(offer.getId(),
+                        offer.getName(), offer.getPrice(), offer.getDescription()));
+
     }
 
     @Override
@@ -44,8 +42,9 @@ public class OfferServiceImpl implements OfferService {
     }
 
     @Override
-    public Offer getOfferById(Long id) {
-        return this.offerRepository.findById(id).orElse(null);
+    public Stream<OfferDTO> getOfferById(Long id) {
+        return this.offerRepository.findById(id).stream().map(offer -> new OfferDTO(offer.getId(),
+                offer.getName(), offer.getPrice(), offer.getDescription()));
     }
 
     @Override
@@ -54,9 +53,14 @@ public class OfferServiceImpl implements OfferService {
     }
 
     @Override
+    public Offer getPutOfferById(Long id) {
+        return this.offerRepository.findById(id).orElse(null);
+    }
+
+    @Override
     public void updateOffer(Long id, Offer updatedOffer){
-        Offer oldOffer = this.getOfferById(id);
-        if(oldOffer !=null){
+        Offer oldOffer = this. getPutOfferById(id);
+        if(null != oldOffer){
             oldOffer.setName(updatedOffer.getName());
             oldOffer.setDescription(updatedOffer.getDescription());
             oldOffer.setPrice(updatedOffer.getPrice());
