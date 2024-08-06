@@ -38,6 +38,7 @@ public class OfferController {
         return this.offerService.getAllOffers();
     }
 
+    @PreAuthorize("hasAnyAuthority('USER_READ_OFFERS', 'ADMIN_READ')")
     @GetMapping({"/{id}"})
     public Stream<OfferDTO> getOfferById(@PathVariable Long id){
         return this.offerService.getOfferById(id);

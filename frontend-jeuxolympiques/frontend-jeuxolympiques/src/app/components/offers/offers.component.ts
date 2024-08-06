@@ -4,28 +4,27 @@ import {Router} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {DataService} from "../../service/data.service";
 import {Sale} from "../../models/sale";
+import {Observable} from "rxjs";
+import { Offer } from '../../models/offer';
+import {AsyncPipe, NgFor, TitleCasePipe} from "@angular/common";
 
 @Component({
   selector: 'app-offers',
   standalone: true,
-  imports: [AdminpageComponent, FormsModule, ReactiveFormsModule],
+  imports: [AdminpageComponent, FormsModule, ReactiveFormsModule, AsyncPipe, NgFor, TitleCasePipe],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css'
 })
 export class OffersComponent implements OnInit{
 
-  title!:string;
-  description!:string;
-  price!:number;
-
+  offer$!:Observable<Offer[]>
   sale!:Sale;
-
 
   constructor(private router: Router, private data: DataService) {
   }
 
   ngOnInit() {
-    this.addNameOffer();
+    this.offer$ = this.data.getAllOffers();
   };
 
   /*add and remove quantity offers*/
@@ -37,17 +36,9 @@ export class OffersComponent implements OnInit{
     this.sale.quantity--;
   }
 
-  /*add name offers*/
-  addNameOffer(){
-    this.sale.nameOffer = this.title;
-  }
-
-
   onSubmit(){
     this.router.navigateByUrl("/connection");
     this.data.createSale(this.sale)
   }
 
-
-
-}
+ }

@@ -57,10 +57,43 @@ li{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   margin-top: 6rem;
   margin-bottom: 3rem;
+  font-size: 24px;
+  padding: 2rem;
 }
 
-.offerSolo, .offerDuo, .offerFamilial{
+.offerSingle{
   height: 150px;
   margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+h3{
+  width:15%;
+}
+
+#offerDescription{
+  display: block;
+  flex-wrap: wrap;
+  width:15%;
+}
+
+.sale{
+  margin-right: 3rem;
+
+}
+
+.buttonSale{
+  height:30px;
+  width:30px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#buttonSubmit{
+  padding: 10px 25px 10px 25px;
+  border-radius: 20px;
+}
+
 
