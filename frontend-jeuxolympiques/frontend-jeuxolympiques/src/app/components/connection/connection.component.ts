@@ -30,7 +30,7 @@ export class ConnectionComponent implements OnInit{
     let formValue = this.connectionForm.value;
     this.authService.connectionAccount(formValue);
     this.connectionForm.reset();
-    this.router.navigateByUrl('/account');
+    this.router.navigateByUrl('/cartpage');
 
   }
 

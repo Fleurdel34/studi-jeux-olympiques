@@ -9,6 +9,7 @@ import {LegalinformationComponent} from "./components/legalinformation/legalinfo
 import {ErrorComponent} from "./components/error/error.component";
 import {OffersComponent} from "./components/offers/offers.component";
 import {AdminpageComponent} from "./components/adminpage/adminpage.component";
+import {CartpageComponent} from "./components/cartpage/cartpage.component";
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import {AdminpageComponent} from "./components/adminpage/adminpage.component";
     ConnectionComponent,
     ProductpageComponent,
     OffersComponent,
-    AdminpageComponent],
+    AdminpageComponent,
+    CartpageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

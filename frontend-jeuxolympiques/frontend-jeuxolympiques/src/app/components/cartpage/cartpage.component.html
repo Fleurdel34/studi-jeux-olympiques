@@ -1,0 +1,16 @@
+
+<div class="offers" *ngIf="offer$ | async as offer">
+
+    <div class="offerSingle">
+      <h3>{{offer.name | titlecase }}</h3>
+      <p id="offerDescription">{{offer.description }}</p>
+      <p>{{offer.price}}€</p>
+      <div class="sale">
+        <p>Nombre de billets:</p>
+        <p>{{offer.quantity}}</p>
+        <button type="submit" (click)="onSubmit()">
+          Valider
+        </button>
+      </div>
+    </div>
+

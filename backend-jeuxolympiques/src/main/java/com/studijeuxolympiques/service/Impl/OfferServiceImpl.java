@@ -30,7 +30,7 @@ public class OfferServiceImpl implements OfferService {
     public Stream<OfferDTO> getAllOffers() {
         return this.offerRepository.findAll()
                 .stream().map(offer -> new OfferDTO(offer.getId(),
-                        offer.getName(), offer.getPrice(), offer.getDescription()));
+                        offer.getName(), offer.getPrice(), offer.getDescription(), offer.getQuantity()));
 
     }
 
@@ -44,7 +44,7 @@ public class OfferServiceImpl implements OfferService {
     @Override
     public Stream<OfferDTO> getOfferById(Long id) {
         return this.offerRepository.findById(id).stream().map(offer -> new OfferDTO(offer.getId(),
-                offer.getName(), offer.getPrice(), offer.getDescription()));
+                offer.getName(), offer.getPrice(), offer.getDescription(), offer.getQuantity()));
     }
 
     @Override
@@ -64,6 +64,7 @@ public class OfferServiceImpl implements OfferService {
             oldOffer.setName(updatedOffer.getName());
             oldOffer.setDescription(updatedOffer.getDescription());
             oldOffer.setPrice(updatedOffer.getPrice());
+            oldOffer.setQuantity(updatedOffer.getQuantity());
             this.offerRepository.save(oldOffer);
         }
     }

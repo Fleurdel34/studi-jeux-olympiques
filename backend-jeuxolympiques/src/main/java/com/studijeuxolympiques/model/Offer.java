@@ -34,14 +34,20 @@ public class Offer {
     )
 
     private String description;
+    @Column(
+            nullable = false
+    )
+
+    private Integer quantity;
 
     @ManyToOne
     private User user;
 
-    public Offer(String name, String description, float price) {
+    public Offer(String name, String description, float price, Integer quantity) {
         this.name = name;
         this.description = description;
         this.price = price;
+        this.quantity= quantity;
     }
 
     public Offer() {
