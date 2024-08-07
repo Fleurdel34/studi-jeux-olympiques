@@ -20,7 +20,7 @@ export const routes: Routes = [
   {path:"registration", component:AccountcreationComponent},
   {path:"activation", component:ActivationComponent},
   {path:"connection", component:ConnectionComponent},
-  {path:"cartpage", component:CartpageComponent},
+  {path:"cartpage/:id", component:CartpageComponent},
 
   {path:"legalinformation", component:LegalinformationComponent},
 

@@ -1,7 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {AuthService} from "../../service/auth.service";
+import {Offer} from "../../models/offer";
+import {Observable} from "rxjs";
+
 
 @Component({
   selector: 'app-connection',
@@ -30,7 +33,7 @@ export class ConnectionComponent implements OnInit{
     let formValue = this.connectionForm.value;
     this.authService.connectionAccount(formValue);
     this.connectionForm.reset();
-    this.router.navigateByUrl('/cartpage');
+    this.router.navigateByUrl(`paymentpage`)
 
   }
 

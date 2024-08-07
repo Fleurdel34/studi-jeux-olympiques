@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AdminpageComponent} from "../adminpage/adminpage.component";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {DataService} from "../../service/data.service";
 import {Observable} from "rxjs";
@@ -10,7 +10,7 @@ import {AsyncPipe, NgFor, TitleCasePipe} from "@angular/common";
 @Component({
   selector: 'app-offers',
   standalone: true,
-  imports: [AdminpageComponent, FormsModule, ReactiveFormsModule, AsyncPipe, NgFor, TitleCasePipe],
+  imports: [AdminpageComponent, FormsModule, ReactiveFormsModule, AsyncPipe, NgFor, TitleCasePipe, RouterLink],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css'
 })
@@ -25,8 +25,4 @@ export class OffersComponent implements OnInit{
   ngOnInit() {
     this.offer$ = this.data.getAllOffers();
   };
-
-  onSubmit(){
-    this.router.navigateByUrl("/connection");
-  }
 }

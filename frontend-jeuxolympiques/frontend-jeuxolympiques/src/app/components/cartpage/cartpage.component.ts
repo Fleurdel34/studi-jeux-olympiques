@@ -1,16 +1,17 @@
 import {Component, OnInit} from '@angular/core';
-import {async, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {Offer} from "../../models/offer";
-import {ActivatedRoute, ActivatedRouteSnapshot, Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {DataService} from "../../service/data.service";
-import {AsyncPipe, TitleCasePipe} from "@angular/common";
+import {AsyncPipe, NgIf, TitleCasePipe} from "@angular/common";
 
 @Component({
   selector: 'app-cartpage',
   standalone: true,
   imports: [
     AsyncPipe,
-    TitleCasePipe
+    TitleCasePipe,
+    NgIf
   ],
   templateUrl: './cartpage.component.html',
   styleUrl: './cartpage.component.css'
@@ -22,7 +23,7 @@ export class CartpageComponent implements OnInit {
   constructor(private router: Router, private data: DataService, private route:ActivatedRoute) {
   }
 
-  /*to recover all offers with data service and method get all*/
+  /*to recover one offer with data service and method get by id*/
   ngOnInit() {
     const offerId = +this.route.snapshot.params['id']
     this.offer$ = this.data. getOfferById(offerId);
@@ -32,5 +33,4 @@ export class CartpageComponent implements OnInit {
     this.router.navigateByUrl("/connection");
   }
 
-  protected readonly async = async;
 }

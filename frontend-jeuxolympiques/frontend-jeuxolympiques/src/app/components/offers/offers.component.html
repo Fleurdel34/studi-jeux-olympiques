@@ -10,8 +10,7 @@
       <li class="liFamilial">Offre familiale</li>
     </ul>
   </div>
-  <div class="offers">
-    @for(offer of offer$ | async ; track offer.id){
+  <div class="offers" *ngFor=" let offer of offer$ | async">
     <div class="offerSingle">
       <h3>{{offer.name | titlecase }}</h3>
       <p id="offerDescription">{{offer.description }}</p>
@@ -19,12 +18,11 @@
       <div class="sale">
         <p>Nombre de billets:</p>
         <p>{{offer.quantity}}</p>
-          <button type="submit" (click)="onSubmit()" id="buttonSubmit">
-            <i class="fa-solid fa-cart-shopping"></i>
-            Ajouter au panier
+         <button type="submit" [routerLink]="['/cartpage', offer.id]" id="buttonSubmit">
+           <i class="fa-solid fa-cart-shopping"></i>
+           Ajouter au panier
           </button>
       </div>
     </div>
-    }
   </div>
 </section>

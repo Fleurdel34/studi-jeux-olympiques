@@ -1,16 +1,15 @@
-
-<div class="offers" *ngIf="offer$ | async as offer">
-
-    <div class="offerSingle">
-      <h3>{{offer.name | titlecase }}</h3>
-      <p id="offerDescription">{{offer.description }}</p>
-      <p>{{offer.price}}€</p>
-      <div class="sale">
-        <p>Nombre de billets:</p>
+<section>
+  <h2>Votre panier</h2>
+  <div class="offers" *ngIf="offer$ | async as offer">
+      <div class="offerSingle">
+        <h3>{{offer.name | titlecase }}</h3>
+        <p id="offerDescription">{{offer.description }}</p>
+        <p>{{offer.price}}€</p>
+        <p>Nombre de billet disponible pour cette offre:</p>
         <p>{{offer.quantity}}</p>
         <button type="submit" (click)="onSubmit()">
-          Valider
+            Valider
         </button>
       </div>
-    </div>
-
+  </div>
+</section>
