@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CartpageComponent } from './cartpage.component';
+import { SingleOfferComponent } from './single-offer.component';
 
-describe('CartpageComponent', () => {
-  let component: CartpageComponent;
-  let fixture: ComponentFixture<CartpageComponent>;
+describe('SingleOfferComponent', () => {
+  let component: SingleOfferComponent;
+  let fixture: ComponentFixture<SingleOfferComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CartpageComponent]
+      imports: [SingleOfferComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CartpageComponent);
+    fixture = TestBed.createComponent(SingleOfferComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

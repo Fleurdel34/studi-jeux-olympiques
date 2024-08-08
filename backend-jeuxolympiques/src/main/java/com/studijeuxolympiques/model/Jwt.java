@@ -14,7 +14,7 @@ public class Jwt {
 
     /**
      * Build Class jwt
-     * Set up properties (id, f)
+     * Set up properties (id, value, disabled, expired and User)
      * Implement constructor, builder, Getter and name table for database
      */
 
@@ -24,6 +24,10 @@ public class Jwt {
     private String value;
     private boolean disabled;
     private boolean expired;
+
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    private RefreshToken refreshToken;
+
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE})
     @JoinColumn(name = "user_id")
     private User user;

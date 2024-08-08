@@ -1,0 +1,19 @@
+<main>
+  <section>
+    <h2>Votre sélection</h2>
+    <div class="title">
+      <h3>Vos billets Jeux Olympiques</h3>
+    </div>
+    <div *ngFor="let offer of offer$ | async"  class="offers">
+      <h3 class="titleOffer">Choix {{offer.name}}</h3>
+      <p> Description: {{offer.description}}</p>
+      <p>Nombre de billets: {{offer.quantity}}</p>
+      <p>Total: {{offer.price}} €</p>
+      <div class="button">
+        <button type="submit" (click)="onSubmit()">
+          Payer
+        </button>
+      </div>
+    </div>
+  </section>
+</main>

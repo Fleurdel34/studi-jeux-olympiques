@@ -81,22 +81,15 @@ h3{
 
 .sale{
   margin-right: 3rem;
+  margin-top: 1rem;
   display:flex
-}
-
-.sale p{
-  margin-right: 1rem;
-}
-.buttonSale{
-  height:30px;
-  width:30px;
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 
 #buttonSubmit{
   padding: 10px 25px 10px 25px;
   border-radius: 20px;
+  margin-left:1rem
 }
+
 
 

@@ -33,12 +33,13 @@ public class OfferController {
         this.offerService.createOffer(offer);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     public Stream<OfferDTO> getAllOffer(){
         return this.offerService.getAllOffers();
     }
 
-    @PreAuthorize("hasAnyAuthority('USER_READ_OFFERS', 'ADMIN_READ')")
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping({"/{id}"})
     public Stream<OfferDTO> getOfferById(@PathVariable Long id){
         return this.offerService.getOfferById(id);

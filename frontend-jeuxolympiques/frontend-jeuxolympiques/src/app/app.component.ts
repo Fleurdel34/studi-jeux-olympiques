@@ -9,7 +9,7 @@ import {LegalinformationComponent} from "./components/legalinformation/legalinfo
 import {ErrorComponent} from "./components/error/error.component";
 import {OffersComponent} from "./components/offers/offers.component";
 import {AdminpageComponent} from "./components/adminpage/adminpage.component";
-import {CartpageComponent} from "./components/cartpage/cartpage.component";
+import {SingleOfferComponent} from "./components/single-offer/single-offer.component";
 
 @Component({
   selector: 'app-root',
@@ -24,7 +24,7 @@ import {CartpageComponent} from "./components/cartpage/cartpage.component";
     ProductpageComponent,
     OffersComponent,
     AdminpageComponent,
-    CartpageComponent],
+    SingleOfferComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

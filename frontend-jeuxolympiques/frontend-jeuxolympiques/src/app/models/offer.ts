@@ -1,8 +1,10 @@
 export class Offer{
 
-  id!:number;
-  name!:string;
-  price!:number;
-  description!:string;
-  quantity!:number;
+  constructor(
+    public id:number,
+    public name:string,
+    public price:number,
+    public description:string,
+    public quantity:number){}
+
 }

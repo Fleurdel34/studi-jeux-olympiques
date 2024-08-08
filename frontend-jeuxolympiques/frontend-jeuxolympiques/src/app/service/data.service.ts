@@ -1,7 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {Router} from "@angular/router";
-import { Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {Offer} from "../models/offer";
 
 
@@ -12,7 +11,12 @@ export class DataService {
 
   urlOffers: string = 'http://localhost:8080/api/offers';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient) {}
+
+  /**
+   * Request get to recover all offers and one offer  in data base
+   * @return an array
+   */
 
   getAllOffers():Observable<Offer[]>{
     return this.http.get<Offer[]>(this.urlOffers)}
@@ -21,7 +25,7 @@ export class DataService {
     return localStorage.getItem('bearer');
   }
 
-  getOfferById(offerId:number): Observable<Offer>{
-    return this.http.get<Offer>(`${this.urlOffers}/${offerId}`);
+  getOfferById(offerId:number): Observable<Offer[]>{
+    return this.http.get<Offer[]>(`${this.urlOffers}/${offerId}`);
   }
 }

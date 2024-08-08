@@ -8,7 +8,7 @@ import {LegalinformationComponent} from "./components/legalinformation/legalinfo
 import {ErrorComponent} from "./components/error/error.component";
 import {OffersComponent} from "./components/offers/offers.component";
 import {AdminpageComponent} from "./components/adminpage/adminpage.component";
-import {CartpageComponent} from "./components/cartpage/cartpage.component";
+import {SingleOfferComponent} from "./components/single-offer/single-offer.component";
 
 
 export const routes: Routes = [
@@ -20,7 +20,7 @@ export const routes: Routes = [
   {path:"registration", component:AccountcreationComponent},
   {path:"activation", component:ActivationComponent},
   {path:"connection", component:ConnectionComponent},
-  {path:"cartpage/:id", component:CartpageComponent},
+  {path:"single-offer/:id", component:SingleOfferComponent},
 
   {path:"legalinformation", component:LegalinformationComponent},
 
