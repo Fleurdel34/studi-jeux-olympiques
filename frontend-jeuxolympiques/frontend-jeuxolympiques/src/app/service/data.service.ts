@@ -1,7 +1,8 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {catchError, Observable, take} from "rxjs";
 import {Offer} from "../models/offer";
+import {FormGroup} from "@angular/forms";
 
 
 @Injectable({
@@ -21,11 +22,27 @@ export class DataService {
   getAllOffers():Observable<Offer[]>{
     return this.http.get<Offer[]>(this.urlOffers)}
 
-  getToken() {
-    return localStorage.getItem('bearer');
+   getOfferById(offerId:number): Observable<Offer[]>{
+    return this.http.get<Offer[]>(`${this.urlOffers}/${offerId}`);
   }
 
-  getOfferById(offerId:number): Observable<Offer[]>{
-    return this.http.get<Offer[]>(`${this.urlOffers}/${offerId}`);
+  createOffer(formValue: FormGroup) {
+    this.http.post(this.urlOffers, formValue)
+      .pipe(take(1), catchError(err => {
+        throw 'error in source. Details: ' + err;
+      }))
+      .subscribe();
+  }
+
+  PutOffer(offerId:number,formValue: FormGroup ) {
+    this.http.put(`${this.urlOffers}/${offerId}`, formValue)}
+
+  deleteOfferById(offerId:number): Observable<Offer>{
+    return this.http.delete<Offer>(`${this.urlOffers}/${offerId}`);
+  }
+
+
+  getToken() {
+    return localStorage.getItem('bearer');
   }
 }

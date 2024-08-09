@@ -1,43 +1,22 @@
 <section>
-  <div class="cardOffers">
+  <div class="title">
     <h2>Visualiser les offres en cours:</h2>
-    <div>
-      <h3></h3>
-      <p></p>
-      <p></p>
-      <input type="checkbox" name="checkbox">
+  </div>
+  <div class="offers" *ngFor="let offer of offer$ | async">
+    <div class="single-offer">
+      <h3>{{offer.name | titlecase }} :</h3>
+      <p id="offerDescription">{{offer.description }}</p>
+      <p>Prix: {{offer.price}}€</p>
+      <p>Nombre billets: {{offer.quantity}}</p>
     </div>
-    <div>
-      <h3></h3>
-      <p></p>
-      <p></p>
-      <input type="checkbox" name="checkbox">
-    </div>
-    <div>
-      <h3></h3>
-      <p></p>
-      <p></p>
-      <input type="checkbox" name="checkbox">
-    </div>
-    <div>
-      <button type="submit"> Créer</button>
-      <button type="submit">Modifier</button>
-      <button type="submit">Supprimer</button>
+    <div class="checkbox">
+      <input type="checkbox" name="checkbox"/>
     </div>
   </div>
-  <div class="cardSale">
-    <h2>Nombre de vente par offre au {{date | date:'d MMMM YYYY' }} :</h2>
-    <div class="divOffers">
-      <p class="paragraphSale">Offre solo:</p>
-      <p class="paragraphSale"></p>
-    </div>
-     <div class="divOffers">
-        <p class="paragraphSale">Offre duo:</p>
-       <p class="paragraphSale"></p>
-     </div>
-     <div class="divOffers">
-        <p class="paragraphSale paragraphSaleFamilial">Offre familiale:</p>
-       <p class="paragraphSale"></p>
-     </div>
+  <div class="buttons">
+    <button type="submit" (click)="addNewOffer()"> Créer</button>
+    <button type="submit">Modifier</button>
+    <button type="submit">Supprimer</button>
   </div>
+    <button (click)="viewSales()" id="buttonLink">Visualiser les ventes</button>
 </section>

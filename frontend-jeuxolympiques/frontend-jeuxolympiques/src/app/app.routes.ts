@@ -9,6 +9,8 @@ import {ErrorComponent} from "./components/error/error.component";
 import {OffersComponent} from "./components/offers/offers.component";
 import {AdminpageComponent} from "./components/adminpage/adminpage.component";
 import {SingleOfferComponent} from "./components/single-offer/single-offer.component";
+import {SaleadminComponent} from "./components/saleadmin/saleadmin.component";
+import {NewOfferComponent} from "./components/new-offer/new-offer.component";
 
 
 export const routes: Routes = [
@@ -16,6 +18,9 @@ export const routes: Routes = [
   {path:'productpage', component:ProductpageComponent},
   {path: 'offers', component: OffersComponent},
   {path: 'adminpage', component:AdminpageComponent},
+  {path: 'adminpage', component:AdminpageComponent},
+  {path: 'new-offer', component:NewOfferComponent},
+  {path: 'sales', component:SaleadminComponent},
 
   {path:"registration", component:AccountcreationComponent},
   {path:"activation", component:ActivationComponent},

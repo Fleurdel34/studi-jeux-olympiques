@@ -10,6 +10,8 @@ import {ErrorComponent} from "./components/error/error.component";
 import {OffersComponent} from "./components/offers/offers.component";
 import {AdminpageComponent} from "./components/adminpage/adminpage.component";
 import {SingleOfferComponent} from "./components/single-offer/single-offer.component";
+import {SaleadminComponent} from "./components/saleadmin/saleadmin.component";
+import {NewOfferComponent} from "./components/new-offer/new-offer.component";
 
 @Component({
   selector: 'app-root',
@@ -24,7 +26,9 @@ import {SingleOfferComponent} from "./components/single-offer/single-offer.compo
     ProductpageComponent,
     OffersComponent,
     AdminpageComponent,
-    SingleOfferComponent],
+    SingleOfferComponent,
+    SaleadminComponent,
+    NewOfferComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
