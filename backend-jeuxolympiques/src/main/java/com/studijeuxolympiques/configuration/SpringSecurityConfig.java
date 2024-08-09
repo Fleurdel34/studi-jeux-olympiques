@@ -50,6 +50,7 @@ public class SpringSecurityConfig {
                             authorize.requestMatchers(POST, "/api/users").permitAll();
                             authorize.requestMatchers(POST, "/api/users/activation").permitAll();
                             authorize.requestMatchers(POST, "/api/users/connection").permitAll();
+                            authorize.requestMatchers(POST, "/api/users/refresh-token").permitAll();
                             authorize.requestMatchers(GET, "/api/offers").permitAll();
                             authorize.requestMatchers(GET, "/api/offers/{id}").permitAll();
 
@@ -64,9 +65,8 @@ public class SpringSecurityConfig {
 
     /**
      *Managing users when trying to log in
-     * @param authenticationConfiguration
-     * @return
-     * @throws Exception
+     * @return  authentication
+     *
      */
 
     @Bean

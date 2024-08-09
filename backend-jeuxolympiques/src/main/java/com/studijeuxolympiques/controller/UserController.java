@@ -58,8 +58,8 @@ public class UserController {
      * @params Request body Map string
      **/
     @PostMapping("/refresh-token")
-    public void refreshToken(@RequestBody Map<String, String> refreshTokenRequest) {
-        this.jwtService.refreshToken(refreshTokenRequest);
+    public @ResponseBody Map<String, String> refreshToken(@RequestBody Map<String, String> refreshTokenRequest) {
+        return this.jwtService.refreshToken(refreshTokenRequest);
     }
 
     /** Build special request post for connexion

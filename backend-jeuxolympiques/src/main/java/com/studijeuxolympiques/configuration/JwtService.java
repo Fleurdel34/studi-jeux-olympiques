@@ -41,6 +41,8 @@ import java.util.stream.Collectors;
 public class JwtService {
 
     public static final String BEARER = "bearer";
+    public static final String REFRESH = "refresh";
+    public static final String TOKEN_INVALID = "Token invalid";
 
     private final String secretKey = "a091e1f010a4014553f790bc45c2bde32d357081d43f1f9df9c05db05b7f41de";
 
@@ -85,7 +87,7 @@ public class JwtService {
                 .build();
 
         this.jwtRepository.save(jwt);
-        jwtMap.put("refresh", refreshToken.getValue());
+        jwtMap.put(REFRESH, refreshToken.getValue());
         return jwtMap;
     }
 
@@ -161,7 +163,7 @@ public class JwtService {
                 user.getUsername(),
                 false,
                 false
-        ).orElseThrow(() -> new RuntimeException("Token invalid"));
+        ).orElseThrow(() -> new RuntimeException(TOKEN_INVALID));
          jwt.setExpired(true);
          jwt.setDisabled(true);
          this.jwtRepository.save(jwt);
@@ -174,6 +176,13 @@ public class JwtService {
 
     }
 
-    public void refreshToken(Map<String, String> refreshTokenRequest) {
+    public Map<String, String> refreshToken(Map<String, String> refreshTokenRequest) {
+        final Jwt jwt = this.jwtRepository.findByRefreshToken(refreshTokenRequest.get(REFRESH))
+                .orElseThrow(() -> new RuntimeException(TOKEN_INVALID));
+        if (jwt.getRefreshToken().isExpired() || jwt.getRefreshToken().getExpiration().isBefore(Instant.now())){
+            throw new RuntimeException(TOKEN_INVALID);
+        }
+        this.disableTokens(jwt.getUser());
+        return this.generate(jwt.getUser().getUsername());
     }
 }
