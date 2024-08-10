@@ -1,0 +1,5 @@
+<div *ngFor="let user of user$ | async">
+    <h2>Bienvenue {{user.lastname}} {{user.firstname}}</h2>
+    <p>Pour continuer, cliquer sur le bouton ci-dessous!</p>
+  <button (click)="onSubmit(user.role)">Poursuivre</button>
+</div>

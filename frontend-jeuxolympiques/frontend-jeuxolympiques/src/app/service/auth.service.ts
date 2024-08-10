@@ -3,6 +3,8 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 import {catchError, map, Observable, throwError} from "rxjs";
+import {Offer} from "../models/offer";
+import {User} from "../models/user";
 
 
 @Injectable({
@@ -11,7 +13,6 @@ import {catchError, map, Observable, throwError} from "rxjs";
 export class AuthService {
 
   urlConnection: string ='http://localhost:8080/api/users/connection'
-  headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient, private router: Router) {
   }
@@ -28,45 +29,21 @@ export class AuthService {
       });
   }
 
+  getUserById(userId:number): Observable<User[]>{
+    return this.http.get<User[]>(`${this.urlConnection}/${userId}`);
+  }
+
   /**recover the token for authentication*/
   getToken() {
     return localStorage.getItem('bearer');
   }
 
-   isLoggedIn(): boolean {
-    let authToken = localStorage.getItem('bearer');
-    return authToken !== null ? true : false;
-  }
-
-  doLogout() {
-    let removeToken = localStorage.removeItem('bearer');
-    if (removeToken == null) {
+  /*delete token for disconnection*/
+  logOut(){
+    localStorage.removeItem('bearer');
+    let token = localStorage.getItem('bearer');
+    if (token == null) {
       this.router.navigate(['connection']);
     }
   }
-
-  getUserProfile(id: any): Observable<any> {
-    let api = `${this.urlConnection}/${id}`;
-    return this.http.get(api, { headers: this.headers }).pipe(
-      map((res) => {
-        return res || {};
-      }),
-      catchError(this.handleError)
-    );
-  }
-
-  handleError(error: HttpErrorResponse) {
-    let msg = '';
-    if (error.error instanceof ErrorEvent) {
-      msg = error.error.message;
-    } else {
-      msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    return throwError(() => msg);
-  }
-
-  public logout(){
-    localStorage.removeItem('access_token');
-  }
-
 }

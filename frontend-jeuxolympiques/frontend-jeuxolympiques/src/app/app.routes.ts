@@ -7,25 +7,32 @@ import {ConnectionComponent} from "./components/connection/connection.component"
 import {LegalinformationComponent} from "./components/legalinformation/legalinformation.component";
 import {ErrorComponent} from "./components/error/error.component";
 import {OffersComponent} from "./components/offers/offers.component";
-import {AdminpageComponent} from "./components/adminpage/adminpage.component";
+import {AdminpageComponent} from "./components/admin/adminpage/adminpage.component";
 import {SingleOfferComponent} from "./components/single-offer/single-offer.component";
-import {SaleadminComponent} from "./components/saleadmin/saleadmin.component";
-import {NewOfferComponent} from "./components/new-offer/new-offer.component";
+import {SaleadminComponent} from "./components/admin/saleadmin/saleadmin.component";
+import {NewOfferComponent} from "./components/admin/new-offer/new-offer.component";
+import {AuthGuard} from "./guards/auth.guard";
+import {PaymentComponent} from "./components/payment/payment.component";
+import {WelcomeComponent} from "./components/welcome/welcome.component";
 
 
 export const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'productpage', component:ProductpageComponent},
   {path: 'offers', component: OffersComponent},
-  {path: 'adminpage', component:AdminpageComponent},
-  {path: 'adminpage', component:AdminpageComponent},
-  {path: 'new-offer', component:NewOfferComponent},
-  {path: 'sales', component:SaleadminComponent},
+  {path:"single-offer/:id", component:SingleOfferComponent},
+
+  {path: 'adminpage', component:AdminpageComponent, canActivate:[AuthGuard]},
+  {path: 'new-offer', component:NewOfferComponent, canActivate:[AuthGuard]},
+  {path: 'sales', component:SaleadminComponent, canActivate:[AuthGuard]},
+
+  {path: 'welcome', component:WelcomeComponent, canActivate:[AuthGuard]},
 
   {path:"registration", component:AccountcreationComponent},
   {path:"activation", component:ActivationComponent},
   {path:"connection", component:ConnectionComponent},
-  {path:"single-offer/:id", component:SingleOfferComponent},
+
+  {path:"payment", component:PaymentComponent, canActivate:[AuthGuard]},
 
   {path:"legalinformation", component:LegalinformationComponent},
 

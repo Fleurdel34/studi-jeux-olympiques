@@ -7,5 +7,6 @@ export class User{
   username!: string;
   password!: string;
   active!: boolean;
+  role!:string;
 
 }

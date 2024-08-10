@@ -33,8 +33,10 @@
                             router.url === '/activation' ||
                             router.url === '/connection'  ||
                             router.url === '/productpage' ||
+                            router.url === '/offers' ||
                             router.url === '/adminpage' ||
-                            router.url === '/offers')">
+                            router.url === '/sales' ||
+                            router.url === '/new-offer')">
         <button (click)="onRedirectBackHomePage()">
           <i class="fa-solid fa-arrow-left"></i>
         </button>
@@ -63,7 +65,7 @@
         Paralympiques Paris 2024
       </h1>
     </ng-container>
-    <ng-container *ngIf="router.url.includes('/adminpage')">
+    <ng-container *ngIf="(router.url === '/adminpage' || router.url === '/sales' || router.url === '/new-offer')">
         <h1 class="titleAdmin">
           Bienvenue sur la page de<br>
           l'administrateur<br>

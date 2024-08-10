@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {DataService} from "../../service/data.service";
+import {DataService} from "../../../service/data.service";
 import {AsyncPipe, NgFor, TitleCasePipe} from "@angular/common";
 import {Observable} from "rxjs";
-import {Offer} from "../../models/offer";
+import {Offer} from "../../../models/offer";
 import {Router} from "@angular/router";
 
 @Component({

@@ -31,6 +31,4 @@ export class SingleOfferComponent implements OnInit{
   onSubmit(){
     this.router.navigateByUrl("/connection");
   }
-
-  protected readonly Object = Object;
 }

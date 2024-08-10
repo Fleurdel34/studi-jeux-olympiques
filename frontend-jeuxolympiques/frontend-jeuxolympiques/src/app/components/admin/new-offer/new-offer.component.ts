@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {DataService} from "../../service/data.service";
 import {Router} from "@angular/router";
 import {AsyncPipe, NgIf} from "@angular/common";
+import {DataService} from "../../../service/data.service";
 
 @Component({
   selector: 'app-new-offer',
