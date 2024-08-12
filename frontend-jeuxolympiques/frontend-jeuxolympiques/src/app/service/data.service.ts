@@ -34,7 +34,7 @@ export class DataService {
       .subscribe();
   }
 
-  PutOffer(offerId:number,formValue: FormGroup ) {
+  putOffer(offerId:number,formValue: FormGroup ) {
     this.http.put(`${this.urlOffers}/${offerId}`, formValue)}
 
   deleteOfferById(offerId:number): Observable<Offer>{

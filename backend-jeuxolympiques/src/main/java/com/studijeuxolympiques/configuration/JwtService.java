@@ -88,6 +88,7 @@ public class JwtService {
 
         this.jwtRepository.save(jwt);
         jwtMap.put(REFRESH, refreshToken.getValue());
+        jwtMap.put("id", String.valueOf(user.getId()));
         return jwtMap;
     }
 

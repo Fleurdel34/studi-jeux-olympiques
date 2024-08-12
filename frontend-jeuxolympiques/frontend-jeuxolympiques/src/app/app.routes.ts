@@ -26,11 +26,11 @@ export const routes: Routes = [
   {path: 'new-offer', component:NewOfferComponent, canActivate:[AuthGuard]},
   {path: 'sales', component:SaleadminComponent, canActivate:[AuthGuard]},
 
-  {path: 'welcome', component:WelcomeComponent, canActivate:[AuthGuard]},
-
   {path:"registration", component:AccountcreationComponent},
   {path:"activation", component:ActivationComponent},
   {path:"connection", component:ConnectionComponent},
+  {path:"welcome/:id", component:WelcomeComponent, canActivate:[AuthGuard]},
+
 
   {path:"payment", component:PaymentComponent, canActivate:[AuthGuard]},
 

@@ -1,10 +1,10 @@
 import {Injectable} from "@angular/core";
-import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
-import {catchError, map, Observable, throwError} from "rxjs";
-import {Offer} from "../models/offer";
+import {Observable} from "rxjs";
 import {User} from "../models/user";
+
 
 
 @Injectable({
@@ -13,6 +13,7 @@ import {User} from "../models/user";
 export class AuthService {
 
   urlConnection: string ='http://localhost:8080/api/users/connection'
+
 
   constructor(private http: HttpClient, private router: Router) {
   }
@@ -25,13 +26,20 @@ export class AuthService {
   connectionAccount(formValue: FormGroup){
     this.http.post(this.urlConnection, formValue)
       .subscribe((res: any) => {
-        localStorage.setItem('bearer', res.token);
+        localStorage.setItem('bearer', res.bearer);
+        localStorage.setItem('id', res.id);
       });
   }
 
-  getUserById(userId:number): Observable<User[]>{
-    return this.http.get<User[]>(`${this.urlConnection}/${userId}`);
+
+  getUserById(userId:number): Observable<User>{
+    return this.http.get<User>(`${this.urlConnection}/${userId}`);
   }
+
+  getId(){
+    return localStorage.getItem('id');
+  }
+
 
   /**recover the token for authentication*/
   getToken() {
