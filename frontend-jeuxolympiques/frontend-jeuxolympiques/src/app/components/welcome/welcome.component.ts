@@ -1,15 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {User} from "../../models/user";
 import {AuthService} from "../../service/auth.service";
-import {AsyncPipe} from "@angular/common";
+import {AsyncPipe, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-welcome',
   standalone: true,
   imports: [
-    AsyncPipe
+    AsyncPipe,
+    NgIf
   ],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.css'
@@ -17,16 +18,24 @@ import {AsyncPipe} from "@angular/common";
 export class WelcomeComponent implements OnInit{
   user$!:Observable<User>;
 
-  constructor(private auth: AuthService, private route:ActivatedRoute) {
+  constructor(private router: Router, private auth: AuthService, private route:ActivatedRoute) {
   }
 
-  /*to recover one user with data service and method get by id*/
+  /**to recover one user with data service and method get by id*/
   ngOnInit() {
     let userId = +this.route.snapshot.params['id']
     this.user$ = this.auth.getUserById(userId);
   };
 
-  onSubmit(userRole:string){
-
+  /**to recover role with data service to redirect with the correct path */
+  onSubmit(userRole: Object){
+    let role = userRole
+    console.log(role)
+    if( userRole === 'ADMIN'){
+      this.router.navigateByUrl('adminpage');
+    }else if ( userRole === 'USER'){
+      this.router.navigateByUrl('payment');
+    }
   }
+
 }

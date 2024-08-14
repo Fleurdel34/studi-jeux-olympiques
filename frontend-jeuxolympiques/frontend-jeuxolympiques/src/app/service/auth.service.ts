@@ -1,10 +1,9 @@
 import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 import {Observable} from "rxjs";
 import {User} from "../models/user";
-
 
 
 @Injectable({
@@ -14,15 +13,15 @@ export class AuthService {
 
   urlConnection: string ='http://localhost:8080/api/users/connection'
 
+  urlUser: string ='http://localhost:8080/api/users'
 
   constructor(private http: HttpClient, private router: Router) {
   }
 
   /**
-   * Request post with form object to authentication in data base
+   * Request post with form object to authentication in database
    * @param formValue
    */
-
   connectionAccount(formValue: FormGroup){
     this.http.post(this.urlConnection, formValue)
       .subscribe((res: any) => {
@@ -32,10 +31,15 @@ export class AuthService {
   }
 
 
+  /**
+   * Request get with to recover one user id in data base
+   * @param userId
+   */
   getUserById(userId:number): Observable<User>{
-    return this.http.get<User>(`${this.urlConnection}/${userId}`);
+   return this.http.get<User>(`${this.urlUser}/${userId}`);
   }
 
+  /**recover id user authenticated*/
   getId(){
     return localStorage.getItem('id');
   }
@@ -46,12 +50,13 @@ export class AuthService {
     return localStorage.getItem('bearer');
   }
 
-  /*delete token for disconnection*/
+  /**delete token for disconnection*/
   logOut(){
     localStorage.removeItem('bearer');
+    localStorage.removeItem('id');
     let token = localStorage.getItem('bearer');
-    if (token == null) {
-      this.router.navigate(['connection']);
+    if (token === null) {
+      this.router.navigateByUrl('/connection');
     }
   }
 }

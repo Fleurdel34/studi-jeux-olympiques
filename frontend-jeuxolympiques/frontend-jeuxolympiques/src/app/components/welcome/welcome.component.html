@@ -1,5 +1,7 @@
-<div *ngif="user$ | async as user">
-  <h2>Bievenue {{user.firstname}} {{user.lastname}}</h2>
-  <p>Cliquez sur le bouton pour accèder à vos ou votre service</p>
-  <button (click)=onSubmit(user.role)>Poursuivre</button>
-</div>
+<section>
+  <div *ngIf="user$ | async as user">
+    <h2>Bienvenue {{user.firstname}} {{user.lastname}} </h2>
+    <p>Cliquez sur le bouton pour accèder à vos ou votre service(s)</p>
+    <button (click)=onSubmit(user.role)>Poursuivre</button>
+  </div>
+</section>

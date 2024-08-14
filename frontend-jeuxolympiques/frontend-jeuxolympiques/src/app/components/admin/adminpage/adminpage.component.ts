@@ -19,17 +19,17 @@ export class AdminpageComponent implements OnInit{
   constructor(public data:DataService, private route:Router) {
   }
 
-  /*to recover all offers with data service*/
+  /**to recover all offers with data service*/
   ngOnInit() {
     this.offer$ = this.data.getAllOffers();
   }
 
-  /*to see the sales by offer*/
+  /**to see the sales by offer*/
   viewSales(){
     this.route.navigateByUrl("/sales");
   }
 
-  /*to create new offer*/
+  /**to create new offer*/
   addNewOffer(){
     this.route.navigateByUrl("/new-offer");
   }
