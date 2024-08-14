@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {catchError, Observable, take} from "rxjs";
 import {Offer} from "../models/offer";
 import {FormGroup} from "@angular/forms";
@@ -36,9 +36,16 @@ export class DataService {
       .subscribe();
   }
 
-  putOffer(offerId:number,formValue: FormGroup ) {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('bearer')}`)
-    this.http.put(`${this.urlOffers}/${offerId}`, formValue)}
+  putOffer(offerId:number, formValue: FormGroup) {
+    this.http.put(`${this.urlOffers}/${offerId}`, formValue).subscribe({
+      next: res => {
+        console.log('Update successful');
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
+    })
+  }
 
   /**delete an offer with role Admin and with id offer*/
 
