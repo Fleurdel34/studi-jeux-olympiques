@@ -8,15 +8,13 @@
       <p id="offerDescription">{{offer.description }}</p>
       <p>Prix: {{offer.price}}€</p>
       <p>Nombre billets: {{offer.quantity}}</p>
+      <button type="submit" class="buttonOffer">Modifier</button>
+      <button type="submit" class="buttonOffer" (click)="deleteOffer(offer.id)">Supprimer</button>
     </div>
-    <div class="checkbox">
-      <input type="checkbox" name="checkbox"/>
-    </div>
+
   </div>
   <div class="buttons">
     <button type="submit" (click)="addNewOffer()"> Créer</button>
-    <button type="submit">Modifier</button>
-    <button type="submit">Supprimer</button>
   </div>
     <button (click)="viewSales()" id="buttonLink">Visualiser les ventes</button>
 </section>

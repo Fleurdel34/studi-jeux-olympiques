@@ -27,15 +27,18 @@ section{
   margin-top: 50px;
 }
 
-.checkbox{
-  padding-top: 15px;
-  width:100%;
+.buttonOffer{
+  border-radius: 20px;
+  background-color: #38bbd8;
+  border: none;
+  color:#ffffff;
+  height: 50px;
+  width:30%;
+  font-size: 18px;
+  margin-top:40px;
+  margin-right: 50px;
 }
 
-input{
-  width:30px;
-  height: 30px;
-}
 
 .buttons{
   width: 100%;

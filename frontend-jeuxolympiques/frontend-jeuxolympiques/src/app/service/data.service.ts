@@ -27,6 +27,7 @@ export class DataService {
     return this.http.get<Offer[]>(`${this.urlOffers}/${offerId}`);
   }
 
+  /**create a new offer with role Admin*/
   createOffer(formValue: FormGroup) {
     this.http.post(this.urlOffers, formValue)
       .pipe(take(1), catchError(err => {
@@ -39,9 +40,17 @@ export class DataService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('bearer')}`)
     this.http.put(`${this.urlOffers}/${offerId}`, formValue)}
 
-  deleteOfferById(offerId:number): Observable<Offer>{
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('bearer')}`)
-    return this.http.delete<Offer>(`${this.urlOffers}/${offerId}`);
+  /**delete an offer with role Admin and with id offer*/
+
+  deleteOfferById(offerId:number){
+    this.http.delete<void>(`${this.urlOffers}/${offerId}`).subscribe({
+      next: res => {
+        console.log('Delete successful');
+      },
+        error: error => {
+        console.error('There was an error!', error);
+      }
+    })
   }
 
   /**recover the token for authentication*/

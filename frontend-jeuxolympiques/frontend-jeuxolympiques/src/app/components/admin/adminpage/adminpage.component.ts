@@ -33,4 +33,9 @@ export class AdminpageComponent implements OnInit{
   addNewOffer(){
     this.route.navigateByUrl("/new-offer");
   }
+
+  /**to delete one offer*/
+  deleteOffer(offerId: number) {
+    this.data.deleteOfferById(offerId);
+  }
 }

@@ -29,11 +29,11 @@ export class WelcomeComponent implements OnInit{
 
   /**to recover role with data service to redirect with the correct path */
   onSubmit(userRole: Object){
-    let role = userRole
-    console.log(role)
-    if( userRole === 'ADMIN'){
+    let role = Object.values(userRole);
+    console.log()
+    if(role[1] === 'ADMIN'){
       this.router.navigateByUrl('adminpage');
-    }else if ( userRole === 'USER'){
+    }else if (role[1] === 'USER'){
       this.router.navigateByUrl('payment');
     }
   }
