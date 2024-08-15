@@ -27,6 +27,7 @@ export class AuthService {
       .subscribe((res: any) => {
         localStorage.setItem('bearer', res.bearer);
         localStorage.setItem('id', res.id);
+        localStorage.setItem('role', res.role);
       });
   }
 
@@ -44,16 +45,22 @@ export class AuthService {
     return localStorage.getItem('id');
   }
 
-
   /**recover the token for authentication*/
   getToken() {
     return localStorage.getItem('bearer');
   }
 
+  /**recover the token for authentication*/
+  getRole() {
+    return localStorage.getItem('role');
+  }
+
+
   /**delete token for disconnection*/
   logOut(){
     localStorage.removeItem('bearer');
     localStorage.removeItem('id');
+    localStorage.removeItem('role');
     let token = localStorage.getItem('bearer');
     if (token === null) {
       this.router.navigateByUrl('/connection');

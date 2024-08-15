@@ -22,6 +22,7 @@ export function authInterceptors (req: HttpRequest<unknown>, next: HttpHandlerFn
         catchError((error: HttpErrorResponse) => {
           localStorage.removeItem('bearer');
           localStorage.removeItem('id');
+          localStorage.removeItem('role');
           route.navigateByUrl('connection');
           return throwError(()=>error) })
       );

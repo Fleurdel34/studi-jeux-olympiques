@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate{
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean
   {
-    if(!this.authService.getToken()){
+    if(!this.authService.getToken() && !this.authService.getRole()){
       window.alert("Accès refusé!");
       this.router.navigateByUrl('/connection');
       return false;

@@ -7,8 +7,12 @@
     <list default="true" id="9554a597-5062-4333-b599-c9f641a52987" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/configuration/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/configuration/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/welcome/welcome.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/welcome/welcome.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/guards/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/guards/auth.guard.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/interceptors/auth.interceptors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/interceptors/auth.interceptors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/interceptors/data.interceptors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/interceptors/data.interceptors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/data.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -363,7 +367,9 @@
       <workItem from="1723633652875" duration="8161000" />
       <workItem from="1723654734287" duration="3414000" />
       <workItem from="1723697158241" duration="5509000" />
-      <workItem from="1723718945973" duration="8288000" />
+      <workItem from="1723718945973" duration="8496000" />
+      <workItem from="1723738979208" duration="3686000" />
+      <workItem from="1723743052908" duration="1372000" />
     </task>
     <servers />
   </component>

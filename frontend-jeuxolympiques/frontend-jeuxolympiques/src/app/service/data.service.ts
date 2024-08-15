@@ -65,14 +65,4 @@ export class DataService {
     return localStorage.getItem('bearer');
   }
 
-  /**delete token for disconnection*/
-  clearJwtExpired(){
-    localStorage.removeItem('bearer');
-    localStorage.removeItem('id');
-    let token = localStorage.getItem('bearer');
-    if (token === null) {
-      this.router.navigateByUrl('/connection');
-    }
-  }
-
 }

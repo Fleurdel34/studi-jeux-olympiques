@@ -77,6 +77,7 @@ public class JwtService {
 
         this.jwtRepository.save(jwt);
         jwtMap.put("id", String.valueOf(user.getId()));
+        jwtMap.put("role", String.valueOf(user.getRole()));
         return jwtMap;
     }
 
