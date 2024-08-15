@@ -14,6 +14,7 @@ import {SaleadminComponent} from "./components/admin/saleadmin/saleadmin.compone
 import {NewOfferComponent} from "./components/admin/new-offer/new-offer.component";
 import {PaymentComponent} from "./components/payment/payment.component";
 import {WelcomeComponent} from "./components/welcome/welcome.component";
+import {UpdateOfferComponent} from "./components/admin/update-offer/update-offer.component";
 
 @Component({
   selector: 'app-root',
@@ -32,7 +33,8 @@ import {WelcomeComponent} from "./components/welcome/welcome.component";
     SaleadminComponent,
     NewOfferComponent,
     PaymentComponent,
-    WelcomeComponent],
+    WelcomeComponent,
+    UpdateOfferComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

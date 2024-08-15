@@ -14,6 +14,7 @@ import {NewOfferComponent} from "./components/admin/new-offer/new-offer.componen
 import {AuthGuard} from "./guards/auth.guard";
 import {PaymentComponent} from "./components/payment/payment.component";
 import {WelcomeComponent} from "./components/welcome/welcome.component";
+import {UpdateOfferComponent} from "./components/admin/update-offer/update-offer.component";
 
 
 export const routes: Routes = [
@@ -25,6 +26,7 @@ export const routes: Routes = [
   {path: 'adminpage', component:AdminpageComponent, canActivate:[AuthGuard]},
   {path: 'new-offer', component:NewOfferComponent, canActivate:[AuthGuard]},
   {path: 'sales', component:SaleadminComponent, canActivate:[AuthGuard]},
+  {path: 'update-offer/:id', component: UpdateOfferComponent, canActivate:[AuthGuard]},
 
   {path:"registration", component:AccountcreationComponent},
   {path:"activation", component:ActivationComponent},

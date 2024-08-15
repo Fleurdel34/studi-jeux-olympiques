@@ -1,8 +1,15 @@
 <section>
-  <form [formGroup]="offerForm">
-    <div class="title">
-      <h2>Veuillez saisir les éléments de l'offre:</h2>
-    </div>
+  <h2>Rappel du contenu de l'offre:</h2>
+  <div *ngFor="let offer of offer$ | async"  class="offers">
+    <h3 class="titleOffer">Choix: {{offer.name}}</h3>
+    <p> Description: {{offer.description}}</p>
+    <p>Nombre de billets: {{offer.quantity}}</p>
+    <p>Total: {{offer.price}} €</p>
+  </div>
+  <div>
+    <h2>Veuillez saisir les éléments conservés et saisir ceux modifiés:</h2>
+  </div>
+  <form [formGroup]="offerUpdateForm">
     <div class="form">
       <div class="label">
         <label for="name">Nom:</label>

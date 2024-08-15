@@ -9,14 +9,13 @@
                             router.url === '/connection'  ||
                             router.url === '/productpage' ||
                             router.url === '/offers' ||
-                            router.url === '/sales' ||
                             router.url === 'single-offer')">
       <button (click)="onRedirectConnectionPage()">
         <i class="fa-solid fa-user"></i>
       </button>
       <li>Se connecter</li>
       </ng-container>
-      <ng-container *ngIf="(router.url === '/adminpage')">
+      <ng-container *ngIf="(router.url === '/adminpage' || router.url === '/sales' || router.url === '/new-offer')">
         <div class="divAdmin">
           <div>
             <button (click)="buttonShowHide()"><i class="fa-solid fa-user"></i></button>
@@ -31,6 +30,20 @@
         </div>
       </ng-container>
       <ng-container *ngIf="router.url.includes('/welcome')">
+        <div class="divAdmin">
+          <div>
+            <button (click)="buttonShowHide()"><i class="fa-solid fa-user"></i></button>
+          </div>
+          <div class="logIn" *ngIf="showMe">
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="buttonLogOut" *ngIf="hideMe">
+            <i class="fa-solid fa-chevron-up"></i>
+            <button class="logOut" (click)="doLogOut()">Me Déconnecter</button>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="router.url.includes('/update-offer')">
         <div class="divAdmin">
           <div>
             <button (click)="buttonShowHide()"><i class="fa-solid fa-user"></i></button>
@@ -75,6 +88,12 @@
         </button>
         <li>Accueil</li>
       </ng-container>
+      <ng-container *ngIf="router.url.includes('/update-offer')">
+        <button (click)="onRedirectBackHomePage()">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <li>Accueil</li>
+      </ng-container>
     </ul>
   </nav>
   <div class="header-logo">
@@ -110,6 +129,14 @@
       <h1>
         Jeux Olympiques et<br>
         Paralympiques de Paris 2024
+      </h1>
+    </ng-container>
+    <ng-container *ngIf="router.url.includes('/update-offer')">
+      <h1 class="titleAdmin">
+        Bienvenue sur la page de<br>
+        l'administrateur<br>
+        Jeux Olympiques et<br>
+        Paralympiques Paris 2024
       </h1>
     </ng-container>
   </div>

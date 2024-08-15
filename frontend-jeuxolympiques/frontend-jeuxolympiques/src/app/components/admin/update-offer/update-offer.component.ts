@@ -3,13 +3,16 @@ import {Observable} from "rxjs";
 import {Offer} from "../../../models/offer";
 import {ActivatedRoute, Router} from "@angular/router";
 import {DataService} from "../../../service/data.service";
-import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {AsyncPipe, NgFor} from "@angular/common";
 
 @Component({
   selector: 'app-update-offer',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AsyncPipe,
+    NgFor
   ],
   templateUrl: './update-offer.component.html',
   styleUrl: './update-offer.component.css'
@@ -17,7 +20,7 @@ import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 export class UpdateOfferComponent implements OnInit{
 
   offer$!:Observable<Offer[]>;
-  offerForm!:FormGroup;
+  offerUpdateForm!:FormGroup;
 
   constructor(private router: Router, private data: DataService, private route:ActivatedRoute, private formBuilder: FormBuilder,) {
   }
@@ -26,15 +29,24 @@ export class UpdateOfferComponent implements OnInit{
   ngOnInit() {
     let offerId = +this.route.snapshot.params['id']
     this.offer$ = this.data.getOfferById(offerId);
+
+    this.offerUpdateForm = this.formBuilder.group({
+      name:[null,[Validators.required]],
+      description:[null,[Validators.required]],
+      price:[null,[Validators.required]],
+      quantity:[null,[Validators.required]]
+
+    })
   };
 
-  onSubmitForm(offerId:number){
-    if(this.offerForm.invalid) {
+  onSubmitForm(){
+    if(this.offerUpdateForm.invalid) {
       alert("La saisie de votre formulaire est incomplète!");
     } else {
-      let formValue = this.offerForm.value;
+      let offerId = +this.route.snapshot.params['id']
+      let formValue = this.offerUpdateForm.value;
       this.data.putOffer(offerId, formValue);
-      this.offerForm.reset();
+      this.offerUpdateForm.reset();
       this.router.navigateByUrl('/adminpage');
     }
   }
