@@ -7,6 +7,7 @@ import {dataInterceptors} from "./interceptors/data.interceptors";
 
 
 
+
 export let appConfig: ApplicationConfig;
 appConfig = {
   providers: [provideZoneChangeDetection({eventCoalescing: true}),
