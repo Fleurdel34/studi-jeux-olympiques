@@ -1,1 +1,37 @@
-<p>payment works!</p>
+<section>
+  <div>
+    <h2>Votre commande:</h2>
+  </div>
+  <div>
+    <button (click)="onChangeOrDelete()">Modifier mot de passe</button>
+    <button (click)="onChangeOrDelete()">Supprimer mon compte</button>
+  </div>
+<form [formGroup]="paymentForm">
+  <div class="title">
+    <h2>Veuillez saisir vos informations bancaies:</h2>
+  </div>
+  <div class="form">
+    <div class="label">
+      <label for="name">Titulaire de la carte</label>
+      <input type="text" id="name" name="name" formControlName="name"/>
+    </div>
+    <div class="label">
+      <label for="numberCard">Numero de la carte</label>
+      <input type="number" id="numberCard" name="numberCard" formControlName="numberCard"/>
+    </div>
+    <div class="label">
+      <label for="date">Date d'Expiration</label>
+      <input type="date" id="date" name="date" formControlName="date"/>
+    </div>
+    <div class="label">
+      <label for="code">Code de sécurité</label>
+      <input type="number" id="code" name="code" formControlName="code"/>
+    </div>
+  </div>
+  <div class="buttonSubmit" *ngFor="let offer of offer$ | async">
+      <h3>{{offer.name}}</h3>
+      <p>Prix:{{offer.price}}€</p>
+      <button type="submit" (click)="onSubmitForm(offer.name, offer.price)">Payer</button>
+  </div>
+</form>
+</section>

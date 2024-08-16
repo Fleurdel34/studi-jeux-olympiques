@@ -50,4 +50,7 @@ export class HeaderComponent implements OnInit {
     this.auth.logOut();
   }
 
+   changeAndDelete(){
+
+   }
 }

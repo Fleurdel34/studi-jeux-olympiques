@@ -52,7 +52,6 @@ public class SpringSecurityConfig {
                             authorize.requestMatchers(POST, "/api/users/connection").permitAll();
                             authorize.requestMatchers(GET, "/api/offers").permitAll();
                             authorize.requestMatchers(GET, "/api/offers/{id}").permitAll();
-
                             authorize.anyRequest().authenticated();
                     })
                     .sessionManagement(httpSecuritySessionManagementConfigurer ->

@@ -1,12 +1,14 @@
 package com.studijeuxolympiques.service.Impl;
 
-
 import com.studijeuxolympiques.model.User;
 import com.studijeuxolympiques.model.Validation;
 import com.studijeuxolympiques.repository.ValidationRepository;
 import com.studijeuxolympiques.service.ValidationService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.util.Random;
@@ -20,9 +22,11 @@ import static java.time.temporal.ChronoUnit.MINUTES;
  */
 
 
+@Transactional
 @Service
 public class ValidationServiceImpl implements ValidationService {
 
+    private static final Logger log = LoggerFactory.getLogger(ValidationServiceImpl.class);
     private final ValidationRepository validationRepository;
 
     private final NotificationServiceImpl notificationServiceImpl;
