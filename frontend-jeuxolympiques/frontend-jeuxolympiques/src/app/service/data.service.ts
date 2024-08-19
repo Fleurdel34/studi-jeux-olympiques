@@ -66,8 +66,8 @@ export class DataService {
     return localStorage.getItem('bearer');
   }
 
-  createPayment(formValue: FormGroup, nameTransaction: string, price: number) {
-    this.http.post(this.urlPayment, [formValue, nameTransaction, price])
+  createPayment(formValue: FormGroup) {
+    this.http.post(this.urlPayment, formValue)
       .pipe(take(1), catchError(err => {
         throw 'error in source. Details: ' + err;
       }))

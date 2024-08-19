@@ -5,14 +5,14 @@ import { AbstractControl, ValidatorFn, ValidationErrors } from "@angular/forms";
  * @export
  */
 export function minDateValidator(minDate: Date): ValidatorFn {
-  return (control: AbstractControl): ValidationErrors | null => {
+  return (control: AbstractControl<Date>): ValidationErrors | null => {
 
     const date = new Date(control.value);
 
-    if (minDate.getTime() < date.getTime()) {
+    if (minDate.getTime() > date.getTime()) {
       return null;
     } else {
-      return { 'min': { value: control.value, expected: minDate } };
+      return { minDateValidator: control.value };
     }
   };
 }

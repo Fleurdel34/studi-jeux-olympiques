@@ -40,8 +40,6 @@ public class PaymentServiceImpl implements PaymentService {
         payment.setKeyTransaction(keyTransaction);
         Long accountNumberHash = (long) payment.getAccountNumber().hashCode();
         payment.setAccountNumber(accountNumberHash);
-        Date date= Date.from(Instant.now());
-        payment.setDate(date);
         this.paymentRepository.save(payment);
     }
 

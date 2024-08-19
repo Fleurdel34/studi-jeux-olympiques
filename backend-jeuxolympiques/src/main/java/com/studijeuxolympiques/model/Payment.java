@@ -1,5 +1,6 @@
 package com.studijeuxolympiques.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -38,6 +39,7 @@ public class Payment {
             nullable = false
     )
 
+    @JsonFormat(pattern="MM-yyyy")
     private Date date;
     @Column(
             nullable = false
@@ -65,9 +67,10 @@ public class Payment {
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Payment(String holder, Long accountNumber, Integer code, String nameTransaction, float price) {
+    public Payment(String holder, Long accountNumber, Integer code, String nameTransaction, float price, Date date) {
         this.holder = holder;
         this.accountNumber = accountNumber;
+        this.date = date;
         this.code = code;
         this.nameTransaction = nameTransaction;
         this.price = price;

@@ -5,7 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {minDateValidator} from "../../validators/date.validator";
 import {Observable} from "rxjs";
 import {Offer} from "../../models/offer";
-import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
+import {AsyncPipe, NgForOf, NgIf, TitleCasePipe} from "@angular/common";
 
 @Component({
   selector: 'app-payment',
@@ -15,7 +15,8 @@ import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
     ReactiveFormsModule,
     AsyncPipe,
     NgForOf,
-    NgIf
+    NgIf,
+    TitleCasePipe
   ],
   templateUrl: './payment.component.html',
   styleUrl: './payment.component.css'
@@ -32,9 +33,10 @@ export class PaymentComponent implements OnInit{
 
 
   ngOnInit(){
+
     this.paymentForm = this.formBuilder.group({
-      name:[null,[Validators.required]],
-      numberCard:[null,[Validators.required, Validators.minLength(16), Validators.maxLength(16)]],
+      holder:[null,[Validators.required]],
+      accountNumber:[null,[Validators.required, Validators.minLength(16), Validators.maxLength(19)]],
       date:[null,[Validators.required, minDateValidator]],
       code:[null,[Validators.required, Validators.minLength(3), Validators.maxLength(3)]]
     })
@@ -45,10 +47,13 @@ export class PaymentComponent implements OnInit{
 
   onSubmitForm(offerName:string, offerPrice:number) {
     if (this.paymentForm.invalid) {
-      alert("La saisie de votre formulaire est incomplète!");
+      alert("La saisie de votre formulaire est incomplète ou erronée!");
     } else {
       let formValue = this.paymentForm.value;
-      this.data.createPayment(formValue, offerName, offerPrice);
+      formValue.nameTransaction = offerName;
+      formValue.price = offerPrice;
+      console.log(formValue);
+      this.data.createPayment(formValue);
       this.paymentForm.reset();
       localStorage.removeItem("offerId");
       this.route.navigateByUrl("pageQrCode");
