@@ -1,8 +1,12 @@
 package com.studijeuxolympiques.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
+
 
 /**Build Class Payment
  * Set up properties (id, n, holder, accountNumber, date, code, nameOffer and priceOffer)
@@ -11,6 +15,8 @@ import java.util.Date;
  */
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "transaction")
 public class Payment {
@@ -27,7 +33,7 @@ public class Payment {
             nullable = false
     )
 
-    private Integer accountNumber;
+    private Long accountNumber;
     @Column(
             nullable = false
     )
@@ -50,12 +56,20 @@ public class Payment {
     private float price;
     @Column(
             nullable = false
+
     )
 
-    @OneToOne
-    private KeyTransaction keyTransaction;
+    private String keyTransaction;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
+    public Payment(String holder, Long accountNumber, Integer code, String nameTransaction, float price) {
+        this.holder = holder;
+        this.accountNumber = accountNumber;
+        this.code = code;
+        this.nameTransaction = nameTransaction;
+        this.price = price;
+    }
 }

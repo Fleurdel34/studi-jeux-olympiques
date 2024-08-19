@@ -6,13 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="9554a597-5062-4333-b599-c9f641a52987" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/configuration/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/configuration/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/welcome/welcome.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/welcome/welcome.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/guards/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/guards/auth.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/interceptors/auth.interceptors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/interceptors/auth.interceptors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/interceptors/data.interceptors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/interceptors/data.interceptors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/data.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/enumerations/TypePermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/enumerations/TypePermission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/enumerations/TypeRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/enumerations/TypeRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/model/KeyTransaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/model/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/model/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/repository/KeyTransactionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/Impl/KeyTransactionServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/Impl/PaymentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/Impl/PaymentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/KeyTransactionService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Record" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -55,7 +58,7 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -369,7 +372,14 @@
       <workItem from="1723697158241" duration="5509000" />
       <workItem from="1723718945973" duration="8496000" />
       <workItem from="1723738979208" duration="3686000" />
-      <workItem from="1723743052908" duration="1372000" />
+      <workItem from="1723743052908" duration="1463000" />
+      <workItem from="1723783330002" duration="16796000" />
+      <workItem from="1723804968918" duration="5895000" />
+      <workItem from="1723825547405" duration="6870000" />
+      <workItem from="1723967631633" duration="6440000" />
+      <workItem from="1724002062714" duration="4912000" />
+      <workItem from="1724043525793" duration="49000" />
+      <workItem from="1724043732594" duration="6135000" />
     </task>
     <servers />
   </component>
@@ -386,5 +396,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/service/Impl/PaymentServiceImpl.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

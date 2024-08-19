@@ -1,16 +1,14 @@
 package com.studijeuxolympiques.controller;
 
-import com.studijeuxolympiques.configuration.JwtService;
-import com.studijeuxolympiques.dto.AuthenticationDTO;
-import com.studijeuxolympiques.dto.OfferDTO;
+
 import com.studijeuxolympiques.dto.PaymentDTO;
 import com.studijeuxolympiques.model.Payment;
-import com.studijeuxolympiques.service.KeyTransactionService;
 import com.studijeuxolympiques.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
+
 import java.util.stream.Stream;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -29,18 +27,17 @@ public class PaymentController {
 
 
      final private PaymentService paymentService;
-     final private KeyTransactionService keyTransactionService;
+
 
     @Autowired
-    public PaymentController(PaymentService paymentService, KeyTransactionService keyTransactionService) {
+    public PaymentController(PaymentService paymentService) {
         this.paymentService = paymentService;
-        this.keyTransactionService = keyTransactionService;
     }
 
+    @PreAuthorize("hasAuthority('USER_CREATE_PAYMENT')")
     @PostMapping("/transaction")
     public void createTransaction(@RequestBody Payment payment) {
         this.paymentService.createPayment(payment);
-        this.keyTransactionService.createKeyTransaction();
     }
 
     @CrossOrigin(origins = "http://localhost:4200")

@@ -16,7 +16,7 @@ public enum TypePermission {
     ADMIN_UPDATE,
     ADMIN_DELETE,
 
-    USER_CREATE_SALES;
+    USER_CREATE_PAYMENT;
 
     private String wording;
 }
