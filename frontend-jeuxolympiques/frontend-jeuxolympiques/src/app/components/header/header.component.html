@@ -29,7 +29,21 @@
           </div>
         </div>
       </ng-container>
-      <ng-container *ngIf="router.url.includes('/welcome' || 'payement')">
+      <ng-container *ngIf="router.url.includes('/welcome')">
+        <div class="divAdmin">
+          <div>
+            <button (click)="buttonShowHide()"><i class="fa-solid fa-user"></i></button>
+          </div>
+          <div class="logIn" *ngIf="showMe">
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="buttonLogOut" *ngIf="hideMe">
+            <i class="fa-solid fa-chevron-up"></i>
+            <button class="logOut" (click)="doLogOut()">Me Déconnecter</button>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="router.url.includes('/payment')">
         <div class="divAdmin">
           <div>
             <button (click)="buttonShowHide()"><i class="fa-solid fa-user"></i></button>
@@ -126,7 +140,13 @@
         de Paris 2024
       </h1>
     </ng-container>
-    <ng-container *ngIf="router.url.includes('/welcome' || '/payment')">
+    <ng-container *ngIf="router.url.includes('/welcome')">
+      <h1>
+        Jeux Olympiques et<br>
+        Paralympiques de Paris 2024
+      </h1>
+    </ng-container>
+    <ng-container *ngIf="router.url.includes('/payment')">
       <h1>
         Jeux Olympiques et<br>
         Paralympiques de Paris 2024

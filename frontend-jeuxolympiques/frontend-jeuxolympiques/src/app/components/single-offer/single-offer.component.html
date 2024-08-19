@@ -10,7 +10,7 @@
       <p>Nombre de billets: {{offer.quantity}}</p>
       <p>Total: {{offer.price}} €</p>
       <div class="button">
-        <button type="submit" (click)="onSubmit()">
+        <button type="submit" (click)="onSubmit(offer.id)">
           Payer
         </button>
       </div>

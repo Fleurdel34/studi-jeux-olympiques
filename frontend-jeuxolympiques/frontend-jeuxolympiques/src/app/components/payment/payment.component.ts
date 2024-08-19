@@ -30,6 +30,7 @@ export class PaymentComponent implements OnInit{
   /*to recover one offer with data service and method get by id*/
 
 
+
   ngOnInit(){
     this.paymentForm = this.formBuilder.group({
       name:[null,[Validators.required]],
@@ -37,19 +38,19 @@ export class PaymentComponent implements OnInit{
       date:[null,[Validators.required, minDateValidator]],
       code:[null,[Validators.required, Validators.minLength(3), Validators.maxLength(3)]]
     })
-    let offerId = +this.router.snapshot.params['id']
-    this.offer$ = this.data.getOfferById(offerId);
+    let offerId = localStorage.getItem("offerId");
+    let idOffer= Number(offerId);
+    this.offer$ = this.data.getOfferById(idOffer);
   }
 
-  onSubmitForm(offerName:String, offerPrice:Number) {
-    let name=offerName;
-    let price = offerPrice;
+  onSubmitForm(offerName:string, offerPrice:number) {
     if (this.paymentForm.invalid) {
       alert("La saisie de votre formulaire est incomplète!");
     } else {
       let formValue = this.paymentForm.value;
-      /*this.data.createPayment(formValue, name, price);*/
+      this.data.createPayment(formValue, offerName, offerPrice);
       this.paymentForm.reset();
+      localStorage.removeItem("offerId");
       this.route.navigateByUrl("pageQrCode");
     }
   }

@@ -12,6 +12,7 @@ import {Router} from "@angular/router";
 export class DataService {
 
   urlOffers: string = 'http://localhost:8080/api/offers';
+  urlPayment: string = 'http://localhost:8080/api/users/transaction';
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -64,5 +65,14 @@ export class DataService {
   getJwt() {
     return localStorage.getItem('bearer');
   }
+
+  createPayment(formValue: FormGroup, nameTransaction: string, price: number) {
+    this.http.post(this.urlPayment, [formValue, nameTransaction, price])
+      .pipe(take(1), catchError(err => {
+        throw 'error in source. Details: ' + err;
+      }))
+      .subscribe();
+  }
+
 
 }

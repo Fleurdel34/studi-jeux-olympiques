@@ -1,5 +1,6 @@
 package com.studijeuxolympiques.service.Impl;
 
+import com.studijeuxolympiques.dto.OfferDTO;
 import com.studijeuxolympiques.dto.PaymentDTO;
 import com.studijeuxolympiques.model.Payment;
 import com.studijeuxolympiques.model.User;
@@ -50,6 +51,5 @@ public class PaymentServiceImpl implements PaymentService {
         return this.paymentRepository.findByNameTransaction(nameTransaction)
                 .stream().map(payment -> new PaymentDTO(payment.getNameTransaction(), payment.getPrice()));
     }
-
 
 }

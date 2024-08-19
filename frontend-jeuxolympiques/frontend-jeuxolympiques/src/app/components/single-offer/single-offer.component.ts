@@ -28,7 +28,9 @@ export class SingleOfferComponent implements OnInit{
     this.offer$ = this.data.getOfferById(offerId);
   };
 
-  onSubmit(){
+  onSubmit(offerId:number){
     this.router.navigateByUrl("/connection");
+    let idOffer= offerId.toString();
+    localStorage.setItem("offerId", idOffer);
   }
 }

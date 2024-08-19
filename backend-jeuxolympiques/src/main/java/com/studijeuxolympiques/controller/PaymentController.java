@@ -40,9 +40,10 @@ public class PaymentController {
         this.paymentService.createPayment(payment);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    /*@CrossOrigin(origins = "http://localhost:4200")
+    @PreAuthorize("hasAuthority('ADMIN_READ')")
     @GetMapping({"/{nameTransaction}"})
-    public Stream<PaymentDTO> getByNameTransaction(@PathVariable String nameTransaction){
+    public Stream <PaymentDTO>  getByNameTransaction(@PathVariable String nameTransaction){
         return this.paymentService.getByNameTransaction(nameTransaction);
-    }
+    }*/
 }
