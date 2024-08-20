@@ -66,6 +66,8 @@ export class DataService {
     return localStorage.getItem('bearer');
   }
 
+
+  /**create a new transaction with resquest pos*/
   createPayment(formValue: FormGroup) {
     this.http.post(this.urlPayment, formValue)
       .pipe(take(1), catchError(err => {

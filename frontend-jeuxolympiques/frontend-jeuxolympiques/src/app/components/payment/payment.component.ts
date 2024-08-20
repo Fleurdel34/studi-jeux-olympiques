@@ -30,20 +30,20 @@ export class PaymentComponent implements OnInit{
 
   /*to recover one offer with data service and method get by id*/
 
-
-
   ngOnInit(){
 
     this.paymentForm = this.formBuilder.group({
       holder:[null,[Validators.required]],
       accountNumber:[null,[Validators.required, Validators.minLength(16), Validators.maxLength(19)]],
-      date:[null,[Validators.required, minDateValidator]],
+      date:[null,[Validators.required, minDateValidator()]],
       code:[null,[Validators.required, Validators.minLength(3), Validators.maxLength(3)]]
     })
     let offerId = localStorage.getItem("offerId");
     let idOffer= Number(offerId);
     this.offer$ = this.data.getOfferById(idOffer);
   }
+
+  /** to input data form and to select offer, to send at the database*/
 
   onSubmitForm(offerName:string, offerPrice:number) {
     if (this.paymentForm.invalid) {
