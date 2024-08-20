@@ -4,6 +4,7 @@ import {catchError, Observable, take} from "rxjs";
 import {Offer} from "../models/offer";
 import {FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
+import {Payment} from "../models/payment";
 
 
 @Injectable({
@@ -12,7 +13,7 @@ import {Router} from "@angular/router";
 export class DataService {
 
   urlOffers: string = 'http://localhost:8080/api/offers';
-  urlPayment: string = 'http://localhost:8080/api/users/transaction';
+  urlPayment: string = 'http://localhost:8080/api/payment';
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -67,7 +68,7 @@ export class DataService {
   }
 
 
-  /**create a new transaction with resquest pos*/
+  /**create a new transaction with resquest post*/
   createPayment(formValue: FormGroup) {
     this.http.post(this.urlPayment, formValue)
       .pipe(take(1), catchError(err => {
@@ -76,5 +77,8 @@ export class DataService {
       .subscribe();
   }
 
+  getAllPayment(): Observable<Payment[]>{
+    return this.http.get<Payment[]>(this.urlPayment);
+  }
 
 }

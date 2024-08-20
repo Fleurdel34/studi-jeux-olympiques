@@ -20,6 +20,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "transaction")
+
 public class Payment {
 
     @Id
@@ -39,7 +40,7 @@ public class Payment {
             nullable = false
     )
 
-    @JsonFormat(pattern="MM-yyyy")
+    @JsonFormat(shape= JsonFormat.Shape.STRING , pattern="MM-yyyy")
     private Date date;
     @Column(
             nullable = false

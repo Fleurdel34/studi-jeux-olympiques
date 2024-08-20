@@ -3,6 +3,7 @@ package com.studijeuxolympiques.service;
 import com.studijeuxolympiques.dto.PaymentDTO;
 import com.studijeuxolympiques.model.Payment;
 
+import java.util.List;
 import java.util.stream.Stream;
 
 /**
@@ -14,6 +15,7 @@ public interface PaymentService {
 
     void createPayment(Payment payment);
 
-    Stream<PaymentDTO> getByNameTransaction(String nameTransaction);
+    Stream<PaymentDTO> getAllPayments();
+
 
 }

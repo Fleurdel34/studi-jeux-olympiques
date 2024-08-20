@@ -1,6 +1,5 @@
 package com.studijeuxolympiques.controller;
 
-
 import com.studijeuxolympiques.dto.PaymentDTO;
 import com.studijeuxolympiques.model.Payment;
 import com.studijeuxolympiques.service.PaymentService;
@@ -9,11 +8,12 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.util.List;
 import java.util.stream.Stream;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping({"api/users"})
+@RequestMapping({"api/payment"})
 public class PaymentController {
 
 
@@ -35,15 +35,18 @@ public class PaymentController {
     }
 
     @PreAuthorize("hasAuthority('USER_CREATE_PAYMENT')")
-    @PostMapping("/transaction")
+    @PostMapping
     public void createTransaction(@RequestBody Payment payment) {
         this.paymentService.createPayment(payment);
     }
 
-    /*@CrossOrigin(origins = "http://localhost:4200")
+
+    @CrossOrigin(origins = "http://localhost:4200")
     @PreAuthorize("hasAuthority('ADMIN_READ')")
-    @GetMapping({"/{nameTransaction}"})
-    public Stream <PaymentDTO>  getByNameTransaction(@PathVariable String nameTransaction){
-        return this.paymentService.getByNameTransaction(nameTransaction);
-    }*/
+    @GetMapping
+    public Stream <PaymentDTO> getAllPayments(){
+        return this.paymentService.getAllPayments();
+    }
+
+
 }
