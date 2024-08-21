@@ -1,11 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AsyncPipe, DatePipe, NgForOf} from "@angular/common";
-import {Observable} from "rxjs";
-
 import {DataService} from "../../../service/data.service";
 import {Router} from "@angular/router";
-import {Payment} from "../../../models/payment";
-
 
 
 @Component({

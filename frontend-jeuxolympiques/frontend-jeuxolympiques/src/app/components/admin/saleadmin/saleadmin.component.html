@@ -1,15 +1,19 @@
-<div class="cardSale">
-  <h2>Nombre de vente par offre au {{date | date:'d MMMM YYYY' }} :</h2>
-  <div class="divOffers">
-    <p class="paragraphSale">Offre Solo:</p>
-    <p class="paragraphSale">{{sumSolo}}</p>
+<section>
+  <div class="title">
+    <h2>Nombre de vente par offre au {{date | date:'d MMMM YYYY' }} :</h2>
   </div>
-  <div class="divOffers">
-    <p class="paragraphSale">Offre Duo :</p>
-    <p class="paragraphSale">{{sumDuo}}</p>
+  <div class="cardSale">
+    <div class="divOffers">
+      <p class="paragraphSale">Offre Solo:</p>
+      <p class="paragraphSale">{{sumSolo}}</p>
+    </div>
+    <div class="divOffers">
+      <p class="paragraphSale">Offre Duo :</p>
+      <p class="paragraphSale">{{sumDuo}}</p>
+    </div>
+    <div class="divOffers">
+      <p class="paragraphSale paragraphSaleFamilial">Offre Familiale:</p>
+      <p class="paragraphSale">{{sumFamilial}}</p>
+    </div>
   </div>
-  <div class="divOffers">
-    <p class="paragraphSale paragraphSaleFamilial">Offre Familiale:</p>
-    <p class="paragraphSale">{{sumFamilial}}</p>
-  </div>
-</div>
+</section>
