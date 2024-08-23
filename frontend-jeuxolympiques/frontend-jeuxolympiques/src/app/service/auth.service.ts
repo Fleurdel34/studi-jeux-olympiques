@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 import {Observable} from "rxjs";
@@ -61,6 +61,8 @@ export class AuthService {
     localStorage.removeItem('bearer');
     localStorage.removeItem('id');
     localStorage.removeItem('role');
+    localStorage.removeItem('offerId');
+    localStorage.removeItem('idKey');
     let token = localStorage.getItem('bearer');
     if (token === null) {
       this.router.navigateByUrl('/connection');

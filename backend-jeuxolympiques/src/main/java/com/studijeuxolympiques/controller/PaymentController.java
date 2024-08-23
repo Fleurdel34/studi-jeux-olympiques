@@ -8,7 +8,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 
-import java.util.List;
 import java.util.stream.Stream;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -20,7 +19,7 @@ public class PaymentController {
     /**
      * Build class PaymentController
      * Receive the request and provide the response
-     * @property PaymentService
+     * @property TestingPayment
      * @requests Get and Post
      * @request Post to create Payment - to generate jwt token
      */
@@ -36,8 +35,8 @@ public class PaymentController {
 
     @PreAuthorize("hasAuthority('USER_CREATE_PAYMENT')")
     @PostMapping
-    public void createTransaction(@RequestBody Payment payment) {
-        this.paymentService.createPayment(payment);
+    public Long createTransaction(@RequestBody Payment payment) {
+        return this.paymentService.createPayment(payment);
     }
 
 
@@ -47,6 +46,15 @@ public class PaymentController {
     public Stream <PaymentDTO> getAllPayments(){
         return this.paymentService.getAllPayments();
     }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping({"/{id}"})
+    public Stream<PaymentDTO> getPaymentById(@PathVariable Long id){
+        return this.paymentService.getPaymentById(id);
+    }
+
+
+
 
 
 }

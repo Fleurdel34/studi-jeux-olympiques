@@ -22,6 +22,7 @@ export class AdminpageComponent implements OnInit{
   /**to recover all offers with data service*/
   ngOnInit() {
     this.offer$ = this.data.getAllOffers();
+
   }
 
   /**to see the sales by offer*/
@@ -41,6 +42,12 @@ export class AdminpageComponent implements OnInit{
 
   /**to delete one offer*/
   deleteOffer(offerId: number) {
-    this.data.deleteOfferById(offerId);
+    if(window.confirm("Etes vous sûr de vouloir supprimer, l'offre!, " +
+      "Si oui, vous allez être redirigé pour créer une nouvelle offre")){
+      this.data.deleteOfferById(offerId);
+      this.route.navigateByUrl("/new-offer")
+    }else{
+      this.route.navigateByUrl('/adminpage')
+    }
   }
 }

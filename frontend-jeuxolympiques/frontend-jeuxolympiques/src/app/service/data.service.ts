@@ -3,7 +3,6 @@ import {HttpClient} from "@angular/common/http";
 import {catchError, Observable, take} from "rxjs";
 import {Offer} from "../models/offer";
 import {FormGroup} from "@angular/forms";
-import {Router} from "@angular/router";
 import {Payment} from "../models/payment";
 
 
@@ -15,10 +14,10 @@ export class DataService {
   urlOffers: string = 'http://localhost:8080/api/offers';
   urlPayment: string = 'http://localhost:8080/api/payment';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient) {}
 
   /**
-   * Request get to recover all offers and one offer  in data base
+   * Request get to recover all offers and one offer  in database
    * @return an array
    */
 
@@ -52,7 +51,7 @@ export class DataService {
   /**delete an offer with role Admin and with id offer*/
 
   deleteOfferById(offerId:number){
-    this.http.delete<void>(`${this.urlOffers}/${offerId}`).subscribe({
+    return this.http.delete(`${this.urlOffers}/${offerId}`).subscribe({
       next: res => {
         console.log('Delete successful');
       },
@@ -68,17 +67,26 @@ export class DataService {
   }
 
 
-  /**create a new transaction with resquest post*/
+  /**create a new transaction with request post*/
   createPayment(formValue: FormGroup) {
-    this.http.post(this.urlPayment, formValue)
-      .pipe(take(1), catchError(err => {
-        throw 'error in source. Details: ' + err;
-      }))
-      .subscribe();
+    this.http.post(this.urlPayment, formValue).subscribe((res: any) => {
+      localStorage.setItem('idKey', res);
+    });
   }
 
+  /**recover all transaction with request get for admin*/
   getAllPayment(): Observable<Payment[]>{
     return this.http.get<Payment[]>(this.urlPayment);
   }
+
+  getIdKey(){
+    return localStorage.getItem('idKey');
+  }
+
+  /**recover one transaction with request get for QrCode*/
+  getPaymentById(paymentId:number): Observable<Payment[]>{
+    return this.http.get<Payment[]>(`${this.urlPayment}/${paymentId}`);
+  }
+
 
 }

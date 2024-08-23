@@ -23,6 +23,7 @@ export function authInterceptors (req: HttpRequest<unknown>, next: HttpHandlerFn
           localStorage.removeItem('bearer');
           localStorage.removeItem('id');
           localStorage.removeItem('role');
+          localStorage.removeItem('idKey');
           route.navigateByUrl('connection');
           return throwError(()=>error) })
       );

@@ -20,7 +20,6 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "transaction")
-
 public class Payment {
 
     @Id

@@ -1,24 +1,23 @@
 import {Component, OnInit} from '@angular/core';
-import {AsyncPipe, DatePipe, NgForOf} from "@angular/common";
+import {AsyncPipe, DatePipe} from "@angular/common";
 import {DataService} from "../../../service/data.service";
-import {Router} from "@angular/router";
 
 
 @Component({
   selector: 'app-saleadmin',
   standalone: true,
-  imports: [DatePipe, AsyncPipe, NgForOf],
+  imports: [DatePipe, AsyncPipe],
   templateUrl: './saleadmin.component.html',
   styleUrl: './saleadmin.component.css'
 })
-export class SaleadminComponent implements OnInit{
+export class SaleAdminComponent implements OnInit{
 
   date!:Date;
   sumSolo:number =0;
   sumDuo: number=0;
   sumFamilial:number=0;
 
-  constructor(public data:DataService, private route:Router) {
+  constructor(public data:DataService) {
   }
 
 
@@ -30,11 +29,11 @@ export class SaleadminComponent implements OnInit{
         next: data =>{
           for(let index of data){
             if(index.nameTransaction === "Offre Solo"){
-              this.addSaleOfferSolo(index.price)
+              this.addSaleOfferSolo(index.price);
             }else if(index.nameTransaction === "Offre Duo"){
-              this.addSaleOfferDuo(index.price)
+              this.addSaleOfferDuo(index.price);
             }else if(index.nameTransaction === "Offre Familiale"){
-              this.addSaleOfferFamilial(index.price)
+              this.addSaleOfferFamilial(index.price);
             }
           }
         },

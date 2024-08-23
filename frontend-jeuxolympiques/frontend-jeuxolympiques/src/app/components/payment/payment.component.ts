@@ -36,7 +36,7 @@ export class PaymentComponent implements OnInit{
       holder:[null,[Validators.required]],
       accountNumber:[null,[Validators.required, Validators.minLength(16), Validators.maxLength(19)]],
       date:[null,[Validators.required, minDateValidator()]],
-      code:[null,[Validators.required, Validators.minLength(3), Validators.maxLength(3)]]
+      code:[null,[Validators.required, Validators.minLength(3), Validators.maxLength(4)]]
     })
     let offerId = localStorage.getItem("offerId");
     let idOffer= Number(offerId);
@@ -52,11 +52,11 @@ export class PaymentComponent implements OnInit{
       let formValue = this.paymentForm.value;
       formValue.nameTransaction = offerName;
       formValue.price = offerPrice;
-      console.log(formValue);
       this.data.createPayment(formValue);
       this.paymentForm.reset();
       localStorage.removeItem("offerId");
-      this.route.navigateByUrl("pageQrCode");
+      this.data.getIdKey();
+      this.route.navigateByUrl("qrCode");
     }
   }
 

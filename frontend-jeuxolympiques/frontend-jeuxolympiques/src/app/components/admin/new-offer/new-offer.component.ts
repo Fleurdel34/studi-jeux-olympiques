@@ -38,8 +38,8 @@ export class NewOfferComponent implements OnInit{
     } else {
       let formValue = this.offerForm.value;
       this.data.createOffer(formValue);
-      this.offerForm.reset();
       this.route.navigateByUrl('/adminpage');
+      window.alert("Rafraichissement de la page");
     }
   }
 

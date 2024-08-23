@@ -12,7 +12,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 
-import java.util.List;
 import java.util.UUID;
 import java.util.stream.Stream;
 
@@ -33,7 +32,7 @@ public class PaymentServiceImpl implements PaymentService {
 
 
     @Override
-    public void createPayment(Payment payment) {
+    public Long createPayment(Payment payment) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         payment.setUser(user);
         String keyTransaction = String.valueOf(UUID.randomUUID());
@@ -41,11 +40,19 @@ public class PaymentServiceImpl implements PaymentService {
         Long accountNumberHash = (long) payment.getAccountNumber().hashCode();
         payment.setAccountNumber(accountNumberHash);
         this.paymentRepository.save(payment);
+        return payment.getId();
     }
 
     @Override
     public Stream<PaymentDTO> getAllPayments() {
         return this.paymentRepository.findAll()
-                .stream().map(payment -> new PaymentDTO(payment.getNameTransaction(), payment.getPrice()));
+                .stream().map(payment -> new PaymentDTO(payment.getId(), payment.getNameTransaction(), payment.getPrice(), payment.getKeyTransaction()));
     }
+
+    @Override
+    public Stream<PaymentDTO> getPaymentById(Long id) {
+        return this.paymentRepository.findById(id).stream().map(payment -> new PaymentDTO(payment.getId(), payment.getNameTransaction(), payment.getPrice(), payment.getKeyTransaction()));
+    }
+
+
 }
