@@ -45,6 +45,10 @@ export class InformationAccountComponent implements OnInit{
     this.userPasswordConfirmationCtrl =this.formBuilder.control('', [Validators.required, Validators.pattern(this.passwordRegex)]);
 
     this.passwordForm = this.formBuilder.group({
+      lastname: [null, [Validators.required]],
+      firstname: [null, [Validators.required]],
+      username: [null, [Validators.required]],
+      mail: [null, [Validators.required]],
       password: this.userPasswordCtrl,
       userPasswordConfirmation: this.userPasswordConfirmationCtrl,
     },{validators: [confirmEqualValidator('password', 'userPasswordConfirmation')], updateOn: 'blur'});
@@ -58,7 +62,7 @@ export class InformationAccountComponent implements OnInit{
       let userId= Number(id);
       let formValue = this.passwordForm.value;
       this.auth.putUserById(userId, formValue);
-      this.route.navigateByUrl('/adminpage');
+      this.route.navigateByUrl('/connection');
     }
   }
 

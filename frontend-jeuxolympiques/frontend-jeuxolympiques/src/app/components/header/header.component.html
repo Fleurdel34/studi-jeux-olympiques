@@ -21,7 +21,7 @@
         </button>
         <li>Se connecter</li>
       </ng-container>
-      <ng-container *ngIf="(router.url === '/adminpage' || router.url === '/sales' || router.url === '/new-offer' || router.url === '/qrCode')">
+      <ng-container *ngIf="(router.url === '/adminpage' || router.url === '/sales' || router.url === '/new-offer' || router.url === '/qrCode' || router.url === '/informationAccount')">
         <div class="divAdmin">
           <div>
             <button (click)="buttonShowHide()"><i class="fa-solid fa-user"></i></button>
@@ -116,6 +116,12 @@
         </button>
         <li>Accueil</li>
       </ng-container>
+      <ng-container *ngIf="router.url.includes('/informationAccount')">
+        <button (click)="onRedirectBackHomePage()">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <li>Accueil</li>
+      </ng-container>
     </ul>
   </nav>
   <div class="header-logo">
@@ -160,6 +166,12 @@
       </h1>
     </ng-container>
     <ng-container *ngIf="router.url.includes('/qrCode')">
+      <h1>
+        Jeux Olympiques et<br>
+        Paralympiques de Paris 2024
+      </h1>
+    </ng-container>
+    <ng-container *ngIf="router.url.includes('/informationAccount')">
       <h1>
         Jeux Olympiques et<br>
         Paralympiques de Paris 2024
