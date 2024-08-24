@@ -68,4 +68,16 @@ export class AuthService {
       this.router.navigateByUrl('/connection');
     }
   }
+
+  /**update password with request put*/
+  putUserById(userId:number, formValue: FormGroup) {
+    this.http.put(`${this.urlUser}/${userId}`, formValue).subscribe({
+      next: res => {
+        console.log('Update successful');
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
+    })
+  }
 }

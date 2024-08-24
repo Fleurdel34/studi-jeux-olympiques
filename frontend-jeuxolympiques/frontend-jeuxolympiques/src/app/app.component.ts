@@ -16,6 +16,7 @@ import {PaymentComponent} from "./components/payment/payment.component";
 import {WelcomeComponent} from "./components/welcome/welcome.component";
 import {UpdateOfferComponent} from "./components/admin/update-offer/update-offer.component";
 import {QrcodeComponent} from "./components/qrcode/qrcode.component";
+import {InformationAccountComponent} from "./components/information-account/information-account.component";
 
 
 @Component({
@@ -37,7 +38,8 @@ import {QrcodeComponent} from "./components/qrcode/qrcode.component";
     PaymentComponent,
     WelcomeComponent,
     UpdateOfferComponent,
-    QrcodeComponent],
+    QrcodeComponent,
+    InformationAccountComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

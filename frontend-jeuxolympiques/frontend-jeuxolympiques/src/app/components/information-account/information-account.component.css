@@ -1,0 +1,97 @@
+section{
+  height:900px;
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  margin-left: 3rem;
+  margin-top:6rem;
+}
+
+h2{
+  font-size: 36px;
+  font-weight: bold;
+  padding:1rem 0 1rem 0;
+}
+
+.users{
+  width:98%;
+  height:210px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding-left: 1rem;
+  display:flex;
+  flex-direction: column;
+}
+
+p
+{
+  font-size: 30px;
+  padding: 0.5rem 0 0 1rem;
+}
+
+/*Layout form to update password modified*/
+
+form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.form{
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.label{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputLabel{
+  display: flex;
+  flex-direction: column;
+}
+
+.label{
+  margin-right:45px;
+  font-size:28px;
+}
+
+input{
+  background-color: #d9d9d9;
+  margin-top:30px;
+  margin-bottom:30px;
+  height:50px;
+  width:25%;
+}
+
+span{
+  font-size: 16px;
+}
+
+.buttonSubmit{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+button{
+  border-radius: 10px;
+  background-color: #38bbd8;
+  border: none;
+  color:#ffffff;
+  width:7%;
+  height: 50px;
+  font-size: 18px;
+  margin-top:40px;
+  margin-right: 50px;
+}

@@ -16,6 +16,7 @@ import {PaymentComponent} from "./components/payment/payment.component";
 import {WelcomeComponent} from "./components/welcome/welcome.component";
 import {UpdateOfferComponent} from "./components/admin/update-offer/update-offer.component";
 import {QrcodeComponent} from "./components/qrcode/qrcode.component";
+import {InformationAccountComponent} from "./components/information-account/information-account.component";
 
 
 
@@ -37,6 +38,7 @@ export const routes: Routes = [
 
 
   {path:"payment", component:PaymentComponent, canActivate:[AuthGuard]},
+  {path:"informationAccount", component: InformationAccountComponent, canActivate:[AuthGuard]},
   {path:"qrCode", component:QrcodeComponent, canActivate:[AuthGuard]},
 
 
