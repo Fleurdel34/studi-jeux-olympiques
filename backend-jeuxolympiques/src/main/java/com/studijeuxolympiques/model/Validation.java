@@ -3,6 +3,8 @@ package com.studijeuxolympiques.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 /** Build Class Validation
  * Set up properties (id and code)
@@ -25,6 +27,7 @@ public class Validation {
     private Instant expired;
     private Instant activation;
     private String code;
-    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.DETACH})
+    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.REMOVE})
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 }

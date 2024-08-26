@@ -80,4 +80,16 @@ export class AuthService {
       }
     })
   }
+
+  deleteUserById(userId:number){
+    return this.http.delete(`${this.urlUser}/${userId}`).subscribe({
+      next: res => {
+        console.log('Delete successful');
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
+    })
+  }
+
 }

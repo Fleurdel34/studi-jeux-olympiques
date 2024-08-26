@@ -66,5 +66,11 @@ export class InformationAccountComponent implements OnInit{
     }
   }
 
+  onDeleteAccount(){
+    let id = localStorage.getItem('id');
+      let userId= Number(id);
+      this.auth.deleteUserById(userId);
+      this.route.navigateByUrl('/connection');
+  }
 
 }
