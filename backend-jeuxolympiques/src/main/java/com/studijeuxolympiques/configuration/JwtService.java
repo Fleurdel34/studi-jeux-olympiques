@@ -7,6 +7,8 @@ import com.studijeuxolympiques.service.Impl.UserServiceImpl;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,6 +19,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.time.Instant;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -41,7 +44,8 @@ public class JwtService {
     public static final String BEARER = "bearer";
     public static final String TOKEN_INVALID = "Token invalid";
 
-    private final String secretKey = "a091e1f010a4014553f790bc45c2bde32d357081d43f1f9df9c05db05b7f41de";
+    @Value("${SECRETE_KEY_JWT}")
+    private String secretKey;
 
     private final UserServiceImpl userServiceImpl;
 
@@ -65,7 +69,7 @@ public class JwtService {
     public Map<String, String> generate(String username){
         User user= (User) this.userServiceImpl.loadUserByUsername(username);
         this.disableTokens(user);
-        Map<String, String> jwtMap = new java.util.HashMap<>(this.generateJwt(user));
+        Map<String, String> jwtMap = new HashMap<>(this.generateJwt(user));
 
         final Jwt jwt = Jwt
                 .builder()

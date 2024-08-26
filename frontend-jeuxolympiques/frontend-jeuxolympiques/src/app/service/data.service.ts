@@ -4,12 +4,13 @@ import {catchError, Observable, take} from "rxjs";
 import {Offer} from "../models/offer";
 import {FormGroup} from "@angular/forms";
 import {Payment} from "../models/payment";
-
+import 'dotenv/config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+
 
   urlOffers: string = 'http://localhost:8080/api/offers';
   urlPayment: string = 'http://localhost:8080/api/payment';

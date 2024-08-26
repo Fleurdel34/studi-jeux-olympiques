@@ -9,7 +9,6 @@ import {Router} from "@angular/router";
   providedIn: 'root'
 })
 export class ApiService {
-
   url: string = 'http://localhost:8080/api/users';
 
   urlActivation: string = 'http://localhost:8080/api/users/activation';
