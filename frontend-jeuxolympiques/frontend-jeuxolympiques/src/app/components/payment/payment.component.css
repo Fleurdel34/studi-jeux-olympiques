@@ -115,3 +115,33 @@ button{
   width:15%;
   margin-top: 3rem;
 }
+
+@media screen and (max-width:1080px){
+
+  .button button{
+    font-size:12px;
+    width:40%;
+  }
+
+  .titleHeader{
+    font-size: 20px;
+  }
+  .form{
+    width:90%;
+  }
+  .title{
+    font-size: 20px;
+    width:90%;
+  }
+  label{
+    font-size: 18px;
+  }
+  .buttonSubmit{
+    width:90%;
+    font-size: 20px;
+  }
+  button{
+    width: 25%;
+  }
+
+}

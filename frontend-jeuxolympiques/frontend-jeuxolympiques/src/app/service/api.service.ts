@@ -5,13 +5,14 @@ import {catchError, take} from "rxjs";
 import {Router} from "@angular/router";
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  url: string = 'http://localhost:8080/api/users';
 
-  urlActivation: string = 'http://localhost:8080/api/users/activation';
+  url:string ="http://localhost:8080/api/users"
+   urlActivation: string = 'http://localhost:8080/api/users/activation';
 
 
   constructor(private http: HttpClient, private router: Router) {
@@ -21,6 +22,7 @@ export class ApiService {
    * Request post with form object to save in data base
    * @param formValue
    */
+
   createUser(formValue: FormGroup) {
     this.http.post(this.url, formValue)
       .pipe(take(1), catchError(err => {

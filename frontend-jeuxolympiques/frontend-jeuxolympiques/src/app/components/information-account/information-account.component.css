@@ -15,7 +15,7 @@ h2{
 }
 
 .users{
-  width:98%;
+  width:95%;
   height:210px;
   background-color: #ffffff;
   border: 1px solid black;
@@ -95,4 +95,31 @@ button{
   margin-top:10px;
   margin-bottom: 10px;
   margin-right: 50px;
+}
+
+@media screen and (max-width:1080px){
+
+  h2{
+  font-size: 20px;
+  }
+
+  .users{
+    width:87%;
+    height:150px;
+  }
+
+  p{
+    font-size: 18px;
+  }
+
+
+  span{
+    font-size: 10px;
+  }
+
+   button{
+    width:20%;
+    font-size: 14px;
+  }
+
 }

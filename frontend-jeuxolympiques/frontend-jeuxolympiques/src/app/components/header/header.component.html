@@ -139,6 +139,20 @@
         Paralympiques Paris 2024
       </h1>
     </ng-container>
+    <ng-container *ngIf="router.url.includes('/activation')">
+      <h1>
+        Inscription<br>
+        Jeux Olympiques et<br>
+        Paralympiques Paris 2024
+      </h1>
+    </ng-container>
+    <ng-container *ngIf="router.url.includes('/connection')">
+      <h1>
+        Connexion<br>
+        Jeux Olympiques et<br>
+        Paralympiques Paris 2024
+      </h1>
+    </ng-container>
     <ng-container *ngIf="(router.url === '/adminpage' || router.url === '/sales' || router.url === '/new-offer')">
         <h1 class="titleAdmin">
           Bienvenue sur la page de<br>

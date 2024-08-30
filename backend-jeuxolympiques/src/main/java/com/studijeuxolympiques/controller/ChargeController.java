@@ -10,20 +10,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.naming.AuthenticationException;
-
-
 @Controller
 public class ChargeController {
 
     @Autowired
-    private StripeService stripeService;
+    private StripeService paymentsService;
 
-     @PostMapping("/charge")
-    public String charge (ChargeRequest chargeRequest, Model model) throws StripeException, AuthenticationException {
-        chargeRequest.setDescription("Example charge");
+    @PostMapping("/charge")
+    public String charge(ChargeRequest chargeRequest, Model model)
+            throws StripeException {
+        chargeRequest.setDescription("Test charge");
         chargeRequest.setCurrency(ChargeRequest.Currency.EUR);
-        Charge charge = stripeService.charge(chargeRequest);
+        Charge charge = paymentsService.charge(chargeRequest);
         model.addAttribute("id", charge.getId());
         model.addAttribute("status", charge.getStatus());
         model.addAttribute("chargeId", charge.getId());
@@ -31,10 +29,10 @@ public class ChargeController {
         return "result";
     }
 
+
     @ExceptionHandler(StripeException.class)
-    public String handleError(Model model, StripeException ex){
+    public String handleError(Model model, StripeException ex) {
         model.addAttribute("error", ex.getMessage());
         return "result";
-
     }
 }

@@ -64,3 +64,10 @@ button{
   margin-top:60px;
 
 }
+
+@media screen and (max-width:1080px){
+
+  h1{
+    margin:40px;
+  }
+}

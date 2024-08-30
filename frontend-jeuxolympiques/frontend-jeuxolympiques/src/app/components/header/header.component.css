@@ -62,7 +62,7 @@ h1{
   font-weight: bold;
   width: 26%;
   position: relative;
-  top: 500px;
+  top: 400px;
   margin-left: 50px;
   text-align: center;
 }
@@ -97,3 +97,10 @@ h1{
   padding:10px;
 }
 
+@media screen and (max-width:1080px){
+  h1{
+    width: 60%;
+    margin-left:25px;
+    top: 450px;
+  }
+}

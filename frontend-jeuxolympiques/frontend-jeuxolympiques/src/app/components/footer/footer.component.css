@@ -23,19 +23,20 @@ footer{
 }
 
 h2{
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: black;
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 i{
-  font-size: 30px;
+  font-size: 25px;
   color:black;
   margin-right: 20px;
   margin-left: 50px;
   margin-top: 10px;
+  padding-bottom: 5px;
 }
 
 /*div with class informations*/
@@ -45,9 +46,28 @@ i{
 }
 
 p{
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   text-decoration: underline;
   padding-top: 20px;
   padding-left: 20px;
+}
+
+/*site responsive*/
+
+@media screen and (max-width:1080px){
+  footer{
+    color:black;
+  }
+  img{
+    width:85%;
+  }
+  i{
+    font-size: 20px;
+    color:black;
+    margin-right: 20px;
+    margin-left: 40px;
+    margin-top: 10px;
+    padding-bottom: 5px;
+  }
 }

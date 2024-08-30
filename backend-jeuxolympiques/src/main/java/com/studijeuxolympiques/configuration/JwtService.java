@@ -8,7 +8,6 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -44,7 +43,7 @@ public class JwtService {
     public static final String BEARER = "bearer";
     public static final String TOKEN_INVALID = "Token invalid";
 
-    @Value("${SECRETE_KEY_JWT}")
+    @Value("${SECRET_KEY_JWT}")
     private String secretKey;
 
     private final UserServiceImpl userServiceImpl;
