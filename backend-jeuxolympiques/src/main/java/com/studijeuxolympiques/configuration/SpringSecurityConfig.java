@@ -54,6 +54,7 @@ public class SpringSecurityConfig {
                             authorize.requestMatchers(GET, "/api/offers/{id}").permitAll();
                             authorize.requestMatchers(POST, "/checkout").permitAll();
                             authorize.requestMatchers(POST, "/charge").permitAll();
+                            authorize.requestMatchers(POST, "/api/stripe/payment").permitAll();
                             authorize.anyRequest().authenticated();
                     })
                     .sessionManagement(httpSecuritySessionManagementConfigurer ->
