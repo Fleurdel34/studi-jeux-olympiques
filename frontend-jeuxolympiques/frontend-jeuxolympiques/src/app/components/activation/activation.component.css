@@ -71,3 +71,18 @@ button{
     margin:40px;
   }
 }
+
+@media screen and (max-width:767px){
+  h1{
+    font-size:14px;
+  }
+  label{
+    font-size: 12px;
+  }
+  input{
+    width: 70%;
+  }
+  button{
+    width:50%;
+  }
+}

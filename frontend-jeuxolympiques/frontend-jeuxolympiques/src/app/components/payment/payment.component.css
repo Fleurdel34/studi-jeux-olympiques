@@ -145,3 +145,14 @@ button{
   }
 
 }
+@media screen and (max-width:767px){
+
+  .titleHeader{
+    font-size: 16px;
+  }
+  .title{
+    font-size: 14px;
+  }
+
+
+}

@@ -101,3 +101,23 @@ button{
   }
 
 }
+@media screen and (max-width:767px){
+  h2{
+    font-size:26px;
+  }
+  .title,.offers{
+    width:90%;
+  }
+  h3{
+    font-size:22px;
+  }
+  p{
+    font-size: 22px;
+  }
+  #description{
+    display:none;
+  }
+  button{
+    width:90px;
+  }
+}

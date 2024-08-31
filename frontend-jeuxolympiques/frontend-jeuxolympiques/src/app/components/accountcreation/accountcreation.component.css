@@ -123,3 +123,22 @@ button{
   }
 }
 
+
+@media screen and (max-width:767px){
+  h2{
+    font-size:14px;
+  }
+  h3{
+    font-size:12px;
+  }
+  input{
+    width:85%;
+  }
+  span{
+    display:none;
+  }
+  button{
+    width:85%;
+  }
+}
+

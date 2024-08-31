@@ -114,4 +114,16 @@ button{
     margin-top:5px;
   }
 }
+@media screen and (max-width:767px){
+  .introduction{
+    height: 600px;
+    margin-bottom: 0;
+  }
+  .card{
+    height:700px;
+  }
+  #first, #second{
+    display: none;
+  }
+}
 

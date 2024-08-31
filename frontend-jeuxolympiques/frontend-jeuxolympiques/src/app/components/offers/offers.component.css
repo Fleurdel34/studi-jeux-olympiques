@@ -115,5 +115,28 @@ h3{
   }
 }
 
+@media screen and (max-width:767px){
+  ul{
+    font-weight: normal;
+    font-size: 22px;
+    text-align: center;
+  }
+  li{
+    padding-right:2rem;
+  }
+  h3{
+    width: 30%;
+  }
+
+  #offerDescription, #number, #quantity{
+    display: none;
+  }
+  .paragraphPresentation{
+    display: none;
+  }
+  #price{
+    margin-right: 1rem;
+  }
+}
 
 

@@ -14,10 +14,10 @@
     <div class="offerSingle">
       <h3>{{offer.name | titlecase }}</h3>
       <p id="offerDescription">{{offer.description }}</p>
-      <p>{{offer.price}}€</p>
+      <p id="price">{{offer.price}}€</p>
       <div class="sale">
-        <p>Nombre de billets:</p>
-        <p>{{offer.quantity}}</p>
+        <p id="number">Nombre de billets:</p>
+        <p id="quantity">{{offer.quantity}}</p>
         <button type="submit" id="buttonSubmit" (click)="onViewOffer(offer.id)">
           <i class="fa-solid fa-cart-shopping"></i>
           Sélectionner
