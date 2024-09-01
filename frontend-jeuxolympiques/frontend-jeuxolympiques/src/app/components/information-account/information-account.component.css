@@ -123,3 +123,22 @@ button{
   }
 
 }
+@media screen and (max-width:767px){
+  .users{
+    width:60%;
+  }
+  h2{
+    font-size: 16px;
+    width:50%;
+  }
+  p{
+    font-size: 14px;
+  }
+  span{
+    display:none;
+  }
+  button{
+    font-size:12px;
+  }
+
+}

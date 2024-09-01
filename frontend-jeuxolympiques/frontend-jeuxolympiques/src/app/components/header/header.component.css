@@ -69,7 +69,7 @@ h1{
 
 /*layout special admin page*/
 .titleAdmin{
-  top:450px;
+  top:350px;
   text-align: left;
 }
 
@@ -102,5 +102,15 @@ h1{
     width: 60%;
     margin-left:25px;
     top: 450px;
+  }
+}
+@media screen and (max-width:767px){
+  li{
+   display: none;
+  }
+
+  h1{
+    width: 30%;
+    font-size: 22px;
   }
 }

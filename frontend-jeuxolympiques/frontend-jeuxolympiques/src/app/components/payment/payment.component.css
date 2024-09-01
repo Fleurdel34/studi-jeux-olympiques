@@ -146,13 +146,20 @@ button{
 
 }
 @media screen and (max-width:767px){
+  .form, .buttonSubmit,.title{
+    margin-left:5%;
+  }
 
   .titleHeader{
-    font-size: 16px;
-  }
-  .title{
     font-size: 14px;
   }
-
-
+  .title{
+    font-size: 12px;
+  }
+  #date, #code{
+    width:50px;
+  }
+  .button button{
+    font-size: 10px;
+  }
 }

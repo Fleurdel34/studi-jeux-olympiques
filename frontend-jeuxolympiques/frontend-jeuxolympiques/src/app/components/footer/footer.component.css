@@ -71,3 +71,24 @@ p{
     padding-bottom: 5px;
   }
 }
+@media screen and (max-width:1080px){
+  .actualities {
+    background-color: #a03174;
+  }
+  h2{
+    display:none;
+  }
+  img{
+    width:70%;
+  }
+  i{
+    font-size:14px;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  p{
+    color:#ffffff;
+    font-size:14px;
+  }
+
+}

@@ -73,6 +73,9 @@ button{
 }
 
 @media screen and (max-width:767px){
+  section{
+    background-color:#d9d9d9;
+  }
   h1{
     font-size:14px;
   }
@@ -85,4 +88,5 @@ button{
   button{
     width:50%;
   }
+
 }

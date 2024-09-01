@@ -56,3 +56,16 @@ a{
   margin-bottom:7rem;
   color: #a03174;
 }
+
+@media screen and (max-width:767px){
+  h1,h2,p,span{
+    font-size:14px;
+  }
+  .needhelp {
+    font-size: 14px;
+    border: none;
+    margin:0;
+    padding:0;
+    font-weight: bold;
+  }
+}

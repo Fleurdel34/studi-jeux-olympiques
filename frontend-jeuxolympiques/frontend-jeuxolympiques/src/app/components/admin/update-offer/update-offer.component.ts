@@ -46,8 +46,8 @@ export class UpdateOfferComponent implements OnInit{
       let offerId = +this.route.snapshot.params['id']
       let formValue = this.offerUpdateForm.value;
       this.data.putOffer(offerId, formValue);
-      this.offerUpdateForm.reset();
       this.router.navigateByUrl('/adminpage');
+      window.alert("Rafraichissement de la page");
     }
   }
 

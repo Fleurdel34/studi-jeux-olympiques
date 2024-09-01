@@ -47,3 +47,9 @@ section{
 .paragraphSaleFamilial{
   padding-left: 45px;
 }
+
+@media screen and (max-width:1080px){
+  .title, .cardSale, .divOffers{
+    display: none;
+  }
+}

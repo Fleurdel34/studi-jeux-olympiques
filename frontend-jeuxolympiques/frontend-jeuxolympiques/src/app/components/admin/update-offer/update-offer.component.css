@@ -92,7 +92,7 @@ input{
 
 #price, #quantity{
   height:30px;
-  width: 3%;
+  width: 8%;
 }
 
 .buttonSubmit{
@@ -112,4 +112,10 @@ button{
   margin-top:40px;
   margin-right: 50px;
   padding: 0 25px 0 25px;
+}
+
+@media screen and (max-width:1080px){
+  h2, .offers, form{
+    display: none;
+  }
 }

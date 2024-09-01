@@ -96,6 +96,9 @@ button{
 
 
 @media screen and (max-width:1080px){
+  section{
+    background-color:#d9d9d9;
+  }
   h2{
     font-size: 16px;
     margin-left:0;
