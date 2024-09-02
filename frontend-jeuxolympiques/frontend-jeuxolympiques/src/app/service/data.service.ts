@@ -4,6 +4,7 @@ import {catchError, Observable, take} from "rxjs";
 import {Offer} from "../models/offer";
 import {FormGroup} from "@angular/forms";
 import {Payment} from "../models/payment";
+import {environment} from "../../environments/environments";
 
 
 @Injectable({
@@ -12,23 +13,20 @@ import {Payment} from "../models/payment";
 export class DataService {
 
 
-  urlOffers: string = 'http://localhost:8080/api/offers';
-  urlPayment: string = 'http://localhost:8080/api/payment';
-
   constructor(private http: HttpClient) {}
 
   /** Request get to recover all offers and one offer  in database*/
 
   getAllOffers():Observable<Offer[]>{
-    return this.http.get<Offer[]>(this.urlOffers)}
+    return this.http.get<Offer[]>(`${environment.urlOffers}`)}
 
    getOfferById(offerId:number): Observable<Offer[]>{
-    return this.http.get<Offer[]>(`${this.urlOffers}/${offerId}`);
+    return this.http.get<Offer[]>(`${environment.urlOffers}/${offerId}`);
   }
 
   /**create a new offer with role Admin*/
   createOffer(formValue: FormGroup) {
-    this.http.post(this.urlOffers, formValue)
+    this.http.post(`${environment.urlOffers}`, formValue)
       .pipe(take(1), catchError(err => {
         throw 'error in source. Details: ' + err;
       }))
@@ -36,7 +34,7 @@ export class DataService {
   }
 
   putOffer(offerId:number, formValue: FormGroup) {
-    this.http.put(`${this.urlOffers}/${offerId}`, formValue).subscribe({
+    this.http.put(`${environment.urlOffers}/${offerId}`, formValue).subscribe({
       next: res => {
         console.log('Update successful');
       },
@@ -48,7 +46,7 @@ export class DataService {
 
   /**delete an offer with role Admin and with id offer*/
   deleteOfferById(offerId:number){
-    return this.http.delete(`${this.urlOffers}/${offerId}`).subscribe({
+    return this.http.delete(`${environment.urlOffers}/${offerId}`).subscribe({
       next: res => {
         console.log('Delete successful');
       },
@@ -66,14 +64,14 @@ export class DataService {
 
   /**create a new transaction with request post*/
   createPayment(formValue: FormGroup) {
-    this.http.post(this.urlPayment, formValue).subscribe((res: any) => {
+    this.http.post(`${environment.urlPayment}`, formValue).subscribe((res: any) => {
       localStorage.setItem('idKey', res);
     });
   }
 
   /**recover all transaction with request get for admin*/
   getAllPayment(): Observable<Payment[]>{
-    return this.http.get<Payment[]>(this.urlPayment);
+    return this.http.get<Payment[]>(`${environment.urlPayment}`);
   }
 
   getIdKey(){
@@ -82,7 +80,7 @@ export class DataService {
 
   /**recover one transaction with request get for QrCode*/
   getPaymentById(paymentId:number): Observable<Payment[]>{
-    return this.http.get<Payment[]>(`${this.urlPayment}/${paymentId}`);
+    return this.http.get<Payment[]>(`${environment.urlPayment}/${paymentId}`);
   }
 
 
