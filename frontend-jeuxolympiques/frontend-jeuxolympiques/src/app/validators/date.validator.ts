@@ -2,10 +2,7 @@ import { AbstractControl, ValidatorFn, ValidationErrors } from "@angular/forms";
 import {formatDate} from "@angular/common";
 
 
-/**
- * Check if control value is superior to date today
- * @export
- */
+/**Check if control value is superior to date today*/
 
 export function minDateValidator(): ValidatorFn {
   return (ctrl: AbstractControl): null | ValidationErrors => {

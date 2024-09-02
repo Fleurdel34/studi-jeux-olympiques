@@ -1,3 +1,5 @@
+/** create entity Payment*/
+
 export class Payment{
 
   constructor(

@@ -9,6 +9,7 @@ section{
 }
 
 /*Layout of presentation offers card */
+
 .presentationOffers {
   height: 350px;
   width: 90%;
@@ -47,6 +48,7 @@ li{
 }
 
 /*Layout of offers card */
+
 .offers{
   height: 200px ;
   width:90%;
@@ -69,6 +71,7 @@ li{
 }
 
 /*Layout of offers title, paragraph and button*/
+
 h3{
   width:15%;
 }
@@ -91,8 +94,9 @@ h3{
   margin-left:1rem
 }
 
-@media screen and (max-width:1080px){
+/*site responsive*/
 
+@media screen and (max-width:1080px){
   h2{
     font-size: 26px;
   }
@@ -104,7 +108,6 @@ h3{
   }
   .offers{
     font-size:16px;
-
   }
   h3{
     width:20%;
@@ -127,7 +130,6 @@ h3{
   h3{
     width: 30%;
   }
-
   #offerDescription, #number, #quantity{
     display: none;
   }

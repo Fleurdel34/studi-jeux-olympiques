@@ -85,6 +85,9 @@ button{
   margin-right: 50px;
   padding: 0 25px 0 25px;
 }
+
+/*site responsive*/
+
 @media screen and (max-width:1080px){
   form{
     display: none;

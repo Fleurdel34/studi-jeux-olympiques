@@ -14,7 +14,6 @@ import java.util.Map;
 import java.util.Optional;
 
 import com.studijeuxolympiques.service.UserService;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -28,8 +27,6 @@ import org.springframework.stereotype.Service;
  * Use the property UserRepository
  */
 
-
-@AllArgsConstructor
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {
 
@@ -37,17 +34,17 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     private final ValidationRepository validationRepository;
     private final ValidationServiceImpl validationServiceImpl;
 
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+    private final BCryptPasswordEncoder passwordEncoder;
 
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository, ValidationRepository validationRepository,
-                           ValidationServiceImpl validationServiceImpl) {
+                           ValidationServiceImpl validationServiceImpl, BCryptPasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.validationRepository = validationRepository;
         this.validationServiceImpl = validationServiceImpl;
 
+        this.passwordEncoder = passwordEncoder;
     }
 
     public List<User> getAllUsers() {
@@ -90,9 +87,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     /**
-     * Update properties of instance of User Object
-     * @param id
-     * @param updatedUser
+     * Update properties of instance of User Object with two parameters id and User
      * @return save model User update with new property
      */
     public User updateUser(Long id, User updatedUser) {
@@ -105,7 +100,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             oldUser.setPassword(this.passwordEncoder.encode(updatedUser.getPassword()));
         }
 
-        return (User)this.userRepository.save(oldUser);
+        return this.userRepository.save(oldUser);
     }
 
     public void deleteUserById(Long id) {
@@ -126,10 +121,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     /**
-     * Implement method loadUserByUsername obligatory with UserDetailsService
-     * @param username
+     * Implement method loadUserByUsername obligatory with UserDetailsService with parameters username
      * @return identified user
-     * @throws UsernameNotFoundException
+     * use exception UsernameNotFoundException
      */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

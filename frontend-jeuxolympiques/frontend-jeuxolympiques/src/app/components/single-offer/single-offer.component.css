@@ -25,7 +25,7 @@ h2{
   padding:1rem 0 2rem 1rem;
 }
 
-/*Layout of title divr*/
+/*Layout of title div*/
 
 .title{
   width:98%;
@@ -48,6 +48,7 @@ h3{
 }
 
 /*Layout of presentation offer card */
+
 .offers{
   width:98%;
   height:400px;
@@ -62,6 +63,7 @@ h3{
 }
 
 /*Layout of div for single-offer*/
+
 .titleOffer{
   font-size: 30px;
   font-weight: normal;
@@ -91,6 +93,8 @@ button{
   margin-top:60px;
   margin-right: 50px;
 }
+
+/*site responsive*/
 
 @media screen and (max-width:1080px){
   button{

@@ -16,19 +16,21 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+
+/**
+ * Build class UserController
+ * Receive the request and provide the response
+ * @property UserService
+ * @requests Get, Post, and Put
+ * @request Post to create User - to enable account with code  - to connect - to disconnect
+ */
+
+
 @Slf4j
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping({"api/users"})
 public class UserController {
-
-    /**
-     * Build class UserController
-     * Receive the request and provide the response
-     * @property UserService
-     * @requests Get, Post, and Put
-     * @request Post to create User - to enable account with code  - to connect - to disconnect
-     */
 
     final private AuthenticationManager authenticationManager;
     final private UserService userService;

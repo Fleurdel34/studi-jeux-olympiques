@@ -6,8 +6,6 @@ import com.studijeuxolympiques.model.Payment;
 import com.studijeuxolympiques.model.User;
 import com.studijeuxolympiques.repository.PaymentRepository;
 import com.studijeuxolympiques.service.PaymentService;
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
@@ -23,12 +21,15 @@ import java.util.stream.Stream;
  */
 
 
-@AllArgsConstructor
+
 @Service
 public class PaymentServiceImpl implements PaymentService {
 
-    @Autowired
-    private PaymentRepository paymentRepository;
+    private final PaymentRepository paymentRepository;
+
+    public PaymentServiceImpl(PaymentRepository paymentRepository) {
+        this.paymentRepository = paymentRepository;
+    }
 
 
     @Override

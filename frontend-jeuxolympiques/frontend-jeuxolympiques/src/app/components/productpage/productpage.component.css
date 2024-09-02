@@ -7,6 +7,7 @@ main{
 }
 
 /*Layout introduction section*/
+
 .introduction {
   height: 410px;
   width: 97%;
@@ -30,6 +31,7 @@ main{
 }
 
 /*Layout event card*/
+
 .card{
   height:840px;
   display: flex;
@@ -88,14 +90,12 @@ button{
   padding-right: 10px;
 }
 
-
 /*site responsive*/
 
 @media screen and (max-width:1080px){
   main{
     height: 1630px;
   }
-
   .introduction p{
     font-weight: bold;
     font-size: 18px;

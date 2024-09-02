@@ -33,11 +33,11 @@ import {NgOptimizedImage} from "@angular/common";
 })
 export class CheckoutComponent {
 
-  //to load Stripe
+  /**to load Stripe*/
   stripePromise = loadStripe(environment.stripe);
   constructor(private http:HttpClient) {}
 
-  //to create a product object payment
+  /**to create a product object payment*/
   async pay(): Promise<void>{
     const payment={
       name:'e-ticket',
@@ -50,8 +50,7 @@ export class CheckoutComponent {
 
     const stripe = await this.stripePromise;
 
-    //to call http backend api
-
+    /**to call http backend api*/
     this.http.post(`${environment.serverUrl}/payment`, payment)
       .subscribe((data:any)=>{
        stripe?.redirectToCheckout({

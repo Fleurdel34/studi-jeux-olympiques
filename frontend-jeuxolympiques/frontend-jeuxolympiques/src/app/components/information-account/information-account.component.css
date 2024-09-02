@@ -97,32 +97,30 @@ button{
   margin-right: 50px;
 }
 
+/*site responsive*/
+
 @media screen and (max-width:1080px){
 
   h2{
   font-size: 20px;
   }
-
   .users{
     width:87%;
     height:150px;
   }
-
   p{
     font-size: 18px;
   }
-
-
   span{
     font-size: 10px;
   }
-
    button{
     width:20%;
     font-size: 14px;
   }
 
 }
+
 @media screen and (max-width:767px){
   .users{
     width:60%;
@@ -140,5 +138,4 @@ button{
   button{
     font-size:12px;
   }
-
 }

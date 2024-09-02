@@ -9,6 +9,7 @@ section{
 }
 
 /* Layout title page*/
+
 h1{
   text-align: center;
   margin: 60px;
@@ -65,8 +66,9 @@ button{
 
 }
 
-@media screen and (max-width:1080px){
+/*site responsive*/
 
+@media screen and (max-width:1080px){
   h1{
     margin:40px;
   }

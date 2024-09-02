@@ -1,3 +1,5 @@
+/** create entity User*/
+
 export class User{
 
   id!: number;

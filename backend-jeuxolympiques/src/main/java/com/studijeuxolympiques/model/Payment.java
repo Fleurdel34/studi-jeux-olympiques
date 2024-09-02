@@ -11,7 +11,8 @@ import org.hibernate.annotations.OnDeleteAction;
 import java.util.Date;
 
 
-/**Build Class Payment
+/**
+ * Build Class Payment
  * Set up properties (id, n, holder, accountNumber, date, code, nameOffer and priceOffer)
  * Implement constructor
  * @Data allows the implementation of getter and setter

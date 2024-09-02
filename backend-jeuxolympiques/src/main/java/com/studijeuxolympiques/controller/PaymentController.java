@@ -10,23 +10,20 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.stream.Stream;
 
+/**
+ * Build class PaymentController
+ * Receive the request and provide the response
+ * @property TestingPayment
+ * @requests Get and Post
+ * @request Post to create Payment - to generate jwt token
+ */
+
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping({"api/payment"})
 public class PaymentController {
 
-
-    /**
-     * Build class PaymentController
-     * Receive the request and provide the response
-     * @property TestingPayment
-     * @requests Get and Post
-     * @request Post to create Payment - to generate jwt token
-     */
-
-
      final private PaymentService paymentService;
-
 
     @Autowired
     public PaymentController(PaymentService paymentService) {

@@ -8,6 +8,7 @@ section {
 }
 
 /*layout title, button of modify password or delete account"*/
+
 .header{
   display:flex;
   flex-direction: row;
@@ -44,6 +45,7 @@ section {
 }
 
 /* Layout form, title, label and input*/
+
 .form{
   width: 65%;
   border-radius:0 0 20px 20px;
@@ -115,6 +117,8 @@ button{
   width:15%;
   margin-top: 3rem;
 }
+
+/*site responsive*/
 
 @media screen and (max-width:1080px){
 

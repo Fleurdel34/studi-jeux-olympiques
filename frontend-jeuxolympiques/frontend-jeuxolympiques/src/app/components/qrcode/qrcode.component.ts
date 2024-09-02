@@ -23,6 +23,7 @@ constructor(private data:DataService, private route: Router){}
 
   }
 
+  /**Generate Qr Code with 2 keys*/
   generateQrCode(){
     let idKey = localStorage.getItem('idKey');
     let valueIdNumber = Number(idKey);

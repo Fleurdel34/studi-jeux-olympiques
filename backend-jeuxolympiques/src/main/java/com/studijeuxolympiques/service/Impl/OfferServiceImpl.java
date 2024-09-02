@@ -5,8 +5,6 @@ import com.studijeuxolympiques.model.Offer;
 import com.studijeuxolympiques.model.User;
 import com.studijeuxolympiques.repository.OfferRepository;
 import com.studijeuxolympiques.service.OfferService;
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import java.util.stream.Stream;
@@ -19,12 +17,15 @@ import java.util.stream.Stream;
  */
 
 
-@AllArgsConstructor
+
 @Service
 public class OfferServiceImpl implements OfferService {
 
-    @Autowired
-    private OfferRepository offerRepository;
+    private final OfferRepository offerRepository;
+
+    public OfferServiceImpl(OfferRepository offerRepository) {
+        this.offerRepository = offerRepository;
+    }
 
     @Override
     public Stream<OfferDTO> getAllOffers() {

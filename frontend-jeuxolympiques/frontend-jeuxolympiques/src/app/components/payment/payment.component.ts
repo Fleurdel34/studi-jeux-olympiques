@@ -28,7 +28,7 @@ export class PaymentComponent implements OnInit{
   constructor(private formBuilder: FormBuilder, private data: DataService, private route:Router,  private router:ActivatedRoute){}
 
 
-  /*to recover one offer with data service and method get by id*/
+  /**to recover one offer with data service and method get by id*/
 
   ngOnInit(){
 

@@ -26,7 +26,8 @@ import java.util.stream.Collectors;
 
 
 
-/** Create class Service
+/**
+ * Create class Service
  * use property UserServiceImpl
  * @method to generate token with Map
  * @params User

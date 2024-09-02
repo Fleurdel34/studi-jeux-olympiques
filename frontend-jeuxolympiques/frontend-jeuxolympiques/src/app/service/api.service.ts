@@ -18,10 +18,7 @@ export class ApiService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
-  /**
-   * Request post with form object to save in data base
-   * @param formValue
-   */
+  /**Request post with form object to save in database*/
 
   createUser(formValue: FormGroup) {
     this.http.post(this.url, formValue)

@@ -4,7 +4,8 @@ import com.studijeuxolympiques.enumerations.TypeRole;
 import jakarta.persistence.*;
 import lombok.Data;
 
-/** Build Class Role
+/**
+ * Build Class Role
  * Set up properties (id and Enumeration)
  * @Data allows the implementation of constructor, getter and setter
  */

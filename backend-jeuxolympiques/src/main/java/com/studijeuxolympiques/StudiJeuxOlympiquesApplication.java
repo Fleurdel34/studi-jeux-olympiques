@@ -5,6 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 
+/**
+ * @author johanna
+ * @version 1.0.0
+ */
+
 @EnableScheduling
 @SpringBootApplication
 public class StudiJeuxOlympiquesApplication {

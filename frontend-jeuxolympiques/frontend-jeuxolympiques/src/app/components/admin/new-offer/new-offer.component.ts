@@ -32,6 +32,7 @@ export class NewOfferComponent implements OnInit{
     })
   }
 
+  /**send form values and create new offer in database*/
   onSubmitForm(){
     if(this.offerForm.invalid) {
       alert("La saisie de votre formulaire est incomplète!");

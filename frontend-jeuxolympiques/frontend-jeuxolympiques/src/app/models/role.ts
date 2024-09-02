@@ -1,3 +1,5 @@
+/** create entity Role*/
+
 export class Role{
 
   constructor(

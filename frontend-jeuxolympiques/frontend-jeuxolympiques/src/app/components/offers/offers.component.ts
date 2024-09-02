@@ -19,7 +19,7 @@ export class OffersComponent implements OnInit{
   constructor( private data: DataService, private route: Router) {
   }
 
-  /*to recover all offers with data service and method get all*/
+  /**to recover all offers with data service and method get all*/
   ngOnInit() {
     this.offer$ = this.data.getAllOffers();
   };

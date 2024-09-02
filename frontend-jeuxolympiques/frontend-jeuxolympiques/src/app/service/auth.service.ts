@@ -19,9 +19,7 @@ export class AuthService {
   }
 
   /**
-   * Request post with form object to authentication in database
-   * @param formValue
-   */
+   * Request post with form object to authentication in database*/
   connectionAccount(formValue: FormGroup){
     this.http.post(this.urlConnection, formValue)
       .subscribe((res: any) => {
@@ -32,10 +30,7 @@ export class AuthService {
   }
 
 
-  /**
-   * Request get with to recover one user id in data base
-   * @param userId
-   */
+  /**Request get with to recover one user id in data base*/
   getUserById(userId:number): Observable<User>{
    return this.http.get<User>(`${this.urlUser}/${userId}`);
   }

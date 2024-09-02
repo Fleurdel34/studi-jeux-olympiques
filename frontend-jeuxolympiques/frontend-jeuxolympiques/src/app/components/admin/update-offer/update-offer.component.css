@@ -16,6 +16,7 @@ h2{
 }
 
 /*Layout of presentation offer card */
+
 .offers{
   width:98%;
   height:400px;
@@ -113,6 +114,8 @@ button{
   margin-right: 50px;
   padding: 0 25px 0 25px;
 }
+
+/*site responsive*/
 
 @media screen and (max-width:1080px){
   h2, .offers, form{

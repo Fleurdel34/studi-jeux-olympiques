@@ -58,11 +58,11 @@ button{
   margin-right: 50px;
 }
 
-
 #buttonLink{
   margin-bottom: 3rem;
 }
 
+/* site responsive */
 @media screen and (max-width:1080px){
   .title, .offers, .buttons, #buttonLink{
     display: none;

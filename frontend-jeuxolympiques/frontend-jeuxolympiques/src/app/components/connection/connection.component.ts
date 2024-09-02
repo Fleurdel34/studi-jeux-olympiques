@@ -30,7 +30,7 @@ export class ConnectionComponent implements OnInit{
 
   }
 
-  /*to recover id user and authentication with auth service and method post and get*/
+  /**to recover id user and authentication with auth service and method post and get*/
   onLogin(){
     let formValue = this.connectionForm.value;
     this.authService.connectionAccount(formValue);

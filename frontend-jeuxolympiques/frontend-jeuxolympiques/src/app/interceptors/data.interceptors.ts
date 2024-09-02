@@ -8,6 +8,7 @@ import {inject} from "@angular/core";
 import {DataService} from "../service/data.service";
 import {Router} from "@angular/router";
 
+/**function interceptors to inject token and to redirect if token expired*/
 
 export function dataInterceptors (req: HttpRequest<unknown>, next: HttpHandlerFn){
 

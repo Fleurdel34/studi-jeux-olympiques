@@ -1,3 +1,5 @@
+/** create entity Offer*/
+
 export class Offer{
 
   constructor(

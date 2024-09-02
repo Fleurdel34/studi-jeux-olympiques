@@ -1,4 +1,3 @@
-
 /*Layout Legal Information Page*/
 
 legalinformation{
@@ -13,6 +12,7 @@ div{
 }
 
 /*Layout title*/
+
 h1{
   padding-top: 5rem;
   text-decoration: underline;
@@ -34,14 +34,15 @@ span{
 }
 
 /*Layout class needhelp and span of this class*/
-.needhelp {
+
+.needHelp {
   font-size: 22px;
   border: 4px solid grey;
   border-radius: 20px;
   padding: 2rem;
 }
 
-.needhelp span{
+.needHelp span{
   display: block;
   text-align: center;
 }
@@ -57,11 +58,13 @@ a{
   color: #a03174;
 }
 
+/*site responsive*/
+
 @media screen and (max-width:767px){
   h1,h2,p,span{
     font-size:14px;
   }
-  .needhelp {
+  .needHelp{
     font-size: 14px;
     border: none;
     margin:0;

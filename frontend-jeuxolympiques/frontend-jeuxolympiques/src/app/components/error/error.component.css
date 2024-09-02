@@ -33,6 +33,7 @@ a{
   color: #a03174;
 }
 
+/*site responsive*/
 
 @media screen and (max-width:767px){
   h1{

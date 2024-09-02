@@ -11,6 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Build class StripeController
+ * Receive the request and provide the response
+ * Stripe is an Api payment
+ * request Post
+ */
+
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping(value="/api/stripe")

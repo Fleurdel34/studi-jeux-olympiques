@@ -7,6 +7,7 @@ section{
 }
 
 /*layout title, paragraph and button page Welcome"*/
+
 div{
   display: flex;
   flex-direction: column;
@@ -38,12 +39,12 @@ button{
   margin-top: 6rem;
 }
 
-@media screen and (max-width:1080px){
+/*site responsive*/
 
+@media screen and (max-width:1080px){
   p{
     font-size: 24px;
   }
-
   button{
     width:25%
   }

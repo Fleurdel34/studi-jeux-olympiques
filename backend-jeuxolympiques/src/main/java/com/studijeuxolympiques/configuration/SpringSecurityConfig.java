@@ -21,7 +21,7 @@ import static org.springframework.http.HttpMethod.*;
 
 /** Create account to access api
  * security api back end
- * @request post: permitall
+ * @request post: permit all
  * @method filter to verify identified user
  */
 

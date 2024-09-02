@@ -17,10 +17,7 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  /**
-   * Request get to recover all offers and one offer  in database
-   * @return an array
-   */
+  /** Request get to recover all offers and one offer  in database*/
 
   getAllOffers():Observable<Offer[]>{
     return this.http.get<Offer[]>(this.urlOffers)}
@@ -50,7 +47,6 @@ export class DataService {
   }
 
   /**delete an offer with role Admin and with id offer*/
-
   deleteOfferById(offerId:number){
     return this.http.delete(`${this.urlOffers}/${offerId}`).subscribe({
       next: res => {

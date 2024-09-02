@@ -2,6 +2,9 @@ package com.studijeuxolympiques;
 
 
 import com.google.gson.Gson;
+
+import com.studijeuxolympiques.configuration.JwtFilter;
+import com.studijeuxolympiques.configuration.JwtService;
 import com.studijeuxolympiques.controller.UserController;
 import com.studijeuxolympiques.enumerations.TypeRole;
 import com.studijeuxolympiques.model.Role;
@@ -14,6 +17,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -33,6 +37,15 @@ public class UserControllerTest {
 
     @MockBean
     UserServiceImpl userService;
+
+    @MockBean
+    AuthenticationManager authenticationManager;
+
+    @MockBean
+    JwtFilter jwtFilter;
+
+    @MockBean
+    JwtService jwtService;
 
     @MockBean
     UserRepository userRepository;
