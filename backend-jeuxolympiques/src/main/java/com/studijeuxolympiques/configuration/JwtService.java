@@ -146,6 +146,7 @@ public class JwtService {
     }
 
     private SecretKey getKey() {
+        System.out.println(secretKey);
        byte[] keyBytes = secretKey.getBytes();
        return new SecretKeySpec(keyBytes, "HmacSHA512");
     }

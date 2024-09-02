@@ -18,4 +18,5 @@ public class StudiJeuxOlympiquesApplication {
 		SpringApplication.run(StudiJeuxOlympiquesApplication.class, args);
 	}
 
+
 }

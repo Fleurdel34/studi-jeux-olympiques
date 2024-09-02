@@ -6,6 +6,7 @@ import com.stripe.exception.StripeException;
 import com.studijeuxolympiques.stripe.model.CheckoutPayment;
 import com.stripe.model.checkout.Session;
 import com.stripe.param.checkout.SessionCreateParams;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -24,9 +25,10 @@ import java.util.Map;
 public class StripeController {
 
     private static final Gson gson = new Gson();
+
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/payment")
-    public String paymentWithCheckoutPage(@RequestBody CheckoutPayment payment) throws StripeException{
+    public String paymentWithCheckoutPage(@RequestBody CheckoutPayment payment) throws StripeException {
         init();
 
         SessionCreateParams params = SessionCreateParams.builder()
@@ -43,12 +45,16 @@ public class StripeController {
                 .build();
 
         Session session = Session.create(params);
-        Map<String, String> responseData= new HashMap<>();
+        Map<String, String> responseData = new HashMap<>();
         responseData.put("id", session.getId());
         return gson.toJson(responseData);
     }
 
-    private static void init(){
-        Stripe.apiKey="sk_test_51PsNEeL5bDlrJQqaMTWZRbluY1YyrPPEdIdTcZHcMbrcm2H2mXtzXXRKu7RvqPDBPVEr6ykpctgARxATDXKPjeuK00CBfIlYlr";
+    @Value("${STRIPE_SECRET_KEY}")
+    private String secretKey;
+
+    private void init() {
+        Stripe.apiKey = secretKey;
     }
 }
+
