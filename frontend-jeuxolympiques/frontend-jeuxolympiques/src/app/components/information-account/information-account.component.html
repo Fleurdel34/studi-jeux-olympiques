@@ -1,0 +1,44 @@
+<section>
+  <h2>Rappel de vos données personnelles:</h2>
+  <div *ngIf="user$ | async as user"  class="users">
+    <p>Votre nom: {{user.lastname}}</p>
+    <p>Votre prénom: {{user.firstname}}</p>
+    <p>Votre adresse mail: {{user.mail}}</p>
+    <p>Votre nom d'utilisateur: {{user.username}} </p>
+  </div>
+  <form [formGroup]="passwordForm">
+    <h2>Veuillez confirmer vos données personnelles pour modifier votre mot de passe:</h2>
+    <div class="inputLabel">
+      <label class="label" for="lastnameInput">Votre nom:</label>
+      <input type="text" id="lastnameInput" name="lastname" formControlName="lastname"/>
+      <label class="label" for="firstnameInput">Votre prénom:</label>
+      <input type="text" id="firstnameInput" name="firstname" formControlName="firstname"/>
+      <label class="label" for="emailInput">Votre email:</label>
+      <input type="email" id="emailInput" name="mail" formControlName="mail"/>
+      <label class="label" for="usernameInput">Votre user:</label>
+      <span>Votre user doit correspondre à votre nom.</span>
+      <input type="text" id="usernameInput" name="username" formControlName="username"/>
+    </div>
+    <div>
+      <h2>Veuillez saisir votre nouveau mot de passe:</h2>
+    </div>
+    <div class="inputLabel">
+      <label class="label" for="passwordInput">Votre mot de passe:</label>
+      <input type="password" id="passwordInput" name="password" formControlName="password" />
+      <span>Le mot de passe devra comporter au moins 10 caractères avec au moins une majuscule,
+        une minuscule, un chiffre, un caractère spécial ou un signe de ponctuation</span>
+    </div>
+    <h2>Confirmer la saisie de votre mot de passe:</h2>
+    <div class="inputLabel">
+      <label class="label" for="passwordConfirmation">Votre mot de passe:</label>
+      <input type="password" id="passwordConfirmation" name="userPasswordConfirmation" formControlName="userPasswordConfirmation" />
+    </div>
+    <small class="error-text" *ngIf="showPasswordError$ | async ">Les mots de passe ne correspondent pas!</small>
+    <div class="buttonSubmit">
+      <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+    </div>
+  </form>
+  <div class="buttonSubmit">
+    <button type="submit" (click)="onDeleteAccount()">Supprimer mon compte</button>
+  </div>
+</section>

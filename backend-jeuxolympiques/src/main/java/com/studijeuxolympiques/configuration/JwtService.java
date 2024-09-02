@@ -7,6 +7,7 @@ import com.studijeuxolympiques.service.Impl.UserServiceImpl;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,6 +18,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.time.Instant;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -24,7 +26,8 @@ import java.util.stream.Collectors;
 
 
 
-/** Create class Service
+/**
+ * Create class Service
  * use property UserServiceImpl
  * @method to generate token with Map
  * @params User
@@ -39,8 +42,10 @@ import java.util.stream.Collectors;
 public class JwtService {
 
     public static final String BEARER = "bearer";
+    public static final String TOKEN_INVALID = "Token invalid";
 
-    private final String secretKey = "a091e1f010a4014553f790bc45c2bde32d357081d43f1f9df9c05db05b7f41de";
+    @Value("${SECRET_KEY_JWT}")
+    private String secretKey;
 
     private final UserServiceImpl userServiceImpl;
 
@@ -64,7 +69,8 @@ public class JwtService {
     public Map<String, String> generate(String username){
         User user= (User) this.userServiceImpl.loadUserByUsername(username);
         this.disableTokens(user);
-        Map<String, String> jwtMap = this.generateJwt(user);
+        Map<String, String> jwtMap = new HashMap<>(this.generateJwt(user));
+
         final Jwt jwt = Jwt
                 .builder()
                 .value(jwtMap.get(BEARER))
@@ -72,7 +78,10 @@ public class JwtService {
                 .expired(false)
                 .user(user)
                 .build();
+
         this.jwtRepository.save(jwt);
+        jwtMap.put("id", String.valueOf(user.getId()));
+        jwtMap.put("role", String.valueOf(user.getRole()));
         return jwtMap;
     }
 
@@ -116,18 +125,18 @@ public class JwtService {
 
         private Map<String, String> generateJwt(User user){
 
-        final long currentTimeMillis = System.currentTimeMillis();
-        final long expirationTimeMillis = currentTimeMillis + 30 * 60 * 1000;
+            final long currentTime = System.currentTimeMillis();
+            final long expirationTime = currentTime + 10 * 60 * 1000;
 
         Map<String, Object> map = Map.of(
                 "nom", user.getLastname(),
-                Claims.EXPIRATION,new Date(expirationTimeMillis),
+                Claims.EXPIRATION,new Date(expirationTime),
                 Claims.SUBJECT, user.getUsername()
         );
 
         final String bearer = Jwts.builder()
-                .issuedAt(new Date(currentTimeMillis))
-                .expiration(new Date(expirationTimeMillis))
+                .issuedAt(new Date(currentTime))
+                .expiration(new Date(expirationTime))
                 .subject(user.getUsername())
                 .claims(map)
                 .signWith(getKey())
@@ -137,6 +146,7 @@ public class JwtService {
     }
 
     private SecretKey getKey() {
+        System.out.println(secretKey);
        byte[] keyBytes = secretKey.getBytes();
        return new SecretKeySpec(keyBytes, "HmacSHA512");
     }
@@ -148,17 +158,18 @@ public class JwtService {
                 user.getUsername(),
                 false,
                 false
-        ).orElseThrow(() -> new RuntimeException("Token invalid"));
+        ).orElseThrow(() -> new RuntimeException(TOKEN_INVALID));
          jwt.setExpired(true);
          jwt.setDisabled(true);
          this.jwtRepository.save(jwt);
     }
 
-    //@Scheduled(cron = "@daily")
-    @Scheduled(cron = "0 */1 * * * *")
+    @Scheduled(cron = "@daily")
     public void removeUselessJwt(){
         log.info("remove token expired and disabled at {}", Instant.now());
         this.jwtRepository.deleteAllByExpiredAndDisabled(true, true);
 
     }
+
+
 }

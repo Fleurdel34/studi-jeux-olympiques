@@ -16,7 +16,6 @@ export class FooterComponent implements OnInit{
   }
 
   /** Create method for redirect Legal Information Page with route and path*/
-
   onRedirectLegalInformation(): void{
     this.router.navigateByUrl('/legalinformation');
   }

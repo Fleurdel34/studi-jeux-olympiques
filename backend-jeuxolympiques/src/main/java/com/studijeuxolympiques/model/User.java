@@ -2,13 +2,13 @@ package com.studijeuxolympiques.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 
 import java.util.Collection;
-import java.util.Collections;
 
 
 /**
@@ -65,6 +65,7 @@ public class User implements UserDetails {
     private boolean active = false;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Role role;
 
     public User(String lastname, String firstname, String username, String mail, String password, Role role) {
@@ -80,7 +81,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singletonList(new SimpleGrantedAuthority("ROLE_"+this.role.getRole()));
+        return this.role.getRole().getAuthorities();
     }
 
     @Override

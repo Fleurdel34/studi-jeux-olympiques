@@ -7,6 +7,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -16,16 +17,17 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import static org.springframework.http.HttpMethod.POST;
+import static org.springframework.http.HttpMethod.*;
 
 /** Create account to access api
  * security api back end
- * @request post: permitall
+ * @request post: permit all
  * @method filter to verify identified user
  */
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 public class SpringSecurityConfig {
 
 
@@ -48,6 +50,11 @@ public class SpringSecurityConfig {
                             authorize.requestMatchers(POST, "/api/users").permitAll();
                             authorize.requestMatchers(POST, "/api/users/activation").permitAll();
                             authorize.requestMatchers(POST, "/api/users/connection").permitAll();
+                            authorize.requestMatchers(GET, "/api/offers").permitAll();
+                            authorize.requestMatchers(GET, "/api/offers/{id}").permitAll();
+                            authorize.requestMatchers(POST, "/checkout").permitAll();
+                            authorize.requestMatchers(POST, "/charge").permitAll();
+                            authorize.requestMatchers(POST, "/api/stripe/payment").permitAll();
                             authorize.anyRequest().authenticated();
                     })
                     .sessionManagement(httpSecuritySessionManagementConfigurer ->
@@ -59,9 +66,8 @@ public class SpringSecurityConfig {
 
     /**
      *Managing users when trying to log in
-     * @param authenticationConfiguration
-     * @return
-     * @throws Exception
+     * @return  authentication
+     *
      */
 
     @Bean

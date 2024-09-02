@@ -20,4 +20,5 @@ public interface UserService {
     void deleteUserById(Long id);
 
     void activation(Map<String, String> activation);
+
 }

@@ -34,6 +34,7 @@ public class OfferRepositoryTest {
         offer.setName("Offre Solo");
         offer.setDescription("Offre réservée aux étudiants");
         offer.setPrice(260.55F);
+        offer.setQuantity(1);
         this.offerRepository.save(offer);
 
         assertEquals("Offre Solo", offer.getName());

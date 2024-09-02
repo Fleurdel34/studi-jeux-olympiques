@@ -1,0 +1,29 @@
+<section>
+  <div class="presentationOffers">
+    <h2>Bénéficier des offres suivantes:</h2>
+    <p class="paragraphPresentation">Vous pouvez bénéficier des offres solo, duo et
+      familiale(accès respectivement à 1, 2 et 4 personnes) et
+      profitez de la réduction selon l'offre sélectionnée:</p>
+    <ul>
+      <li>Offre solo</li>
+      <li>Offre duo</li>
+      <li class="liFamilial">Offre familiale</li>
+    </ul>
+  </div>
+  <div class="offers" *ngFor="let offer of offer$ | async">
+    <div class="offerSingle">
+      <h3>{{offer.name | titlecase }}</h3>
+      <p id="offerDescription">{{offer.description }}</p>
+      <p id="price">{{offer.price}}€</p>
+      <div class="sale">
+        <p id="number">Nombre de billets:</p>
+        <p id="quantity">{{offer.quantity}}</p>
+        <button type="submit" id="buttonSubmit" (click)="onViewOffer(offer.id)">
+          <i class="fa-solid fa-cart-shopping"></i>
+          Sélectionner
+        </button>
+      </div>
+    </div>
+  </div>
+
+</section>

@@ -18,12 +18,14 @@ export class ActivationComponent implements OnInit {
               private apiService: ApiService,
               private router: Router,) {}
 
+
   ngOnInit() {
     this.numberActivationForm= this.formBuilder.group({
       code: [null, [Validators.required]],
     },{updateOn: 'blur'});
   }
 
+  /**recover activation code form values and activated user in database*/
   onSubmitForm(){
       let formValue = this.numberActivationForm.value;
       this.apiService.activationAccount(formValue);

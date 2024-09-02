@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {Router} from "@angular/router";
 import {AuthService} from "../../service/auth.service";
 
+
+
 @Component({
   selector: 'app-connection',
   standalone: true,
@@ -16,6 +18,7 @@ export class ConnectionComponent implements OnInit{
 
   connectionForm!:FormGroup;
 
+
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
   }
 
@@ -24,14 +27,17 @@ export class ConnectionComponent implements OnInit{
       username: [null, [Validators.required]],
       password: [null, [Validators.required]]
     },{updateOn: 'blur'});
+
   }
 
-  onSubmitForm(){
+  /**to recover id user and authentication with auth service and method post and get*/
+  onLogin(){
     let formValue = this.connectionForm.value;
     this.authService.connectionAccount(formValue);
+    let userId=this.authService.getId();
+    let id = Number(userId)
+    this.router.navigateByUrl(`welcome/${id}`);
     this.connectionForm.reset();
-    this.router.navigateByUrl('/account');
-
   }
 
 }

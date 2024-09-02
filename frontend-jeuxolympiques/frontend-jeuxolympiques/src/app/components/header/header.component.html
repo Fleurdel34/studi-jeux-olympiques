@@ -3,17 +3,120 @@
     <ul>
       <img src="assets/flag.png" class= "img-flag" alt="Drapeau Français"/>
       <li>FR</li>
+      <ng-container *ngIf="(router.url === '/' ||
+                            router.url === '/registration' ||
+                            router.url === '/activation' ||
+                            router.url === '/connection'  ||
+                            router.url === '/productpage' ||
+                            router.url === '/offers' ||
+                            router.url === 'single-offer')">
       <button (click)="onRedirectConnectionPage()">
         <i class="fa-solid fa-user"></i>
       </button>
       <li>Se connecter</li>
+      </ng-container>
+      <ng-container *ngIf="router.url.includes('/single-offer')">
+        <button (click)="onRedirectConnectionPage()">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <li>Se connecter</li>
+      </ng-container>
+      <ng-container *ngIf="(router.url === '/adminpage' || router.url === '/sales' || router.url === '/new-offer' || router.url === '/qrCode' || router.url === '/informationAccount')">
+        <div class="divAdmin">
+          <div>
+            <button (click)="buttonShowHide()"><i class="fa-solid fa-user"></i></button>
+          </div>
+          <div class="logIn" *ngIf="showMe">
+             <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="buttonLogOut" *ngIf="hideMe">
+            <i class="fa-solid fa-chevron-up"></i>
+            <button class="logOut" (click)="doLogOut()">Me Déconnecter</button>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="router.url.includes('/welcome')">
+        <div class="divAdmin">
+          <div>
+            <button (click)="buttonShowHide()"><i class="fa-solid fa-user"></i></button>
+          </div>
+          <div class="logIn" *ngIf="showMe">
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="buttonLogOut" *ngIf="hideMe">
+            <i class="fa-solid fa-chevron-up"></i>
+            <button class="logOut" (click)="doLogOut()">Me Déconnecter</button>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="router.url.includes('/payment')">
+        <div class="divAdmin">
+          <div>
+            <button (click)="buttonShowHide()"><i class="fa-solid fa-user"></i></button>
+          </div>
+          <div class="logIn" *ngIf="showMe">
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="buttonLogOut" *ngIf="hideMe">
+            <i class="fa-solid fa-chevron-up"></i>
+            <button class="logOut" (click)="doLogOut()">Me Déconnecter</button>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="router.url.includes('/update-offer')">
+        <div class="divAdmin">
+          <div>
+            <button (click)="buttonShowHide()"><i class="fa-solid fa-user"></i></button>
+          </div>
+          <div class="logIn" *ngIf="showMe">
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="buttonLogOut" *ngIf="hideMe">
+            <i class="fa-solid fa-chevron-up"></i>
+            <button class="logOut" (click)="doLogOut()">Me Déconnecter</button>
+          </div>
+        </div>
+      </ng-container>
       <ng-container *ngIf="router.url.endsWith('/')">
         <button (click)="onRedirectAccountCreation()">
           <i class="fa-regular fa-user"></i>
         </button>
         <li>S'inscrire</li>
       </ng-container>
-      <ng-container *ngIf="(router.url === '/registration' || router.url === '/activation' || router.url === '/connection'  || router.url === '/productpage')">
+      <ng-container *ngIf="(router.url === '/registration' ||
+                            router.url === '/activation' ||
+                            router.url === '/connection'  ||
+                            router.url === '/productpage' ||
+                            router.url === '/offers' ||
+                            router.url === '/adminpage' ||
+                            router.url === '/sales' ||
+                            router.url === '/new-offer' ||
+                            router.url === '/payment' ||
+                            router.url === '/qrCode')">
+        <button (click)="onRedirectBackHomePage()">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <li>Accueil</li>
+      </ng-container>
+      <ng-container *ngIf="router.url.includes('/single-offer')">
+        <button (click)="onRedirectBackHomePage()">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <li>Accueil</li>
+      </ng-container>
+      <ng-container *ngIf="router.url.includes('/welcome')">
+        <button (click)="onRedirectBackHomePage()">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <li>Accueil</li>
+      </ng-container>
+      <ng-container *ngIf="router.url.includes('/update-offer')">
+        <button (click)="onRedirectBackHomePage()">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <li>Accueil</li>
+      </ng-container>
+      <ng-container *ngIf="router.url.includes('/informationAccount')">
         <button (click)="onRedirectBackHomePage()">
           <i class="fa-solid fa-arrow-left"></i>
         </button>
@@ -23,7 +126,7 @@
   </nav>
   <div class="header-logo">
     <img src="assets/Logo.png" class="img-logo" alt="Logo des jeux olympiques">
-    <ng-container *ngIf="(router.url === '/' || router.url === '/productpage')">
+    <ng-container *ngIf="(router.url === '/' || router.url === '/productpage' || router.url === '/offers')">
       <h1>
         Billetterie des Jeux Olympiques et Paralympiques<br>
         de Paris 2024
@@ -36,9 +139,62 @@
         Paralympiques Paris 2024
       </h1>
     </ng-container>
+    <ng-container *ngIf="router.url.includes('/activation')">
+      <h1>
+        Inscription<br>
+        Jeux Olympiques et<br>
+        Paralympiques Paris 2024
+      </h1>
+    </ng-container>
     <ng-container *ngIf="router.url.includes('/connection')">
       <h1>
         Connexion<br>
+        Jeux Olympiques et<br>
+        Paralympiques Paris 2024
+      </h1>
+    </ng-container>
+    <ng-container *ngIf="(router.url === '/adminpage' || router.url === '/sales' || router.url === '/new-offer')">
+        <h1 class="titleAdmin">
+          Bienvenue sur la page de
+          l'administrateur
+          Jeux Olympiques et
+          Paralympiques Paris 2024
+        </h1>
+    </ng-container>
+    <ng-container *ngIf="router.url.includes('/single-offer')">
+      <h1>
+        Billetterie des Jeux Olympiques et Paralympiques<br>
+        de Paris 2024
+      </h1>
+    </ng-container>
+    <ng-container *ngIf="router.url.includes('/welcome')">
+      <h1>
+        Jeux Olympiques et<br>
+        Paralympiques de Paris 2024
+      </h1>
+    </ng-container>
+    <ng-container *ngIf="router.url.includes('/payment')">
+      <h1>
+        Jeux Olympiques et<br>
+        Paralympiques de Paris 2024
+      </h1>
+    </ng-container>
+    <ng-container *ngIf="router.url.includes('/qrCode')">
+      <h1>
+        Jeux Olympiques et<br>
+        Paralympiques de Paris 2024
+      </h1>
+    </ng-container>
+    <ng-container *ngIf="router.url.includes('/informationAccount')">
+      <h1>
+        Jeux Olympiques et<br>
+        Paralympiques de Paris 2024
+      </h1>
+    </ng-container>
+    <ng-container *ngIf="router.url.includes('/update-offer')">
+      <h1 class="titleAdmin">
+        Bienvenue sur la page de<br>
+        l'administrateur<br>
         Jeux Olympiques et<br>
         Paralympiques Paris 2024
       </h1>

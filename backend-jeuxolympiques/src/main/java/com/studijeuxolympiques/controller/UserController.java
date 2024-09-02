@@ -10,10 +10,21 @@ import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+
+
+/**
+ * Build class UserController
+ * Receive the request and provide the response
+ * @property UserService
+ * @requests Get, Post, and Put
+ * @request Post to create User - to enable account with code  - to connect - to disconnect
+ */
+
 
 @Slf4j
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -21,17 +32,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping({"api/users"})
 public class UserController {
 
-    /**
-     * Build class UserController
-     * Receive the request and provide the response
-     * @property UserService
-     * @requests Get, Post, and Put
-     * @request Post to create User - to enable account with code  - to connect - to disconnect
-     */
-
-    private AuthenticationManager authenticationManager;
-    private UserService userService;
-    private JwtService jwtService;
+    final private AuthenticationManager authenticationManager;
+    final private UserService userService;
+    final private JwtService jwtService;
 
     @Autowired
     public UserController(UserService userService, AuthenticationManager authenticationManager, JwtService jwtService) {
@@ -52,6 +55,7 @@ public class UserController {
     public void activationUser(@RequestBody Map<String, String>  activation) {
         this.userService.activation(activation);
     }
+
 
     /** Build special request post for connexion
      * @params Request body Map string
@@ -77,6 +81,7 @@ public class UserController {
         return this.userService.getUserById(id);
     }
 
+    @PreAuthorize("hasAuthority('ADMIN_READ')")
     @GetMapping
     public List<User> getAllUsers() {
         return this.userService.getAllUsers();

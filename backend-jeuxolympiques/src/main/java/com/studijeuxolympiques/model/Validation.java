@@ -3,12 +3,9 @@ package com.studijeuxolympiques.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
-/** Build Class Validation
- * Set up properties (id and code)
- * Set up Instant creation, expired and activation
- * @Data allows the implementation of constructor, getter and setter
- */
 
 import java.time.Instant;
 
@@ -16,6 +13,13 @@ import java.time.Instant;
 @Entity
 @Table(name = "validation")
 public class Validation {
+
+    /**
+     * Build Class Validation
+     * Set up properties (id and code)
+     * Set up Instant creation, expired and activation
+     * @Data allows the implementation of constructor, getter and setter
+     */
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +29,7 @@ public class Validation {
     private Instant expired;
     private Instant activation;
     private String code;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.REMOVE})
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 }

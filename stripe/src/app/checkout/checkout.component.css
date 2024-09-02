@@ -1,0 +1,15 @@
+/*Layout card and button*/
+
+.card{
+  height:1000px;
+}
+
+button{
+  border-radius: 50px;
+  background-color: #38bbd8;
+  border: none;
+  color:#ffffff;
+  width:15%;
+  height: 50px;
+  font-size: 18px;
+}

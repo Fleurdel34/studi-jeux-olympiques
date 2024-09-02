@@ -1,0 +1,10 @@
+<section>
+  <h3>QR Code Billets</h3>
+  <button (click)="generateQrCode()">Cliquez pour générer le Qr Code</button>
+  <div *ngFor="let payment of payment$ | async">
+    <qr-code value="{{payment.keyTransaction}}, {{key}}" size="300" errorCorrectionLevel="M"></qr-code>
+  </div>
+</section>
+
+
+

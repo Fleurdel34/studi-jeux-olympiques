@@ -60,9 +60,6 @@ export class AccountcreationComponent implements OnInit {
   }
 
   /**recover all form values and create user in database*/
-  /*voir github projet angular*/
- /*sécuriser l'API av role + token => verifier le front end requete post nettoyer le localstorage*/
-
   onSubmitForm(){
 
     if(this.registrationForm.invalid) {

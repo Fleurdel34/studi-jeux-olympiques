@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgIf, NgOptimizedImage} from "@angular/common";
 import {Router} from "@angular/router";
-
-
+import {AuthService} from "../../service/auth.service";
 
 
 @Component({
@@ -18,8 +17,10 @@ import {Router} from "@angular/router";
 
 export class HeaderComponent implements OnInit {
 
+  showMe: boolean=true;
+  hideMe: boolean=false;
 
-  constructor(protected router: Router) {
+  constructor(protected router: Router, private auth:AuthService) {
   }
 
   ngOnInit(): void {
@@ -39,4 +40,13 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/connection');
   }
 
+  /**Create method to modify login logout menu*/
+  buttonShowHide(){
+   this.showMe =! this.showMe;
+   this.hideMe =!this.hideMe;
+  }
+
+  doLogOut(){
+    this.auth.logOut();
+  }
 }

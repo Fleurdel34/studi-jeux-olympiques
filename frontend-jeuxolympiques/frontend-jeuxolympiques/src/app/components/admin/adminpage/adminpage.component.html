@@ -1,0 +1,20 @@
+<section>
+  <div class="title">
+    <h2>Visualiser les offres en cours:</h2>
+  </div>
+  <div class="offers" *ngFor="let offer of offer$ | async">
+    <div class="single-offer">
+      <h3>{{offer.name | titlecase }} :</h3>
+      <p id="offerDescription">{{offer.description }}</p>
+      <p>Prix: {{offer.price}}€</p>
+      <p>Nombre billets: {{offer.quantity}}</p>
+      <button type="submit" class="buttonOffer" (click)="updateOffer(offer.id)">Modifier</button>
+      <button type="submit" class="buttonOffer" (click)="deleteOffer(offer.id)">Supprimer</button>
+    </div>
+
+  </div>
+  <div class="buttons">
+    <button type="submit" (click)="addNewOffer()"> Créer</button>
+  </div>
+    <button (click)="viewSales()" id="buttonLink">Visualiser les ventes</button>
+</section>

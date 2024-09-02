@@ -32,3 +32,16 @@ a{
   margin-bottom:7rem;
   color: #a03174;
 }
+
+/*site responsive*/
+
+@media screen and (max-width:767px){
+  h1{
+    font-size:144px;
+    margin-top:6rem;
+  }
+  p{
+    font-size: 20px;
+    text-align:center;
+  }
+}

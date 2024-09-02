@@ -1,12 +1,17 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import {ApplicationConfig, LOCALE_ID, provideZoneChangeDetection} from '@angular/core';
 import { provideRouter } from '@angular/router';
-
 import { routes } from './app.routes';
-import {provideHttpClient} from "@angular/common/http";
+import {provideHttpClient, withInterceptors} from "@angular/common/http";
+import {authInterceptors} from "./interceptors/auth.interceptors";
+import {dataInterceptors} from "./interceptors/data.interceptors";
 
 
-export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }),
+
+
+export let appConfig: ApplicationConfig;
+appConfig = {
+  providers: [provideZoneChangeDetection({eventCoalescing: true}),
     provideRouter(routes),
-    provideHttpClient()]
+    provideHttpClient(withInterceptors([authInterceptors, dataInterceptors]),),
+    {provide: LOCALE_ID, useValue: 'fr-FR'}]
 };

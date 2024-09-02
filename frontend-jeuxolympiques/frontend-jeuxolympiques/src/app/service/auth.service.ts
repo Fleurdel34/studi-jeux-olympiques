@@ -1,31 +1,40 @@
 import {Injectable} from "@angular/core";
-import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
-import {catchError, map, Observable, throwError} from "rxjs";
-
+import {Observable} from "rxjs";
+import {User} from "../models/user";
+import {environment} from "../../environments/environments";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  urlConnection: string ='http://localhost:8080/api/users/connection'
-  headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient, private router: Router) {
   }
 
   /**
-   * Request post with form object to authentication in data base
-   * @param formValue
-   */
-
+   * Request post with form object to authentication in database*/
   connectionAccount(formValue: FormGroup){
-    this.http.post(this.urlConnection, formValue)
+    this.http.post(`${environment.urlConnection}`, formValue)
       .subscribe((res: any) => {
-        localStorage.setItem('bearer', res.token);
+        localStorage.setItem('bearer', res.bearer);
+        localStorage.setItem('id', res.id);
+        localStorage.setItem('role', res.role);
       });
+  }
+
+
+  /**Request get with to recover one user id in database*/
+  getUserById(userId:number): Observable<User>{
+   return this.http.get<User>(`${environment.url}/${userId}`);
+  }
+
+  /**recover id user authenticated*/
+  getId(){
+    return localStorage.getItem('id');
   }
 
   /**recover the token for authentication*/
@@ -33,40 +42,46 @@ export class AuthService {
     return localStorage.getItem('bearer');
   }
 
-   isLoggedIn(): boolean {
-    let authToken = localStorage.getItem('bearer');
-    return authToken !== null ? true : false;
+  /**recover the token for authentication*/
+  getRole() {
+    return localStorage.getItem('role');
   }
 
-  doLogout() {
-    let removeToken = localStorage.removeItem('bearer');
-    if (removeToken == null) {
-      this.router.navigate(['connection']);
+
+  /**delete token for disconnection*/
+  logOut(){
+    localStorage.removeItem('bearer');
+    localStorage.removeItem('id');
+    localStorage.removeItem('role');
+    localStorage.removeItem('offerId');
+    localStorage.removeItem('idKey');
+    let token = localStorage.getItem('bearer');
+    if (token === null) {
+      this.router.navigateByUrl('/connection');
     }
   }
 
-  getUserProfile(id: any): Observable<any> {
-    let api = `${this.urlConnection}/${id}`;
-    return this.http.get(api, { headers: this.headers }).pipe(
-      map((res) => {
-        return res || {};
-      }),
-      catchError(this.handleError)
-    );
+  /**update password with request put*/
+  putUserById(userId:number, formValue: FormGroup) {
+    this.http.put(`${environment.url}/${userId}`, formValue).subscribe({
+      next: res => {
+        console.log('Update successful');
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
+    })
   }
 
-  handleError(error: HttpErrorResponse) {
-    let msg = '';
-    if (error.error instanceof ErrorEvent) {
-      msg = error.error.message;
-    } else {
-      msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    return throwError(() => msg);
-  }
-
-  public logout(){
-    localStorage.removeItem('access_token');
+  deleteUserById(userId:number){
+    return this.http.delete(`${environment.url}/${userId}`).subscribe({
+      next: res => {
+        console.log('Delete successful');
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
+    })
   }
 
 }

@@ -26,6 +26,7 @@ li{
 }
 
 /* Layout picture of french flag */
+
 .img-flag{
   width: 50px;
   height: 50px;
@@ -33,12 +34,14 @@ li{
 }
 
 /*Layout button path page AccountCreation and Connection"*/
+
 button{
   background-color: #a03174;
   border: none;
 }
 
 /*icon awesome*/
+
 i{
   font-size: 30px;
   color: white;
@@ -46,6 +49,7 @@ i{
 }
 
 /*layout logo and title website olympic games*/
+
 .header-logo{
   width: 100%;
   height: 78%;
@@ -62,7 +66,58 @@ h1{
   font-weight: bold;
   width: 26%;
   position: relative;
-  top: 500px;
+  top: 400px;
   margin-left: 50px;
   text-align: center;
+}
+
+/*layout special admin page*/
+
+.titleAdmin{
+  top:350px;
+  text-align: left;
+}
+
+.divAdmin{
+  display: flex;
+  margin-right: 25px;
+}
+
+.divAdmin i{
+  color: black;
+}
+
+.logoutDiv{
+  display: flex;
+}
+
+.buttonLogOut{
+  display: flex;
+  flex-direction: column;
+}
+
+.logOut{
+  background-color: #d9d9d9;
+  font-weight:bold;
+  padding:10px;
+}
+
+/*site responsive*/
+
+@media screen and (max-width:1080px){
+  h1{
+    width: 60%;
+    margin-left:25px;
+    top: 450px;
+  }
+}
+
+@media screen and (max-width:767px){
+  li{
+   display: none;
+  }
+  h1{
+    width: 30%;
+    font-size: 22px;
+  }
 }

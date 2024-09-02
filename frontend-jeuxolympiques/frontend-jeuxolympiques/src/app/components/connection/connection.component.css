@@ -20,6 +20,7 @@ form{
 }
 
 /* Layout title page*/
+
 h2{
   font-size: 24px;
   font-weight: bold;
@@ -27,6 +28,7 @@ h2{
 }
 
 /*layout div containing label, input and button*/
+
 .labelInput{
   position: relative;
   height:80px;
@@ -42,6 +44,7 @@ h2{
 }
 
 /*layout label, input and button*/
+
 .label{
   position: absolute;
   padding: 0 20px;
@@ -68,6 +71,7 @@ input{
 }
 
 /* Animation of the input when the user makes an entry c*/
+
 input:focus,
 input:active
 {
@@ -92,4 +96,49 @@ button{
   height: 50px;
   font-size: 18px;
   width:25%;
+}
+
+/*site responsive*/
+
+@media screen and (max-width:1080px){
+  section{
+    background-color:#d9d9d9;
+  }
+  h2{
+    font-size: 16px;
+    margin-left:0;
+  }
+  .label{
+    font-size: 14px;
+  }
+  button{
+    font-size: 14px;
+    width:35%;
+  }
+}
+
+@media screen and (max-width:767px){
+
+  h2{
+    font-size:14px;
+    text-align:center;
+  }
+  form{
+    width:80%;
+  }
+  .label{
+    font-size: 10px;
+    height: 15px;
+    margin-left: 0;
+    line-height: 15px;
+    width: 70%;
+  }
+  input{
+    width: 100%;
+    padding:0;
+    margin:0;
+  }
+  button{
+    width:80%;
+  }
 }
