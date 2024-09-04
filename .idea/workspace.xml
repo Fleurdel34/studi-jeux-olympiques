@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9554a597-5062-4333-b599-c9f641a52987" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/StudiJeuxOlympiquesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/StudiJeuxOlympiquesApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/configuration/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/configuration/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/stripe/controller/StripeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/java/com/studijeuxolympiques/stripe/controller/StripeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +48,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/data.service.ts" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -512,7 +511,8 @@
       <workItem from="1725191302910" duration="9864000" />
       <workItem from="1725252156940" duration="14787000" />
       <workItem from="1725274901231" duration="6621000" />
-      <workItem from="1725288381191" duration="8688000" />
+      <workItem from="1725288381191" duration="9490000" />
+      <workItem from="1725364115978" duration="6489000" />
     </task>
     <servers />
   </component>
