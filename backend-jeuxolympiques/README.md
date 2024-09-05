@@ -51,11 +51,6 @@ to click on button `Run`
 
 Select tests files and click on button `Run`
 
-## Deploy application
-Docker:Dockerfile
-docker-compose.yml
-version: "4.32.0"
-
 ## services (test send mail to generate activation code):
 smtp4dev:
 port:
