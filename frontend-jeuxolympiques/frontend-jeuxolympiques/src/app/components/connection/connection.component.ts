@@ -35,8 +35,13 @@ export class ConnectionComponent implements OnInit{
     let formValue = this.connectionForm.value;
     this.authService.connectionAccount(formValue);
     let userId=this.authService.getId();
-    let id = Number(userId)
-    this.router.navigateByUrl(`welcome/${id}`);
+    let id = Number(userId);
+    if(id){
+      this.authService.logIn()
+      this.router.navigateByUrl(`welcome/${id}`);
+      this.connectionForm.reset();
+    }
+
   }
 
 }

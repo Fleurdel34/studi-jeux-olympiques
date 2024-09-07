@@ -11,6 +11,7 @@ import {User} from "../models/user";
 })
 export class AuthService {
 
+  private isAuthenticated: boolean=false;
 
   constructor(private http: HttpClient, private router: Router) {
   }
@@ -26,6 +27,9 @@ export class AuthService {
       });
   }
 
+  logIn(){
+    this.isAuthenticated=true;
+  }
 
   /**Request get with to recover one user id in database*/
   getUserById(userId:number): Observable<User>{
@@ -42,11 +46,9 @@ export class AuthService {
     return localStorage.getItem('bearer');
   }
 
-  /**recover the token for authentication*/
-  getRole() {
-    return localStorage.getItem('role');
+  authenticated(): boolean{
+    return this.isAuthenticated;
   }
-
 
   /**delete token for disconnection*/
   logOut(){
@@ -58,6 +60,7 @@ export class AuthService {
     let token = localStorage.getItem('bearer');
     if (token === null) {
       this.router.navigateByUrl('/connection');
+      this.isAuthenticated = false;
     }
   }
 
