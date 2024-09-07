@@ -4,7 +4,7 @@ import {FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 import {Observable} from "rxjs";
 import {User} from "../models/user";
-import {environment} from "../../environments/environments";
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class AuthService {
   /**
    * Request post with form object to authentication in database*/
   connectionAccount(formValue: FormGroup){
-    this.http.post(`${environment.urlConnection}`, formValue)
+    this.http.post(`${process.env["URL_CONNECTION"]}`, formValue)
       .subscribe((res: any) => {
         localStorage.setItem('bearer', res.bearer);
         localStorage.setItem('id', res.id);
@@ -29,7 +29,7 @@ export class AuthService {
 
   /**Request get with to recover one user id in database*/
   getUserById(userId:number): Observable<User>{
-   return this.http.get<User>(`${environment.url}/${userId}`);
+   return this.http.get<User>(`${process.env["URL"]}/${userId}`);
   }
 
   /**recover id user authenticated*/
@@ -63,7 +63,7 @@ export class AuthService {
 
   /**update password with request put*/
   putUserById(userId:number, formValue: FormGroup) {
-    this.http.put(`${environment.url}/${userId}`, formValue).subscribe({
+    this.http.put(`${process.env["URL"]}/${userId}`, formValue).subscribe({
       next: res => {
         console.log('Update successful');
       },
@@ -74,7 +74,7 @@ export class AuthService {
   }
 
   deleteUserById(userId:number){
-    return this.http.delete(`${environment.url}/${userId}`).subscribe({
+    return this.http.delete(`${process.env["URL"]}/${userId}`).subscribe({
       next: res => {
         console.log('Delete successful');
       },
