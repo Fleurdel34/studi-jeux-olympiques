@@ -1,6 +1,33 @@
-version: "4.32.0"
+version: "4.34.1"
 
 services:
+back:
+  build:
+    context: ./backend-jeuxolympiques
+  environment:
+  # données du .env
+  ports:
+    - 8080:8080
+  links:
+    - database
+
+  database:
+    image: mariadb:11.5-ubi9
+    environment:
+    # initialisation de la db
+    ports:
+      - 3000:3000
+
+  front:
+    build:
+      context: ./frontend-jeuxolympiques/frontend-jeuxolympiques
+    environment:
+    # données du .env
+    ports:
+      - 81:80
+    links:
+      - back
+
   smtp4dev:
     image: rnwood/smtp4dev:prerelease
     restart: always
@@ -9,7 +36,3 @@ services:
       - '5000:80'
       # Change the number before : to the port the SMTP server should be accessible on
       - '25:25'
-
-
-
-
