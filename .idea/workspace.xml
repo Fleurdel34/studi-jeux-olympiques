@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9554a597-5062-4333-b599-c9f641a52987" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/connection/connection.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/components/connection/connection.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/guards/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/guards/auth.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/service/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/custom-webpack.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/src/custom-webpack.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +73,7 @@
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;Docker.docker-compose.yml.front: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.smtp4dev: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.frontend-jeuxolympiques/Dockerfile.executor&quot;: &quot;Run&quot;,
     &quot;Docker.frontend-jeuxolympiques/compose.yaml.server: Compose Deployment.executor&quot;: &quot;Run&quot;,
@@ -140,7 +138,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;javascript.karma.karma_node_package_dir&quot;: &quot;&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/IdeaProjects/frontend-jeuxolympiques&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/IdeaProjects/nathan&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -524,7 +522,24 @@
       <workItem from="1725530496296" duration="3267000" />
       <workItem from="1725709068454" duration="3777000" />
       <workItem from="1725713763634" duration="1132000" />
-      <workItem from="1725724984724" duration="4378000" />
+      <workItem from="1725724984724" duration="7883000" />
+      <workItem from="1725788477258" duration="2390000" />
+      <workItem from="1725791383765" duration="482000" />
+      <workItem from="1725792459339" duration="505000" />
+      <workItem from="1725793023149" duration="543000" />
+      <workItem from="1725793814882" duration="1723000" />
+      <workItem from="1725795883372" duration="1722000" />
+      <workItem from="1725806873004" duration="3811000" />
+      <workItem from="1725812699822" duration="198000" />
+      <workItem from="1725813279881" duration="2782000" />
+      <workItem from="1725817101118" duration="988000" />
+      <workItem from="1725818640066" duration="323000" />
+      <workItem from="1725819146074" duration="19000" />
+      <workItem from="1725819288446" duration="476000" />
+      <workItem from="1725819925149" duration="43000" />
+      <workItem from="1725820293239" duration="1065000" />
+      <workItem from="1725821621251" duration="352000" />
+      <workItem from="1725822212131" duration="6147000" />
     </task>
     <servers />
   </component>
