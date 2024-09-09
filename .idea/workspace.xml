@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9554a597-5062-4333-b599-c9f641a52987" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -539,7 +538,8 @@
       <workItem from="1725819925149" duration="43000" />
       <workItem from="1725820293239" duration="1065000" />
       <workItem from="1725821621251" duration="352000" />
-      <workItem from="1725822212131" duration="6147000" />
+      <workItem from="1725822212131" duration="6546000" />
+      <workItem from="1725859071110" duration="12301000" />
     </task>
     <servers />
   </component>
@@ -547,6 +547,7 @@
     <option name="version" value="3" />
   </component>
   <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
