@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9554a597-5062-4333-b599-c9f641a52987" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend-jeuxolympiques/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stripe/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/stripe/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/Dockerfile" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,85 +71,86 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Docker.docker-compose.yml.front: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "Docker.frontend-jeuxolympiques/Dockerfile.executor": "Run",
-    "Docker.frontend-jeuxolympiques/compose.yaml.server: Compose Deployment.executor": "Run",
-    "Docker.frontend-jeuxolympiques/compose.yaml: Compose Deployment.executor": "Run",
-    "JUnit.ChargeControllerTest.executor": "Run",
-    "JUnit.NotificationServiceImplTest.executor": "Run",
-    "JUnit.NotificationServiceImplTest.testSendMessage.executor": "Run",
-    "JUnit.OfferControllerTest.executor": "Run",
-    "JUnit.OfferControllerTest.testCreateOffer.executor": "Run",
-    "JUnit.OfferControllerTest.testGetOffers.executor": "Run",
-    "JUnit.OfferRepositoryTest.executor": "Coverage",
-    "JUnit.OfferServiceTest.executor": "Run",
-    "JUnit.OfferServiceTest.testCreateOffer.executor": "Run",
-    "JUnit.PaymentControllerTest.executor": "Run",
-    "JUnit.PaymentControllerTest.testTransaction.executor": "Run",
-    "JUnit.PaymentTest.executor": "Run",
-    "JUnit.StudiJeuxOlympiquesApplicationTests.contextLoads.executor": "Run",
-    "JUnit.StudiJeuxOlympiquesApplicationTests.createUser.executor": "Run",
-    "JUnit.StudiJeuxOlympiquesApplicationTests.executor": "Run",
-    "JUnit.StudiJeuxOlympiquesApplicationTests.shouldCreateUser.executor": "Run",
-    "JUnit.StudiJeuxOlympiquesApplicationTests.shouldReturnDefaultMessage.executor": "Run",
-    "JUnit.StudiJeuxOlympiquesApplicationTests.shouldReturnUserPage.executor": "Run",
-    "JUnit.StudiJeuxOlympiquesApplicationTests.testGetUsers.executor": "Run",
-    "JUnit.StudiJeuxOlympiquesApplicationTests.userLoginFailed.executor": "Run",
-    "JUnit.StudiJeuxOlympiquesApplicationTests.userLoginTest.executor": "Run",
-    "JUnit.UserControllerTest.contextLoads.executor": "Run",
-    "JUnit.UserControllerTest.createUser.executor": "Coverage",
-    "JUnit.UserControllerTest.executor": "Coverage",
-    "JUnit.UserControllerTest.shouldReturnUserPage.executor": "Coverage",
-    "JUnit.templates in studi-jeux-olympiques.executor": "Run",
-    "JavaScript Debug.checkout.html.executor": "Run",
-    "JavaScript Debug.index.html.executor": "Run",
-    "Karma.ApiPaymentTestingService (1).executor": "Run",
-    "Karma.ApiPaymentTestingService (2).executor": "Run",
-    "Karma.ApiPaymentTestingService .executor": "Run",
-    "Karma.ApiPaymentTestingService.executor": "Run",
-    "Karma.ApiPaymentTestingService.should create.executor": "Run",
-    "Karma.ApiPaymentTestingService.should return status 200.executor": "Run",
-    "Karma.AppComponent.should have the 'frontend-jeuxolympiques' title.executor": "Run",
-    "Karma.My Jasmine Setup (1).executor": "Run",
-    "Karma.My Jasmine Setup (2).executor": "Run",
-    "Karma.My Jasmine Setup (3).executor": "Run",
-    "Karma.My Jasmine Setup.executor": "Run",
-    "Karma.My Jasmine Setup.tests if the value of a is true.executor": "Run",
-    "Karma.auth.guard.spec.ts.executor": "Run",
-    "Karma.createTransaction.executor": "Run",
-    "Maven.studi-jeux-olympiques [clean].executor": "Run",
-    "Maven.studi-jeux-olympiques [compile].executor": "Run",
-    "Maven.studi-jeux-olympiques [install].executor": "Run",
-    "Maven.studi-jeux-olympiques [package].executor": "Run",
-    "Maven.studi-jeux-olympiques [site].executor": "Run",
-    "Maven.studi-jeux-olympiques [test].executor": "Run",
-    "Maven.studi-jeux-olympiques [validate].executor": "Run",
-    "Maven.studi-jeux-olympiques [verify].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.StudiJeuxOlympiquesApplication.executor": "Run",
-    "git-widget-placeholder": "dev",
-    "ignore.virus.scanning.warn.message": "true",
-    "javascript.karma.karma_node_package_dir": "",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/johan/IdeaProjects/studi-jeux-olympiques/frontend-jeuxolympiques/frontend-jeuxolympiques/src/app/interceptors",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\johan\\IdeaProjects\\studi-jeux-olympiques\\frontend-jeuxolympiques\\frontend-jeuxolympiques\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Docker.docker-compose.yml.front: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.smtp4dev: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.frontend-jeuxolympiques/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.frontend-jeuxolympiques/compose.yaml.server: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.frontend-jeuxolympiques/compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChargeControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotificationServiceImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotificationServiceImplTest.testSendMessage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OfferControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OfferControllerTest.testCreateOffer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OfferControllerTest.testGetOffers.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OfferRepositoryTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.OfferServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OfferServiceTest.testCreateOffer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentControllerTest.testTransaction.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.createUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.shouldCreateUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.shouldReturnDefaultMessage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.shouldReturnUserPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.testGetUsers.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.userLoginFailed.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudiJeuxOlympiquesApplicationTests.userLoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTest.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTest.createUser.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.UserControllerTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.UserControllerTest.shouldReturnUserPage.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.templates in studi-jeux-olympiques.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.checkout.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;Karma.ApiPaymentTestingService (1).executor&quot;: &quot;Run&quot;,
+    &quot;Karma.ApiPaymentTestingService (2).executor&quot;: &quot;Run&quot;,
+    &quot;Karma.ApiPaymentTestingService .executor&quot;: &quot;Run&quot;,
+    &quot;Karma.ApiPaymentTestingService.executor&quot;: &quot;Run&quot;,
+    &quot;Karma.ApiPaymentTestingService.should create.executor&quot;: &quot;Run&quot;,
+    &quot;Karma.ApiPaymentTestingService.should return status 200.executor&quot;: &quot;Run&quot;,
+    &quot;Karma.AppComponent.should have the 'frontend-jeuxolympiques' title.executor&quot;: &quot;Run&quot;,
+    &quot;Karma.My Jasmine Setup (1).executor&quot;: &quot;Run&quot;,
+    &quot;Karma.My Jasmine Setup (2).executor&quot;: &quot;Run&quot;,
+    &quot;Karma.My Jasmine Setup (3).executor&quot;: &quot;Run&quot;,
+    &quot;Karma.My Jasmine Setup.executor&quot;: &quot;Run&quot;,
+    &quot;Karma.My Jasmine Setup.tests if the value of a is true.executor&quot;: &quot;Run&quot;,
+    &quot;Karma.auth.guard.spec.ts.executor&quot;: &quot;Run&quot;,
+    &quot;Karma.createTransaction.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [site].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.studi-jeux-olympiques [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.StudiJeuxOlympiquesApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.karma.karma_node_package_dir&quot;: &quot;&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/IdeaProjects/nathan&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\johan\\IdeaProjects\\studi-jeux-olympiques\\frontend-jeuxolympiques\\frontend-jeuxolympiques\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\johan\IdeaProjects\studi-jeux-olympiques\frontend-jeuxolympiques\frontend-jeuxolympiques\src\app\interceptors" />
@@ -519,7 +520,36 @@
       <workItem from="1725425704591" duration="788000" />
       <workItem from="1725448391901" duration="18681000" />
       <workItem from="1725472137711" duration="4000" />
-      <workItem from="1725511056170" duration="10044000" />
+      <workItem from="1725511056170" duration="11803000" />
+      <workItem from="1725530496296" duration="3267000" />
+      <workItem from="1725709068454" duration="3777000" />
+      <workItem from="1725713763634" duration="1132000" />
+      <workItem from="1725724984724" duration="7883000" />
+      <workItem from="1725788477258" duration="2390000" />
+      <workItem from="1725791383765" duration="482000" />
+      <workItem from="1725792459339" duration="505000" />
+      <workItem from="1725793023149" duration="543000" />
+      <workItem from="1725793814882" duration="1723000" />
+      <workItem from="1725795883372" duration="1722000" />
+      <workItem from="1725806873004" duration="3811000" />
+      <workItem from="1725812699822" duration="198000" />
+      <workItem from="1725813279881" duration="2782000" />
+      <workItem from="1725817101118" duration="988000" />
+      <workItem from="1725818640066" duration="323000" />
+      <workItem from="1725819146074" duration="19000" />
+      <workItem from="1725819288446" duration="476000" />
+      <workItem from="1725819925149" duration="43000" />
+      <workItem from="1725820293239" duration="1065000" />
+      <workItem from="1725821621251" duration="352000" />
+      <workItem from="1725822212131" duration="6546000" />
+      <workItem from="1725859071110" duration="14091000" />
+      <workItem from="1725880165908" duration="30000" />
+      <workItem from="1725880698282" duration="2945000" />
+      <workItem from="1725891326130" duration="6085000" />
+      <workItem from="1725900211093" duration="4993000" />
+      <workItem from="1726043188407" duration="2450000" />
+      <workItem from="1726049991379" duration="708000" />
+      <workItem from="1726050743833" duration="421000" />
     </task>
     <servers />
   </component>
@@ -527,6 +557,7 @@
     <option name="version" value="3" />
   </component>
   <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

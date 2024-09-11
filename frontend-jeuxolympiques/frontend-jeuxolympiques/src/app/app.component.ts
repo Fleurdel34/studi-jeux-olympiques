@@ -45,4 +45,5 @@ import {InformationAccountComponent} from "./components/information-account/info
 })
 export class AppComponent {
 
+
 }

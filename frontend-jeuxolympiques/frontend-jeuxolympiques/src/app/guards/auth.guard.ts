@@ -1,32 +1,21 @@
+import {inject} from "@angular/core";
 
-import {Injectable} from "@angular/core";
 import {
-  ActivatedRouteSnapshot,
-  CanActivate,
   Router,
-  RouterStateSnapshot
 } from "@angular/router";
 import { AuthService } from "../service/auth.service";
 
 /**implements guard for the security*/
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AuthGuard implements CanActivate{
+export const AuthGuard = ()=>{
 
-  constructor(public authService: AuthService, public router: Router) {
-  }
+  const auth = inject(AuthService);
+  const router = inject(Router);
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean
-  {
-    if(!this.authService.getToken() && !this.authService.getRole()){
+  if(!auth.authenticated()) {
       window.alert("Accès refusé!");
-      this.router.navigateByUrl('/connection');
+      router.navigateByUrl('/connection');
       return false;
     }
     return true;
-  }
 }
