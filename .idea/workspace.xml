@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9554a597-5062-4333-b599-c9f641a52987" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-jeuxolympiques/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-jeuxolympiques/frontend-jeuxolympiques/Dockerfile" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -539,7 +542,14 @@
       <workItem from="1725820293239" duration="1065000" />
       <workItem from="1725821621251" duration="352000" />
       <workItem from="1725822212131" duration="6546000" />
-      <workItem from="1725859071110" duration="12301000" />
+      <workItem from="1725859071110" duration="14091000" />
+      <workItem from="1725880165908" duration="30000" />
+      <workItem from="1725880698282" duration="2945000" />
+      <workItem from="1725891326130" duration="6085000" />
+      <workItem from="1725900211093" duration="4993000" />
+      <workItem from="1726043188407" duration="2450000" />
+      <workItem from="1726049991379" duration="708000" />
+      <workItem from="1726050743833" duration="421000" />
     </task>
     <servers />
   </component>

@@ -1,45 +1,6 @@
-version: "4.34.1"
+version: "4.33.1"
 
 services:
-
-  back:
-    build:
-      context: ./backend-jeuxolympiques
-    environment:
-      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
-      - SECRET_KEY_JWT=${SECRET_KEY_JWT}
-      - DATABASE_URL=${DATABASE_URL}
-      - MARIADB_DATABASE=${MARIADB_DATABASE}
-      - MARIADB_USER=${MARIADB_USER}
-      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
-    ports:
-      - 8080:8080
-    links:
-      - database
-
-  database:
-    image: mariadb:11.5-ubi9
-    environment:
-      - MARIADB_DATABASE=${MARIADB_DATABASE}
-      - MARIADB_USER=${MARIADB_USER}
-      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
-      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
-    ports:
-      - 3000:3000
-
-  front:
-    build:
-      context: ./frontend-jeuxolympiques/frontend-jeuxolympiques
-    environment:
-      - URL=${URL}
-      - URL_ACTIVATION=${URL_ACTIVATION}
-      - URL_CONNECTION=${URL_CONNECTION}
-      - URL_OFFERS=${URL_OFFERS}
-      - URL_PAYMENT=${URL_PAYMENT}
-    ports:
-      - 81:80
-    links:
-      - back
 
   smtp4dev:
     image: rnwood/smtp4dev:prerelease
